@@ -1,0 +1,53 @@
+definition {
+
+	macro selectAssociatedFSOptionsValue {
+		Click(locator1 = "CommerceFrontStore#FS_PRODUCT_OPTIONS_SELECT");
+
+		Click(
+			key_optionValue = "${FSOptionValue}",
+			locator1 = "CommerceFrontStore#FS_PRODUCT_OPTION");
+	}
+
+	macro viewProductDetail {
+		AssertElementPresent(
+			key_FSProductName = "${FSProductName}",
+			locator1 = "CommerceFrontStore#FS_PRODUCT_NAME");
+
+		if (IsElementPresent(locator1 = "CommerceFrontStore#FS_PRODUCT_OPTIONS_SELECT")) {
+			for (var FSOptionValues : list "${FSOptionValuesList}") {
+				var FSOptionValue = StringUtil.extractFirst("${FSOptionValues}", ":");
+				var FSPrice = StringUtil.extractLast("${FSOptionValues}", ":");
+				var FSOptionValueUppercase = StringUtil.upperCase("${FSOptionValue}");
+
+				FrontStore.selectAssociatedFSOptionsValue(FSOptionValue = "${FSOptionValue}");
+
+				echo("Checking ${FSOptionValue} ${FSProductName} SKU is correct...");
+
+				AssertElementPresent(
+					key_FSProductSKU = "${FSOptionValueUppercase}SKU",
+					locator1 = "CommerceFrontStore#FS_PRODUCT_SKU");
+
+				echo("Checking ${FSOptionValue} ${FSProductName} price is correct...");
+
+				AssertElementPresent(
+					key_FSProductPrice = "${FSPrice}",
+					locator1 = "CommerceFrontStore#FS_PRODUCT_PRICE");
+
+				echo("Checking ${FSOptionValue} ${FSProductName} image is correct...");
+
+				AssertElementPresent(
+					key_FSProductImage = "${FSOptionValue}",
+					locator1 = "CommerceFrontStore#FS_PRODUCT_FULL_IMAGE",
+					value1 = "${FSOptionValue}");
+
+				echo("Checking ${FSOptionValue} ${FSProductName} thumbnail is correct...");
+
+				AssertElementPresent(
+					key_FSProductImageThumb = "${FSOptionValue}",
+					locator1 = "CommerceFrontStore#FS_PRODUCT_IMAGE_THUMBNAIL",
+					value1 = "${FSOptionValue}");
+			}
+		}
+	}
+
+}
