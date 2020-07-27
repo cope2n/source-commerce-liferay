@@ -1,27 +1,22 @@
-#Deploy product 27-7-2020
+# Deploy product 27-7-2020
 
-##features
+## features
 
 * Add fields to product service and product form
 * Add fields to catalog service and catalog form
 
-#Catalog 
+# Catalog 
 
 * fields:descCatalog - varchar (ckeditor)
 
-#Product 
+# Product 
 
 * fields:
 
 1. overview : varchar (ckeditor)
-
 2. introduction : varchar (ckeditor)
-
 3. features : varchar (ckeditor)
-
 4. benefits : varchar (ckeditor)
-
 5. functions : varchar (ckeditor)
-
 6. partners : varchar (ckeditor)
 
