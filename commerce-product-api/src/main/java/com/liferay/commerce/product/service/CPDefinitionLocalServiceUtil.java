@@ -81,7 +81,8 @@ public class CPDefinitionLocalServiceUtil {
 				com.liferay.portal.kernel.util.UnicodeProperties
 					subscriptionTypeSettingsProperties,
 				long maxSubscriptionCycles, String externalReferenceCode,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext, String overview)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext,
+				String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().addCPDefinition(
@@ -96,7 +97,7 @@ public class CPDefinitionLocalServiceUtil {
 			expirationDateMinute, neverExpire, defaultSku, subscriptionEnabled,
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-			externalReferenceCode, serviceContext, overview);
+			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners);
 	}
 
 	public static void checkCPDefinitions()
@@ -698,7 +699,8 @@ public class CPDefinitionLocalServiceUtil {
 				int expirationDateDay, int expirationDateYear,
 				int expirationDateHour, int expirationDateMinute,
 				boolean neverExpire,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext, String overview)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext,
+				String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().updateCPDefinition(
@@ -710,7 +712,7 @@ public class CPDefinitionLocalServiceUtil {
 			displayDateMonth, displayDateDay, displayDateYear, displayDateHour,
 			displayDateMinute, expirationDateMonth, expirationDateDay,
 			expirationDateYear, expirationDateHour, expirationDateMinute,
-			neverExpire, serviceContext, overview);
+			neverExpire, serviceContext, overview, introduction, features, benefits, functions, partners);
 	}
 
 	public static com.liferay.commerce.product.model.CPDefinition
@@ -729,7 +731,8 @@ public class CPDefinitionLocalServiceUtil {
 				int expirationDateMonth, int expirationDateDay,
 				int expirationDateYear, int expirationDateHour,
 				int expirationDateMinute, boolean neverExpire,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext, String overview)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext,
+				String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().updateCPDefinition(
@@ -739,7 +742,7 @@ public class CPDefinitionLocalServiceUtil {
 			displayDateDay, displayDateYear, displayDateHour, displayDateMinute,
 			expirationDateMonth, expirationDateDay, expirationDateYear,
 			expirationDateHour, expirationDateMinute, neverExpire,
-			serviceContext, overview);
+			serviceContext, overview, introduction, features, benefits, functions, partners);
 	}
 
 	public static com.liferay.commerce.product.model.CPDefinition
@@ -892,7 +895,8 @@ public class CPDefinitionLocalServiceUtil {
 				com.liferay.portal.kernel.util.UnicodeProperties
 					subscriptionTypeSettingsProperties,
 				long maxSubscriptionCycles, String externalReferenceCode,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext, String overview)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext,
+				String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().upsertCPDefinition(
@@ -907,7 +911,7 @@ public class CPDefinitionLocalServiceUtil {
 			expirationDateMinute, neverExpire, defaultSku, subscriptionEnabled,
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-			externalReferenceCode, serviceContext, overview);
+			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners);
 	}
 
 	public static CPDefinitionLocalService getService() {

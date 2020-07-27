@@ -100,7 +100,7 @@ public class CPOSGiCommands {
 				displayDateMonth, displayDateDay, displayDateYear,
 				displayDateHour, displayDateMinute, 0, 0, 0, 0, 0, true,
 				CPInstanceConstants.DEFAULT_SKU, false, 0, null, null, 0, null,
-				serviceContext, null);
+				serviceContext, null,null,null,null,null,null);
 		}
 	}
 

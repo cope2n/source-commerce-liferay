@@ -113,12 +113,66 @@ if ((cpDefinition != null) && (cpDefinition.getExpirationDate() != null)) {
 				</div>
 			</aui:field-wrapper>
 
-			<liferay-ui:input-editor toolbarSet="overview"
-									 name="overview"
-									 initMethod="initEditor"
-									 width="100" height="400"
-									 resizable="true" >
-			</liferay-ui:input-editor>
+			<aui:field-wrapper>
+				<label class="control-label">Overview </label>
+				<liferay-ui:input-editor toolbarSet="overview"
+										 name="overview"
+										 initMethod="initEditorOverview"
+										 width="100" height="400"
+										 resizable="true" >
+				</liferay-ui:input-editor>
+			</aui:field-wrapper>
+
+			<aui:field-wrapper>
+				<label class="control-label">Introduction </label>
+				<liferay-ui:input-editor toolbarSet="introduction"
+										 name="introduction"
+										 initMethod="initEditorIntroduction"
+										 width="100" height="400"
+										 resizable="true" >
+				</liferay-ui:input-editor>
+			</aui:field-wrapper>
+
+			<aui:field-wrapper>
+				<label class="control-label">Features </label>
+				<liferay-ui:input-editor toolbarSet="features"
+										 name="features"
+										 initMethod="initEditorFeatures"
+										 width="100" height="400"
+										 resizable="true" >
+				</liferay-ui:input-editor>
+			</aui:field-wrapper>
+
+			<aui:field-wrapper>
+				<label class="control-label">Benefits </label>
+				<liferay-ui:input-editor toolbarSet="benefits"
+										 name="benefits"
+										 initMethod="initEditorBenefits"
+										 width="100" height="400"
+										 resizable="true" >
+				</liferay-ui:input-editor>
+			</aui:field-wrapper>
+
+			<aui:field-wrapper>
+				<label class="control-label">Functions </label>
+				<liferay-ui:input-editor toolbarSet="functions"
+										 name="functions"
+										 initMethod="initEditorFunctions"
+										 width="100" height="400"
+										 resizable="true" >
+				</liferay-ui:input-editor>
+			</aui:field-wrapper>
+
+			<aui:field-wrapper>
+				<label class="control-label">Partners </label>
+				<liferay-ui:input-editor toolbarSet="partners"
+										 name="partners"
+										 initMethod="initEditorPartners"
+										 width="100" height="400"
+										 resizable="true" >
+				</liferay-ui:input-editor>
+			</aui:field-wrapper>
+
 		</aui:fieldset>
 
 		<aui:fieldset collapsible="<%= true %>" label="seo">
@@ -248,8 +302,28 @@ if ((cpDefinition != null) && (cpDefinition.getExpirationDate() != null)) {
 
 <c:if test="<%= cpDefinition != null %>">
 	<aui:script>
-		function <portlet:namespace/><% assert cpDefinition != null; %>initEditor(){
+		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorOverview(){
 		return "<%= UnicodeFormatter.toString((String)cpDefinition.getOverview()) %>";
+		}
+
+		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorIntroduction(){
+		return "<%= UnicodeFormatter.toString((String)cpDefinition.getIntroduction()) %>";
+		}
+
+		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorFeatures(){
+		return "<%= UnicodeFormatter.toString((String)cpDefinition.getFeatures()) %>";
+		}
+
+		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorBenefits(){
+		return "<%= UnicodeFormatter.toString((String)cpDefinition.getBenefits()) %>";
+		}
+
+		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorFunctions(){
+		return "<%= UnicodeFormatter.toString((String)cpDefinition.getFunctions()) %>";
+		}
+
+		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorPartners(){
+		return "<%= UnicodeFormatter.toString((String)cpDefinition.getPartners()) %>";
 		}
 	</aui:script>
 </c:if>

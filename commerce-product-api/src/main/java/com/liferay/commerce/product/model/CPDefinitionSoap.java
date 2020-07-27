@@ -75,6 +75,11 @@ public class CPDefinitionSoap implements Serializable {
 		soapModel.setStatusByUserName(model.getStatusByUserName());
 		soapModel.setStatusDate(model.getStatusDate());
 		soapModel.setOverview(model.getOverview());
+		soapModel.setIntroduction(model.getIntroduction());
+		soapModel.setFeatures(model.getFeatures());
+		soapModel.setBenefits(model.getBenefits());
+		soapModel.setFunctions(model.getFunctions());
+		soapModel.setPartners(model.getPartners());
 
 		return soapModel;
 	}
@@ -510,6 +515,46 @@ public class CPDefinitionSoap implements Serializable {
 		_overview = overview;
 	}
 
+	public String getIntroduction() {
+		return _introduction;
+	}
+
+	public void setIntroduction(String introduction) {
+		_introduction = introduction;
+	}
+
+	public String getFeatures() {
+		return _features;
+	}
+
+	public void setFeatures(String features) {
+		_features = features;
+	}
+
+	public String getBenefits() {
+		return _benefits;
+	}
+
+	public void setBenefits(String benefits) {
+		_benefits = benefits;
+	}
+
+	public String getFunctions() {
+		return _functions;
+	}
+
+	public void setFunctions(String functions) {
+		_functions = functions;
+	}
+
+	public String getPartners() {
+		return _partners;
+	}
+
+	public void setPartners(String partners) {
+		_partners = partners;
+	}
+
 	private String _uuid;
 	private String _defaultLanguageId;
 	private long _CPDefinitionId;
@@ -552,5 +597,10 @@ public class CPDefinitionSoap implements Serializable {
 	private String _statusByUserName;
 	private Date _statusDate;
 	private String _overview;
+	private String _introduction;
+	private String _features;
+	private String _benefits;
+	private String _functions;
+	private String _partners;
 
 }

@@ -61,7 +61,8 @@ public class CommerceCatalogLocalServiceUtil {
 				String name, String commerceCurrencyCode,
 				String catalogDefaultLanguageId, boolean system,
 				String externalReferenceCode,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext, String descCatalog)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext,
+				String descCatalog)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().addCommerceCatalog(
@@ -73,7 +74,8 @@ public class CommerceCatalogLocalServiceUtil {
 			addCommerceCatalog(
 				String name, String commerceCurrencyCode,
 				String catalogDefaultLanguageId, String externalReferenceCode,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext, String descCatalog)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext,
+				String descCatalog)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().addCommerceCatalog(
@@ -409,7 +411,8 @@ public class CommerceCatalogLocalServiceUtil {
 	public static com.liferay.commerce.product.model.CommerceCatalog
 			updateCommerceCatalog(
 				long commerceCatalogId, String name,
-				String commerceCurrencyCode, String catalogDefaultLanguageId, String descCatalog)
+				String commerceCurrencyCode, String catalogDefaultLanguageId,
+				String descCatalog)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().updateCommerceCatalog(

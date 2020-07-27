@@ -112,7 +112,8 @@ public interface CPDefinitionLocalService
 			int subscriptionLength, String subscriptionType,
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			ServiceContext serviceContext, String overview)
+			ServiceContext serviceContext,
+			String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws PortalException;
 
 	public void checkCPDefinitions() throws PortalException;
@@ -511,7 +512,8 @@ public interface CPDefinitionLocalService
 			int displayDateMinute, int expirationDateMonth,
 			int expirationDateDay, int expirationDateYear,
 			int expirationDateHour, int expirationDateMinute,
-			boolean neverExpire, ServiceContext serviceContext, String overview)
+			boolean neverExpire, ServiceContext serviceContext,
+			String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws PortalException;
 
 	public CPDefinition updateCPDefinition(
@@ -526,7 +528,8 @@ public interface CPDefinitionLocalService
 			int displayDateMinute, int expirationDateMonth,
 			int expirationDateDay, int expirationDateYear,
 			int expirationDateHour, int expirationDateMinute,
-			boolean neverExpire, ServiceContext serviceContext, String overview)
+			boolean neverExpire, ServiceContext serviceContext,
+			String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws PortalException;
 
 	public CPDefinition updateCPDefinitionAccountGroupFilter(
@@ -615,7 +618,8 @@ public interface CPDefinitionLocalService
 			int subscriptionLength, String subscriptionType,
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			ServiceContext serviceContext, String overview)
+			ServiceContext serviceContext,
+			String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws PortalException;
 
 }

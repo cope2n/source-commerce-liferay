@@ -132,6 +132,11 @@
 		<field name="statusByUserName" type="String" />
 		<field name="statusDate" type="Date" />
 		<field name="overview" type="String" />
+		<field name="introduction" type="String" />
+		<field name="features" type="String" />
+		<field name="benefits" type="String" />
+		<field name="functions" type="String" />
+		<field name="partners" type="String" />
 	</model>
 	<model name="com.liferay.commerce.product.model.CPDefinitionLink">
 		<field name="uuid" type="String" />

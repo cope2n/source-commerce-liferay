@@ -34,6 +34,7 @@ import com.liferay.commerce.product.exception.NoSuchCatalogException;
 import com.liferay.commerce.product.model.CPDefinition;
 import com.liferay.commerce.product.model.CPInstanceConstants;
 import com.liferay.commerce.product.model.CommerceChannelRel;
+import com.liferay.commerce.product.service.CPDefinitionLocalServiceUtil;
 import com.liferay.commerce.product.service.CPDefinitionService;
 import com.liferay.commerce.product.service.CommerceChannelRelService;
 import com.liferay.portal.kernel.exception.PortalException;
@@ -117,6 +118,12 @@ public class EditCPDefinitionMVCActionCommand extends BaseMVCActionCommand {
 
 		String cmd = ParamUtil.getString(actionRequest, Constants.CMD);
 
+//		CPDefinition cp = CPDefinitionLocalServiceUtil.getCPDefinition(11111);
+//		cp.getFunctions();
+//		cp.getIntroduction();
+//		cp.getFeatures();
+//		cp.getBenefits();
+//		cp.getPartners();
 		try {
 			if (cmd.equals(Constants.ADD) || cmd.equals(Constants.UPDATE)) {
 				CPDefinition cpDefinition = updateCPDefinition(actionRequest);
@@ -431,8 +438,25 @@ public class EditCPDefinitionMVCActionCommand extends BaseMVCActionCommand {
 		boolean neverExpire = ParamUtil.getBoolean(
 			actionRequest, "neverExpire");
 
+		//<editor-fold desc="custom fields">
 		String overview = ParamUtil.getString(
 				actionRequest, "overview");
+
+		String introduction = ParamUtil.getString(
+				actionRequest, "introduction");
+
+		String features = ParamUtil.getString(
+				actionRequest, "features");
+
+		String benefits = ParamUtil.getString(
+				actionRequest, "benefits");
+
+		String functions = ParamUtil.getString(
+				actionRequest, "functions");
+
+		String partners = ParamUtil.getString(
+				actionRequest, "partners");
+		//</editor-fold>
 
 		ServiceContext serviceContext = ServiceContextFactory.getInstance(
 			CPDefinition.class.getName(), actionRequest);
@@ -453,7 +477,7 @@ public class EditCPDefinitionMVCActionCommand extends BaseMVCActionCommand {
 				expirationDateDay, expirationDateYear, expirationDateHour,
 				expirationDateMinute, neverExpire,
 				CPInstanceConstants.DEFAULT_SKU, false, 0, null, null, 0L, null,
-				serviceContext, overview);
+				serviceContext, overview, introduction, features, benefits, functions, partners);
 		}
 		else {
 
@@ -477,7 +501,7 @@ public class EditCPDefinitionMVCActionCommand extends BaseMVCActionCommand {
 				displayDateMonth, displayDateDay, displayDateYear,
 				displayDateHour, displayDateMinute, expirationDateMonth,
 				expirationDateDay, expirationDateYear, expirationDateHour,
-				expirationDateMinute, neverExpire, serviceContext, overview);
+				expirationDateMinute, neverExpire, serviceContext, overview, introduction, features, benefits, functions, partners);
 		}
 
 		return cpDefinition;

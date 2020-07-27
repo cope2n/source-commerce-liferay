@@ -37,7 +37,8 @@ public class CommerceCatalogServiceWrapper
 			addCommerceCatalog(
 				String name, String commerceCurrencyCode,
 				String catalogDefaultLanguageId, String externalReferenceCode,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext, String descCatalog)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext,
+				String descCatalog)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _commerceCatalogService.addCommerceCatalog(
@@ -128,7 +129,8 @@ public class CommerceCatalogServiceWrapper
 	public com.liferay.commerce.product.model.CommerceCatalog
 			updateCommerceCatalog(
 				long commerceCatalogId, String name,
-				String commerceCurrencyCode, String catalogDefaultLanguageId, String descCatalog)
+				String commerceCurrencyCode, String catalogDefaultLanguageId,
+				String descCatalog)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _commerceCatalogService.updateCommerceCatalog(

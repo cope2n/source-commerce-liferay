@@ -83,7 +83,12 @@ create table CPDefinition (
 	statusByUserId LONG,
 	statusByUserName VARCHAR(75) null,
 	statusDate DATE null,
-	overview VARCHAR(75) null
+	overview VARCHAR(75) null,
+	introduction VARCHAR(75) null,
+	features VARCHAR(75) null,
+	benefits VARCHAR(75) null,
+	functions VARCHAR(75) null,
+	partners VARCHAR(75) null
 );
 
 create table CPDefinitionLink (

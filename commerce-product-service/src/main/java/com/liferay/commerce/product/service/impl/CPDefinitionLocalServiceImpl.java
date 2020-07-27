@@ -144,7 +144,8 @@ public class CPDefinitionLocalServiceImpl
 			int subscriptionLength, String subscriptionType,
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			ServiceContext serviceContext, String overview)
+			ServiceContext serviceContext,
+			String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws PortalException {
 
 		// Commerce product definition
@@ -219,8 +220,15 @@ public class CPDefinitionLocalServiceImpl
 		cpDefinition.setAccountGroupFilterEnabled(false);
 		cpDefinition.setChannelFilterEnabled(false);
 		cpDefinition.setVersion(1);
-		//custom field
+
+		//<editor-fold desc="custom fields">
 		cpDefinition.setOverview(overview);
+		cpDefinition.setIntroduction(introduction);
+		cpDefinition.setFeatures(features);
+		cpDefinition.setBenefits(benefits);
+		cpDefinition.setFunctions(functions);
+		cpDefinition.setPartners(partners);
+		//</editor-fold>
 
 		if ((expirationDate == null) || expirationDate.after(now)) {
 			cpDefinition.setStatus(WorkflowConstants.STATUS_DRAFT);
@@ -1262,7 +1270,8 @@ public class CPDefinitionLocalServiceImpl
 			int displayDateMinute, int expirationDateMonth,
 			int expirationDateDay, int expirationDateYear,
 			int expirationDateHour, int expirationDateMinute,
-			boolean neverExpire, ServiceContext serviceContext, String overview)
+			boolean neverExpire, ServiceContext serviceContext,
+			String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws PortalException {
 
 		// Commerce product definition
@@ -1323,7 +1332,15 @@ public class CPDefinitionLocalServiceImpl
 		cpDefinition.setPublished(published);
 		cpDefinition.setDisplayDate(displayDate);
 		cpDefinition.setExpirationDate(expirationDate);
+
+		//<editor-fold desc="custom fields">
 		cpDefinition.setOverview(overview);
+		cpDefinition.setIntroduction(introduction);
+		cpDefinition.setFeatures(features);
+		cpDefinition.setBenefits(benefits);
+		cpDefinition.setFunctions(functions);
+		cpDefinition.setPartners(partners);
+		//</editor-fold>
 
 		if ((expirationDate == null) || expirationDate.after(now)) {
 			cpDefinition.setStatus(WorkflowConstants.STATUS_DRAFT);
@@ -1386,7 +1403,8 @@ public class CPDefinitionLocalServiceImpl
 			int displayDateMinute, int expirationDateMonth,
 			int expirationDateDay, int expirationDateYear,
 			int expirationDateHour, int expirationDateMinute,
-			boolean neverExpire, ServiceContext serviceContext, String overview)
+			boolean neverExpire, ServiceContext serviceContext,
+			String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws PortalException {
 
 		CPDefinition cpDefinition = cpDefinitionPersistence.findByPrimaryKey(
@@ -1405,7 +1423,7 @@ public class CPDefinitionLocalServiceImpl
 			displayDateYear, displayDateHour, displayDateMinute,
 			expirationDateMonth, expirationDateDay, expirationDateYear,
 			expirationDateHour, expirationDateMinute, neverExpire,
-			serviceContext, overview);
+			serviceContext, overview, introduction, features, benefits, functions, partners);
 	}
 
 	@Override
@@ -1674,7 +1692,8 @@ public class CPDefinitionLocalServiceImpl
 			int subscriptionLength, String subscriptionType,
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			ServiceContext serviceContext, String overview)
+			ServiceContext serviceContext,
+			String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws PortalException {
 
 		if (Validator.isBlank(externalReferenceCode)) {
@@ -1697,7 +1716,7 @@ public class CPDefinitionLocalServiceImpl
 					displayDateDay, displayDateYear, displayDateHour,
 					displayDateMinute, expirationDateMonth, expirationDateDay,
 					expirationDateYear, expirationDateHour,
-					expirationDateMinute, neverExpire, serviceContext, overview);
+					expirationDateMinute, neverExpire, serviceContext, overview, introduction, features, benefits, functions, partners);
 			}
 		}
 
@@ -1713,7 +1732,7 @@ public class CPDefinitionLocalServiceImpl
 			expirationDateMinute, neverExpire, defaultSku, subscriptionEnabled,
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-			externalReferenceCode, serviceContext, overview);
+			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners);
 	}
 
 	protected SearchContext buildSearchContext(

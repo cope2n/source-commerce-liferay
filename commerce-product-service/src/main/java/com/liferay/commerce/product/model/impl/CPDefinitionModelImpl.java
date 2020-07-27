@@ -104,7 +104,9 @@ public class CPDefinitionModelImpl
 		{"channelFilterEnabled", Types.BOOLEAN}, {"version", Types.INTEGER},
 		{"status", Types.INTEGER}, {"statusByUserId", Types.BIGINT},
 		{"statusByUserName", Types.VARCHAR}, {"statusDate", Types.TIMESTAMP},
-		{"overview", Types.VARCHAR}
+		{"overview", Types.VARCHAR}, {"introduction", Types.VARCHAR},
+		{"features", Types.VARCHAR}, {"benefits", Types.VARCHAR},
+		{"functions", Types.VARCHAR}, {"partners", Types.VARCHAR}
 	};
 
 	public static final Map<String, Integer> TABLE_COLUMNS_MAP =
@@ -153,10 +155,15 @@ public class CPDefinitionModelImpl
 		TABLE_COLUMNS_MAP.put("statusByUserName", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("statusDate", Types.TIMESTAMP);
 		TABLE_COLUMNS_MAP.put("overview", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("introduction", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("features", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("benefits", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("functions", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("partners", Types.VARCHAR);
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table CPDefinition (uuid_ VARCHAR(75) null,defaultLanguageId VARCHAR(75) null,CPDefinitionId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,CProductId LONG,CPTaxCategoryId LONG,productTypeName VARCHAR(75) null,availableIndividually BOOLEAN,ignoreSKUCombinations BOOLEAN,shippable BOOLEAN,freeShipping BOOLEAN,shipSeparately BOOLEAN,shippingExtraPrice DOUBLE,width DOUBLE,height DOUBLE,depth DOUBLE,weight DOUBLE,taxExempt BOOLEAN,telcoOrElectronics BOOLEAN,DDMStructureKey VARCHAR(75) null,published BOOLEAN,displayDate DATE null,expirationDate DATE null,lastPublishDate DATE null,subscriptionEnabled BOOLEAN,subscriptionLength INTEGER,subscriptionType VARCHAR(75) null,subscriptionTypeSettings TEXT null,maxSubscriptionCycles LONG,accountGroupFilterEnabled BOOLEAN,channelFilterEnabled BOOLEAN,version INTEGER,status INTEGER,statusByUserId LONG,statusByUserName VARCHAR(75) null,statusDate DATE null,overview VARCHAR(75) null)";
+		"create table CPDefinition (uuid_ VARCHAR(75) null,defaultLanguageId VARCHAR(75) null,CPDefinitionId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,CProductId LONG,CPTaxCategoryId LONG,productTypeName VARCHAR(75) null,availableIndividually BOOLEAN,ignoreSKUCombinations BOOLEAN,shippable BOOLEAN,freeShipping BOOLEAN,shipSeparately BOOLEAN,shippingExtraPrice DOUBLE,width DOUBLE,height DOUBLE,depth DOUBLE,weight DOUBLE,taxExempt BOOLEAN,telcoOrElectronics BOOLEAN,DDMStructureKey VARCHAR(75) null,published BOOLEAN,displayDate DATE null,expirationDate DATE null,lastPublishDate DATE null,subscriptionEnabled BOOLEAN,subscriptionLength INTEGER,subscriptionType VARCHAR(75) null,subscriptionTypeSettings TEXT null,maxSubscriptionCycles LONG,accountGroupFilterEnabled BOOLEAN,channelFilterEnabled BOOLEAN,version INTEGER,status INTEGER,statusByUserId LONG,statusByUserName VARCHAR(75) null,statusDate DATE null,overview VARCHAR(75) null,introduction VARCHAR(75) null,features VARCHAR(75) null,benefits VARCHAR(75) null,functions VARCHAR(75) null,partners VARCHAR(75) null)";
 
 	public static final String TABLE_SQL_DROP = "drop table CPDefinition";
 
@@ -262,6 +269,11 @@ public class CPDefinitionModelImpl
 		model.setStatusByUserName(soapModel.getStatusByUserName());
 		model.setStatusDate(soapModel.getStatusDate());
 		model.setOverview(soapModel.getOverview());
+		model.setIntroduction(soapModel.getIntroduction());
+		model.setFeatures(soapModel.getFeatures());
+		model.setBenefits(soapModel.getBenefits());
+		model.setFunctions(soapModel.getFunctions());
+		model.setPartners(soapModel.getPartners());
 
 		return model;
 	}
@@ -1367,6 +1379,116 @@ public class CPDefinitionModelImpl
 					CPDefinition cpDefinition, Object overviewObject) {
 
 					cpDefinition.setOverview((String)overviewObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"introduction",
+			new Function<CPDefinition, Object>() {
+
+				@Override
+				public Object apply(CPDefinition cpDefinition) {
+					return cpDefinition.getIntroduction();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"introduction",
+			new BiConsumer<CPDefinition, Object>() {
+
+				@Override
+				public void accept(
+					CPDefinition cpDefinition, Object introductionObject) {
+
+					cpDefinition.setIntroduction((String)introductionObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"features",
+			new Function<CPDefinition, Object>() {
+
+				@Override
+				public Object apply(CPDefinition cpDefinition) {
+					return cpDefinition.getFeatures();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"features",
+			new BiConsumer<CPDefinition, Object>() {
+
+				@Override
+				public void accept(
+					CPDefinition cpDefinition, Object featuresObject) {
+
+					cpDefinition.setFeatures((String)featuresObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"benefits",
+			new Function<CPDefinition, Object>() {
+
+				@Override
+				public Object apply(CPDefinition cpDefinition) {
+					return cpDefinition.getBenefits();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"benefits",
+			new BiConsumer<CPDefinition, Object>() {
+
+				@Override
+				public void accept(
+					CPDefinition cpDefinition, Object benefitsObject) {
+
+					cpDefinition.setBenefits((String)benefitsObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"functions",
+			new Function<CPDefinition, Object>() {
+
+				@Override
+				public Object apply(CPDefinition cpDefinition) {
+					return cpDefinition.getFunctions();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"functions",
+			new BiConsumer<CPDefinition, Object>() {
+
+				@Override
+				public void accept(
+					CPDefinition cpDefinition, Object functionsObject) {
+
+					cpDefinition.setFunctions((String)functionsObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"partners",
+			new Function<CPDefinition, Object>() {
+
+				@Override
+				public Object apply(CPDefinition cpDefinition) {
+					return cpDefinition.getPartners();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"partners",
+			new BiConsumer<CPDefinition, Object>() {
+
+				@Override
+				public void accept(
+					CPDefinition cpDefinition, Object partnersObject) {
+
+					cpDefinition.setPartners((String)partnersObject);
 				}
 
 			});
@@ -2502,6 +2624,86 @@ public class CPDefinitionModelImpl
 		_overview = overview;
 	}
 
+	@JSON
+	@Override
+	public String getIntroduction() {
+		if (_introduction == null) {
+			return "";
+		}
+		else {
+			return _introduction;
+		}
+	}
+
+	@Override
+	public void setIntroduction(String introduction) {
+		_introduction = introduction;
+	}
+
+	@JSON
+	@Override
+	public String getFeatures() {
+		if (_features == null) {
+			return "";
+		}
+		else {
+			return _features;
+		}
+	}
+
+	@Override
+	public void setFeatures(String features) {
+		_features = features;
+	}
+
+	@JSON
+	@Override
+	public String getBenefits() {
+		if (_benefits == null) {
+			return "";
+		}
+		else {
+			return _benefits;
+		}
+	}
+
+	@Override
+	public void setBenefits(String benefits) {
+		_benefits = benefits;
+	}
+
+	@JSON
+	@Override
+	public String getFunctions() {
+		if (_functions == null) {
+			return "";
+		}
+		else {
+			return _functions;
+		}
+	}
+
+	@Override
+	public void setFunctions(String functions) {
+		_functions = functions;
+	}
+
+	@JSON
+	@Override
+	public String getPartners() {
+		if (_partners == null) {
+			return "";
+		}
+		else {
+			return _partners;
+		}
+	}
+
+	@Override
+	public void setPartners(String partners) {
+		_partners = partners;
+	}
+
 	@Override
 	public StagedModelType getStagedModelType() {
 		return new StagedModelType(
@@ -2668,6 +2870,11 @@ public class CPDefinitionModelImpl
 		cpDefinitionImpl.setStatusByUserName(getStatusByUserName());
 		cpDefinitionImpl.setStatusDate(getStatusDate());
 		cpDefinitionImpl.setOverview(getOverview());
+		cpDefinitionImpl.setIntroduction(getIntroduction());
+		cpDefinitionImpl.setFeatures(getFeatures());
+		cpDefinitionImpl.setBenefits(getBenefits());
+		cpDefinitionImpl.setFunctions(getFunctions());
+		cpDefinitionImpl.setPartners(getPartners());
 
 		cpDefinitionImpl.resetOriginalValues();
 
@@ -2971,6 +3178,46 @@ public class CPDefinitionModelImpl
 			cpDefinitionCacheModel.overview = null;
 		}
 
+		cpDefinitionCacheModel.introduction = getIntroduction();
+
+		String introduction = cpDefinitionCacheModel.introduction;
+
+		if ((introduction != null) && (introduction.length() == 0)) {
+			cpDefinitionCacheModel.introduction = null;
+		}
+
+		cpDefinitionCacheModel.features = getFeatures();
+
+		String features = cpDefinitionCacheModel.features;
+
+		if ((features != null) && (features.length() == 0)) {
+			cpDefinitionCacheModel.features = null;
+		}
+
+		cpDefinitionCacheModel.benefits = getBenefits();
+
+		String benefits = cpDefinitionCacheModel.benefits;
+
+		if ((benefits != null) && (benefits.length() == 0)) {
+			cpDefinitionCacheModel.benefits = null;
+		}
+
+		cpDefinitionCacheModel.functions = getFunctions();
+
+		String functions = cpDefinitionCacheModel.functions;
+
+		if ((functions != null) && (functions.length() == 0)) {
+			cpDefinitionCacheModel.functions = null;
+		}
+
+		cpDefinitionCacheModel.partners = getPartners();
+
+		String partners = cpDefinitionCacheModel.partners;
+
+		if ((partners != null) && (partners.length() == 0)) {
+			cpDefinitionCacheModel.partners = null;
+		}
+
 		return cpDefinitionCacheModel;
 	}
 
@@ -3101,6 +3348,11 @@ public class CPDefinitionModelImpl
 	private String _statusByUserName;
 	private Date _statusDate;
 	private String _overview;
+	private String _introduction;
+	private String _features;
+	private String _benefits;
+	private String _functions;
+	private String _partners;
 	private long _columnBitmask;
 	private CPDefinition _escapedModel;
 

@@ -83,7 +83,8 @@ public interface CommerceCatalogLocalService
 	public CommerceCatalog addCommerceCatalog(
 			String name, String commerceCurrencyCode,
 			String catalogDefaultLanguageId, boolean system,
-			String externalReferenceCode, ServiceContext serviceContext, String descCatalog)
+			String externalReferenceCode, ServiceContext serviceContext,
+			String descCatalog)
 		throws PortalException;
 
 	public CommerceCatalog addCommerceCatalog(

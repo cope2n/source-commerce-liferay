@@ -260,7 +260,8 @@ public class CPDefinitionServiceSoap {
 				int expirationDateDay, int expirationDateYear,
 				int expirationDateHour, int expirationDateMinute,
 				boolean neverExpire,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext, String overview)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext,
+				String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws RemoteException {
 
 		try {
@@ -284,6 +285,7 @@ public class CPDefinitionServiceSoap {
 			Map<Locale, String> metaKeywordsMap =
 				LocalizationUtil.getLocalizationMap(
 					metaKeywordsMapLanguageIds, metaKeywordsMapValues);
+
 			com.liferay.commerce.product.model.CPDefinition returnValue =
 				CPDefinitionServiceUtil.updateCPDefinition(
 					cpDefinitionId, nameMap, shortDescriptionMap,
@@ -293,7 +295,8 @@ public class CPDefinitionServiceSoap {
 					displayDateDay, displayDateYear, displayDateHour,
 					displayDateMinute, expirationDateMonth, expirationDateDay,
 					expirationDateYear, expirationDateHour,
-					expirationDateMinute, neverExpire, serviceContext, overview);
+					expirationDateMinute, neverExpire, serviceContext,
+					overview, introduction, features, benefits, functions, partners);
 
 			return com.liferay.commerce.product.model.CPDefinitionSoap.
 				toSoapModel(returnValue);

@@ -77,7 +77,8 @@ public class CPDefinitionServiceHttp {
 				com.liferay.portal.kernel.util.UnicodeProperties
 					subscriptionTypeSettingsProperties,
 				long maxSubscriptionCycles, String externalReferenceCode,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext,
+				String overview)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		try {
@@ -98,7 +99,7 @@ public class CPDefinitionServiceHttp {
 				expirationDateMinute, neverExpire, defaultSku,
 				subscriptionEnabled, subscriptionLength, subscriptionType,
 				subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-				externalReferenceCode, serviceContext);
+				externalReferenceCode, serviceContext, overview);
 
 			Object returnObj = null;
 
@@ -637,7 +638,8 @@ public class CPDefinitionServiceHttp {
 				int expirationDateMonth, int expirationDateDay,
 				int expirationDateYear, int expirationDateHour,
 				int expirationDateMinute, boolean neverExpire,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext,
+				String overview)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		try {
@@ -652,7 +654,7 @@ public class CPDefinitionServiceHttp {
 				published, displayDateMonth, displayDateDay, displayDateYear,
 				displayDateHour, displayDateMinute, expirationDateMonth,
 				expirationDateDay, expirationDateYear, expirationDateHour,
-				expirationDateMinute, neverExpire, serviceContext);
+				expirationDateMinute, neverExpire, serviceContext, overview);
 
 			Object returnObj = null;
 
@@ -1059,7 +1061,8 @@ public class CPDefinitionServiceHttp {
 				com.liferay.portal.kernel.util.UnicodeProperties
 					subscriptionTypeSettingsProperties,
 				long maxSubscriptionCycles, String externalReferenceCode,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext,
+				String overview)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		try {
@@ -1080,7 +1083,7 @@ public class CPDefinitionServiceHttp {
 				expirationDateMinute, neverExpire, defaultSku,
 				subscriptionEnabled, subscriptionLength, subscriptionType,
 				subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-				externalReferenceCode, serviceContext);
+				externalReferenceCode, serviceContext, overview);
 
 			Object returnObj = null;
 
@@ -1126,7 +1129,8 @@ public class CPDefinitionServiceHttp {
 			int.class, boolean.class, String.class, boolean.class, int.class,
 			String.class,
 			com.liferay.portal.kernel.util.UnicodeProperties.class, long.class,
-			String.class, com.liferay.portal.kernel.service.ServiceContext.class
+			String.class,
+			com.liferay.portal.kernel.service.ServiceContext.class, String.class
 		};
 	private static final Class<?>[]
 		_deleteAssetCategoryCPDefinitionParameterTypes1 = new Class[] {
@@ -1175,7 +1179,7 @@ public class CPDefinitionServiceHttp {
 			String.class, boolean.class, int.class, int.class, int.class,
 			int.class, int.class, int.class, int.class, int.class, int.class,
 			int.class, boolean.class,
-			com.liferay.portal.kernel.service.ServiceContext.class
+			com.liferay.portal.kernel.service.ServiceContext.class, String.class
 		};
 	private static final Class<?>[]
 		_updateCPDefinitionAccountGroupFilterParameterTypes14 = new Class[] {
@@ -1227,7 +1231,8 @@ public class CPDefinitionServiceHttp {
 			int.class, boolean.class, String.class, boolean.class, int.class,
 			String.class,
 			com.liferay.portal.kernel.util.UnicodeProperties.class, long.class,
-			String.class, com.liferay.portal.kernel.service.ServiceContext.class
+			String.class,
+			com.liferay.portal.kernel.service.ServiceContext.class, String.class
 		};
 
 }

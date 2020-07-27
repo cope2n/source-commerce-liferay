@@ -55,7 +55,8 @@ public class CPDefinitionServiceWrapper
 			com.liferay.portal.kernel.util.UnicodeProperties
 				subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			com.liferay.portal.kernel.service.ServiceContext serviceContext, String overview)
+			com.liferay.portal.kernel.service.ServiceContext serviceContext,
+			String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _cpDefinitionService.addCPDefinition(
@@ -70,7 +71,7 @@ public class CPDefinitionServiceWrapper
 			expirationDateMinute, neverExpire, defaultSku, subscriptionEnabled,
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-			externalReferenceCode, serviceContext, overview);
+			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners);
 	}
 
 	@Override
@@ -208,7 +209,8 @@ public class CPDefinitionServiceWrapper
 			int expirationDateMonth, int expirationDateDay,
 			int expirationDateYear, int expirationDateHour,
 			int expirationDateMinute, boolean neverExpire,
-			com.liferay.portal.kernel.service.ServiceContext serviceContext, String overview)
+			com.liferay.portal.kernel.service.ServiceContext serviceContext,
+			String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _cpDefinitionService.updateCPDefinition(
@@ -218,7 +220,7 @@ public class CPDefinitionServiceWrapper
 			displayDateDay, displayDateYear, displayDateHour, displayDateMinute,
 			expirationDateMonth, expirationDateDay, expirationDateYear,
 			expirationDateHour, expirationDateMinute, neverExpire,
-			serviceContext, overview);
+			serviceContext, overview, introduction, features, benefits, functions, partners);
 	}
 
 	@Override
@@ -338,7 +340,8 @@ public class CPDefinitionServiceWrapper
 			com.liferay.portal.kernel.util.UnicodeProperties
 				subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			com.liferay.portal.kernel.service.ServiceContext serviceContext, String overview)
+			com.liferay.portal.kernel.service.ServiceContext serviceContext,
+			String overview, String introduction, String features, String benefits, String functions, String partners)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _cpDefinitionService.upsertCPDefinition(
@@ -353,7 +356,7 @@ public class CPDefinitionServiceWrapper
 			expirationDateMinute, neverExpire, defaultSku, subscriptionEnabled,
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-			externalReferenceCode, serviceContext, overview);
+			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners);
 	}
 
 	@Override

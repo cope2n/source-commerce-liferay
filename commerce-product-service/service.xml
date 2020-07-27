@@ -263,6 +263,11 @@
 		<column name="statusByUserName" type="String" />
 		<column name="statusDate" type="Date" />
 		<column name="overview" type="String" />
+		<column name="introduction" type="String" />
+		<column name="features" type="String" />
+		<column name="benefits" type="String" />
+		<column name="functions" type="String" />
+		<column name="partners" type="String" />
 
 		<!-- Localized entity -->
 

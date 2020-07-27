@@ -62,7 +62,7 @@ public class CPDefinitionCacheModel
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(85);
+		StringBundler sb = new StringBundler(95);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -148,6 +148,16 @@ public class CPDefinitionCacheModel
 		sb.append(statusDate);
 		sb.append(", overview=");
 		sb.append(overview);
+		sb.append(", introduction=");
+		sb.append(introduction);
+		sb.append(", features=");
+		sb.append(features);
+		sb.append(", benefits=");
+		sb.append(benefits);
+		sb.append(", functions=");
+		sb.append(functions);
+		sb.append(", partners=");
+		sb.append(partners);
 		sb.append("}");
 
 		return sb.toString();
@@ -297,6 +307,41 @@ public class CPDefinitionCacheModel
 			cpDefinitionImpl.setOverview(overview);
 		}
 
+		if (introduction == null) {
+			cpDefinitionImpl.setIntroduction("");
+		}
+		else {
+			cpDefinitionImpl.setIntroduction(introduction);
+		}
+
+		if (features == null) {
+			cpDefinitionImpl.setFeatures("");
+		}
+		else {
+			cpDefinitionImpl.setFeatures(features);
+		}
+
+		if (benefits == null) {
+			cpDefinitionImpl.setBenefits("");
+		}
+		else {
+			cpDefinitionImpl.setBenefits(benefits);
+		}
+
+		if (functions == null) {
+			cpDefinitionImpl.setFunctions("");
+		}
+		else {
+			cpDefinitionImpl.setFunctions(functions);
+		}
+
+		if (partners == null) {
+			cpDefinitionImpl.setPartners("");
+		}
+		else {
+			cpDefinitionImpl.setPartners(partners);
+		}
+
 		cpDefinitionImpl.resetOriginalValues();
 
 		return cpDefinitionImpl;
@@ -375,6 +420,11 @@ public class CPDefinitionCacheModel
 		statusByUserName = objectInput.readUTF();
 		statusDate = objectInput.readLong();
 		overview = objectInput.readUTF();
+		introduction = objectInput.readUTF();
+		features = objectInput.readUTF();
+		benefits = objectInput.readUTF();
+		functions = objectInput.readUTF();
+		partners = objectInput.readUTF();
 	}
 
 	@Override
@@ -503,6 +553,41 @@ public class CPDefinitionCacheModel
 		else {
 			objectOutput.writeUTF(overview);
 		}
+
+		if (introduction == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(introduction);
+		}
+
+		if (features == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(features);
+		}
+
+		if (benefits == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(benefits);
+		}
+
+		if (functions == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(functions);
+		}
+
+		if (partners == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(partners);
+		}
 	}
 
 	public String uuid;
@@ -547,5 +632,10 @@ public class CPDefinitionCacheModel
 	public String statusByUserName;
 	public long statusDate;
 	public String overview;
+	public String introduction;
+	public String features;
+	public String benefits;
+	public String functions;
+	public String partners;
 
 }

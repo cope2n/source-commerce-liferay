@@ -100,6 +100,11 @@ public class CPDefinitionWrapper
 		attributes.put("statusByUserName", getStatusByUserName());
 		attributes.put("statusDate", getStatusDate());
 		attributes.put("overview", getOverview());
+		attributes.put("introduction", getIntroduction());
+		attributes.put("features", getFeatures());
+		attributes.put("benefits", getBenefits());
+		attributes.put("functions", getFunctions());
+		attributes.put("partners", getPartners());
 
 		return attributes;
 	}
@@ -367,6 +372,36 @@ public class CPDefinitionWrapper
 		if (overview != null) {
 			setOverview(overview);
 		}
+
+		String introduction = (String)attributes.get("introduction");
+
+		if (introduction != null) {
+			setIntroduction(introduction);
+		}
+
+		String features = (String)attributes.get("features");
+
+		if (features != null) {
+			setFeatures(features);
+		}
+
+		String benefits = (String)attributes.get("benefits");
+
+		if (benefits != null) {
+			setBenefits(benefits);
+		}
+
+		String functions = (String)attributes.get("functions");
+
+		if (functions != null) {
+			setFunctions(functions);
+		}
+
+		String partners = (String)attributes.get("partners");
+
+		if (partners != null) {
+			setPartners(partners);
+		}
 	}
 
 	@Override
@@ -402,6 +437,16 @@ public class CPDefinitionWrapper
 	@Override
 	public String[] getAvailableLanguageIds() {
 		return _cpDefinition.getAvailableLanguageIds();
+	}
+
+	/**
+	 * Returns the benefits of this cp definition.
+	 *
+	 * @return the benefits of this cp definition
+	 */
+	@Override
+	public String getBenefits() {
+		return _cpDefinition.getBenefits();
 	}
 
 	/**
@@ -601,6 +646,16 @@ public class CPDefinitionWrapper
 	}
 
 	/**
+	 * Returns the features of this cp definition.
+	 *
+	 * @return the features of this cp definition
+	 */
+	@Override
+	public String getFeatures() {
+		return _cpDefinition.getFeatures();
+	}
+
+	/**
 	 * Returns the free shipping of this cp definition.
 	 *
 	 * @return the free shipping of this cp definition
@@ -608,6 +663,16 @@ public class CPDefinitionWrapper
 	@Override
 	public boolean getFreeShipping() {
 		return _cpDefinition.getFreeShipping();
+	}
+
+	/**
+	 * Returns the functions of this cp definition.
+	 *
+	 * @return the functions of this cp definition
+	 */
+	@Override
+	public String getFunctions() {
+		return _cpDefinition.getFunctions();
 	}
 
 	/**
@@ -638,6 +703,16 @@ public class CPDefinitionWrapper
 	@Override
 	public boolean getIgnoreSKUCombinations() {
 		return _cpDefinition.getIgnoreSKUCombinations();
+	}
+
+	/**
+	 * Returns the introduction of this cp definition.
+	 *
+	 * @return the introduction of this cp definition
+	 */
+	@Override
+	public String getIntroduction() {
+		return _cpDefinition.getIntroduction();
 	}
 
 	@Override
@@ -818,6 +893,16 @@ public class CPDefinitionWrapper
 	@Override
 	public String getOverview() {
 		return _cpDefinition.getOverview();
+	}
+
+	/**
+	 * Returns the partners of this cp definition.
+	 *
+	 * @return the partners of this cp definition
+	 */
+	@Override
+	public String getPartners() {
+		return _cpDefinition.getPartners();
 	}
 
 	/**
@@ -1344,6 +1429,16 @@ public class CPDefinitionWrapper
 		_cpDefinition.setAvailableIndividually(availableIndividually);
 	}
 
+	/**
+	 * Sets the benefits of this cp definition.
+	 *
+	 * @param benefits the benefits of this cp definition
+	 */
+	@Override
+	public void setBenefits(String benefits) {
+		_cpDefinition.setBenefits(benefits);
+	}
+
 	@Override
 	public void setCachedModel(boolean cachedModel) {
 		_cpDefinition.setCachedModel(cachedModel);
@@ -1484,6 +1579,16 @@ public class CPDefinitionWrapper
 	}
 
 	/**
+	 * Sets the features of this cp definition.
+	 *
+	 * @param features the features of this cp definition
+	 */
+	@Override
+	public void setFeatures(String features) {
+		_cpDefinition.setFeatures(features);
+	}
+
+	/**
 	 * Sets whether this cp definition is free shipping.
 	 *
 	 * @param freeShipping the free shipping of this cp definition
@@ -1491,6 +1596,16 @@ public class CPDefinitionWrapper
 	@Override
 	public void setFreeShipping(boolean freeShipping) {
 		_cpDefinition.setFreeShipping(freeShipping);
+	}
+
+	/**
+	 * Sets the functions of this cp definition.
+	 *
+	 * @param functions the functions of this cp definition
+	 */
+	@Override
+	public void setFunctions(String functions) {
+		_cpDefinition.setFunctions(functions);
 	}
 
 	/**
@@ -1521,6 +1636,16 @@ public class CPDefinitionWrapper
 	@Override
 	public void setIgnoreSKUCombinations(boolean ignoreSKUCombinations) {
 		_cpDefinition.setIgnoreSKUCombinations(ignoreSKUCombinations);
+	}
+
+	/**
+	 * Sets the introduction of this cp definition.
+	 *
+	 * @param introduction the introduction of this cp definition
+	 */
+	@Override
+	public void setIntroduction(String introduction) {
+		_cpDefinition.setIntroduction(introduction);
 	}
 
 	/**
@@ -1576,6 +1701,16 @@ public class CPDefinitionWrapper
 	@Override
 	public void setOverview(String overview) {
 		_cpDefinition.setOverview(overview);
+	}
+
+	/**
+	 * Sets the partners of this cp definition.
+	 *
+	 * @param partners the partners of this cp definition
+	 */
+	@Override
+	public void setPartners(String partners) {
+		_cpDefinition.setPartners(partners);
 	}
 
 	/**

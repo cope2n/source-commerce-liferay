@@ -65,7 +65,8 @@ public class CommerceCatalogServiceSoap {
 			addCommerceCatalog(
 				String name, String commerceCurrencyCode,
 				String catalogDefaultLanguageId, String externalReferenceCode,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext, String descCatalog)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext,
+				String descCatalog)
 		throws RemoteException {
 
 		try {
@@ -241,7 +242,8 @@ public class CommerceCatalogServiceSoap {
 	public static com.liferay.commerce.product.model.CommerceCatalogSoap
 			updateCommerceCatalog(
 				long commerceCatalogId, String name,
-				String commerceCurrencyCode, String catalogDefaultLanguageId, String descCatalog)
+				String commerceCurrencyCode, String catalogDefaultLanguageId,
+				String descCatalog)
 		throws RemoteException {
 
 		try {

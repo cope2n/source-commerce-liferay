@@ -796,6 +796,81 @@ public interface CPDefinitionModel
 	 */
 	public void setOverview(String overview);
 
+	/**
+	 * Returns the introduction of this cp definition.
+	 *
+	 * @return the introduction of this cp definition
+	 */
+	@AutoEscape
+	public String getIntroduction();
+
+	/**
+	 * Sets the introduction of this cp definition.
+	 *
+	 * @param introduction the introduction of this cp definition
+	 */
+	public void setIntroduction(String introduction);
+
+	/**
+	 * Returns the features of this cp definition.
+	 *
+	 * @return the features of this cp definition
+	 */
+	@AutoEscape
+	public String getFeatures();
+
+	/**
+	 * Sets the features of this cp definition.
+	 *
+	 * @param features the features of this cp definition
+	 */
+	public void setFeatures(String features);
+
+	/**
+	 * Returns the benefits of this cp definition.
+	 *
+	 * @return the benefits of this cp definition
+	 */
+	@AutoEscape
+	public String getBenefits();
+
+	/**
+	 * Sets the benefits of this cp definition.
+	 *
+	 * @param benefits the benefits of this cp definition
+	 */
+	public void setBenefits(String benefits);
+
+	/**
+	 * Returns the functions of this cp definition.
+	 *
+	 * @return the functions of this cp definition
+	 */
+	@AutoEscape
+	public String getFunctions();
+
+	/**
+	 * Sets the functions of this cp definition.
+	 *
+	 * @param functions the functions of this cp definition
+	 */
+	public void setFunctions(String functions);
+
+	/**
+	 * Returns the partners of this cp definition.
+	 *
+	 * @return the partners of this cp definition
+	 */
+	@AutoEscape
+	public String getPartners();
+
+	/**
+	 * Sets the partners of this cp definition.
+	 *
+	 * @param partners the partners of this cp definition
+	 */
+	public void setPartners(String partners);
+
 	public String[] getAvailableLanguageIds();
 
 	public String getName();
