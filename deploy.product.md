@@ -5,11 +5,11 @@
 * Add fields to product service and product form
 * Add fields to catalog service and catalog form
 
-# Catalog 
+# Catalog table: commercecatalog
 
 * fields:descCatalog - varchar (ckeditor)
 
-# Product 
+# Product table: cpdefinition
 
 * fields:
 
