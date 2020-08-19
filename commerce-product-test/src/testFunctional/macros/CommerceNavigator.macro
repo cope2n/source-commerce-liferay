@@ -1,0 +1,44 @@
+definition {
+
+	macro gotoCommercePortletNavItem {
+		AssertClick(
+			key_navItem = "${navItem}",
+			locator1 = "NavBar#NAV_ITEM_LINK",
+			value1 = "${navItem}");
+	}
+
+	macro gotoEntry {
+		AssertClick(
+			key_entryName = "${entryName}",
+			locator1 = "CommerceNavigation#ENTRY_NAME",
+			value1 = "${entryName}");
+	}
+
+	macro gotoFrontStoreProductPage {
+		var productName = StringUtil.replace("${productName}", " ", "-");
+		var productName = StringUtil.lowerCase("${productName}");
+
+		Navigator.openSpecificURL(url = "localhost:8080/web/guest/p/${productName}");
+	}
+
+	macro gotoOptionValues {
+		Click(
+			key_optionEntryName = "${optionEntryName}",
+			locator1 = "CommerceNavigation#OPTION_VALUES_LINK",
+			value1 = "${optionEntryName}");
+
+		WaitForSPARefresh();
+
+		AssertElementPresent(locator1 = "CommerceEntry#NAME_FIELD");
+	}
+
+	macro searchEntry {
+		Type(
+			entryName = "${entryName}",
+			locator1 = "TextInput#SEARCH",
+			value1 = "${entryName}");
+
+		Click(locator1 = "CommerceNavigation#SEARCH");
+	}
+
+}
