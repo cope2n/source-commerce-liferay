@@ -78,7 +78,8 @@ public class CPDefinitionServiceHttp {
 					subscriptionTypeSettingsProperties,
 				long maxSubscriptionCycles, String externalReferenceCode,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext,
-				String overview)
+				String overview, String introduction, String features,
+				String benefits, String functions, String partners)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		try {
@@ -99,7 +100,8 @@ public class CPDefinitionServiceHttp {
 				expirationDateMinute, neverExpire, defaultSku,
 				subscriptionEnabled, subscriptionLength, subscriptionType,
 				subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-				externalReferenceCode, serviceContext, overview);
+				externalReferenceCode, serviceContext, overview, introduction,
+				features, benefits, functions, partners);
 
 			Object returnObj = null;
 
@@ -639,7 +641,8 @@ public class CPDefinitionServiceHttp {
 				int expirationDateYear, int expirationDateHour,
 				int expirationDateMinute, boolean neverExpire,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext,
-				String overview)
+				String overview, String introduction, String features,
+				String benefits, String functions, String partners)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		try {
@@ -654,7 +657,8 @@ public class CPDefinitionServiceHttp {
 				published, displayDateMonth, displayDateDay, displayDateYear,
 				displayDateHour, displayDateMinute, expirationDateMonth,
 				expirationDateDay, expirationDateYear, expirationDateHour,
-				expirationDateMinute, neverExpire, serviceContext, overview);
+				expirationDateMinute, neverExpire, serviceContext, overview,
+				introduction, features, benefits, functions, partners);
 
 			Object returnObj = null;
 
@@ -1062,7 +1066,8 @@ public class CPDefinitionServiceHttp {
 					subscriptionTypeSettingsProperties,
 				long maxSubscriptionCycles, String externalReferenceCode,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext,
-				String overview)
+				String overview, String introduction, String features,
+				String benefits, String functions, String partners)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		try {
@@ -1083,7 +1088,8 @@ public class CPDefinitionServiceHttp {
 				expirationDateMinute, neverExpire, defaultSku,
 				subscriptionEnabled, subscriptionLength, subscriptionType,
 				subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-				externalReferenceCode, serviceContext, overview);
+				externalReferenceCode, serviceContext, overview, introduction,
+				features, benefits, functions, partners);
 
 			Object returnObj = null;
 
@@ -1130,7 +1136,9 @@ public class CPDefinitionServiceHttp {
 			String.class,
 			com.liferay.portal.kernel.util.UnicodeProperties.class, long.class,
 			String.class,
-			com.liferay.portal.kernel.service.ServiceContext.class, String.class
+			com.liferay.portal.kernel.service.ServiceContext.class,
+			String.class, String.class, String.class, String.class,
+			String.class, String.class
 		};
 	private static final Class<?>[]
 		_deleteAssetCategoryCPDefinitionParameterTypes1 = new Class[] {
@@ -1179,7 +1187,9 @@ public class CPDefinitionServiceHttp {
 			String.class, boolean.class, int.class, int.class, int.class,
 			int.class, int.class, int.class, int.class, int.class, int.class,
 			int.class, boolean.class,
-			com.liferay.portal.kernel.service.ServiceContext.class, String.class
+			com.liferay.portal.kernel.service.ServiceContext.class,
+			String.class, String.class, String.class, String.class,
+			String.class, String.class
 		};
 	private static final Class<?>[]
 		_updateCPDefinitionAccountGroupFilterParameterTypes14 = new Class[] {
@@ -1232,7 +1242,9 @@ public class CPDefinitionServiceHttp {
 			String.class,
 			com.liferay.portal.kernel.util.UnicodeProperties.class, long.class,
 			String.class,
-			com.liferay.portal.kernel.service.ServiceContext.class, String.class
+			com.liferay.portal.kernel.service.ServiceContext.class,
+			String.class, String.class, String.class, String.class,
+			String.class, String.class
 		};
 
 }

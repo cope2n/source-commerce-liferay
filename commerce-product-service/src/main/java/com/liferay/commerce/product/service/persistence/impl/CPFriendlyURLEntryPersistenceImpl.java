@@ -5448,7 +5448,7 @@ public class CPFriendlyURLEntryPersistenceImpl
 		try {
 			session = openSession();
 
-			if (cpFriendlyURLEntry.isNew()) {
+			if (isNew) {
 				session.save(cpFriendlyURLEntry);
 
 				cpFriendlyURLEntry.setNew(false);
@@ -6394,6 +6394,7 @@ public class CPFriendlyURLEntryPersistenceImpl
 
 	public void destroy() {
 		entityCache.removeCache(CPFriendlyURLEntryImpl.class.getName());
+
 		finderCache.removeCache(FINDER_CLASS_NAME_ENTITY);
 		finderCache.removeCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
 		finderCache.removeCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);

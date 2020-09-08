@@ -11,6 +11,8 @@
 		<field name="modifiedDate" type="Date" />
 		<field name="name" type="String" />
 		<field name="descCatalog" type="String" />
+		<field name="subCatalog" type="String" />
+		<field name="imageCatalog" type="String" />
 		<field name="commerceCurrencyCode" type="String" />
 		<field name="catalogDefaultLanguageId" type="String" />
 		<field name="system" type="boolean" />

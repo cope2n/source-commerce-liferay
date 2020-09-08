@@ -220,6 +220,36 @@ public interface CommerceCatalogModel
 	public void setDescCatalog(String descCatalog);
 
 	/**
+	 * Returns the sub catalog of this commerce catalog.
+	 *
+	 * @return the sub catalog of this commerce catalog
+	 */
+	@AutoEscape
+	public String getSubCatalog();
+
+	/**
+	 * Sets the sub catalog of this commerce catalog.
+	 *
+	 * @param subCatalog the sub catalog of this commerce catalog
+	 */
+	public void setSubCatalog(String subCatalog);
+
+	/**
+	 * Returns the image catalog of this commerce catalog.
+	 *
+	 * @return the image catalog of this commerce catalog
+	 */
+	@AutoEscape
+	public String getImageCatalog();
+
+	/**
+	 * Sets the image catalog of this commerce catalog.
+	 *
+	 * @param imageCatalog the image catalog of this commerce catalog
+	 */
+	public void setImageCatalog(String imageCatalog);
+
+	/**
 	 * Returns the commerce currency code of this commerce catalog.
 	 *
 	 * @return the commerce currency code of this commerce catalog

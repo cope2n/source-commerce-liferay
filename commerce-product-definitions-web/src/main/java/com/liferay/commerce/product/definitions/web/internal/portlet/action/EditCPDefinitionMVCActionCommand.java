@@ -37,6 +37,8 @@ import com.liferay.commerce.product.model.CommerceChannelRel;
 import com.liferay.commerce.product.service.CPDefinitionLocalServiceUtil;
 import com.liferay.commerce.product.service.CPDefinitionService;
 import com.liferay.commerce.product.service.CommerceChannelRelService;
+import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.portlet.PortletProvider;
 import com.liferay.portal.kernel.portlet.PortletProviderUtil;
@@ -115,15 +117,8 @@ public class EditCPDefinitionMVCActionCommand extends BaseMVCActionCommand {
 	protected void doProcessAction(
 			ActionRequest actionRequest, ActionResponse actionResponse)
 		throws Exception {
-
 		String cmd = ParamUtil.getString(actionRequest, Constants.CMD);
 
-//		CPDefinition cp = CPDefinitionLocalServiceUtil.getCPDefinition(11111);
-//		cp.getFunctions();
-//		cp.getIntroduction();
-//		cp.getFeatures();
-//		cp.getBenefits();
-//		cp.getPartners();
 		try {
 			if (cmd.equals(Constants.ADD) || cmd.equals(Constants.UPDATE)) {
 				CPDefinition cpDefinition = updateCPDefinition(actionRequest);

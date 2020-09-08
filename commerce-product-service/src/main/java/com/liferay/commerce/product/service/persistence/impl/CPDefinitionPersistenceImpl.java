@@ -5510,7 +5510,7 @@ public class CPDefinitionPersistenceImpl
 		try {
 			session = openSession();
 
-			if (cpDefinition.isNew()) {
+			if (isNew) {
 				session.save(cpDefinition);
 
 				cpDefinition.setNew(false);
@@ -6431,6 +6431,7 @@ public class CPDefinitionPersistenceImpl
 
 	public void destroy() {
 		entityCache.removeCache(CPDefinitionImpl.class.getName());
+
 		finderCache.removeCache(FINDER_CLASS_NAME_ENTITY);
 		finderCache.removeCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
 		finderCache.removeCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
@@ -6442,7 +6443,7 @@ public class CPDefinitionPersistenceImpl
 	@ServiceReference(type = FinderCache.class)
 	protected FinderCache finderCache;
 
-	private Long _getTime(Date date) {
+	private static Long _getTime(Date date) {
 		if (date == null) {
 			return null;
 		}

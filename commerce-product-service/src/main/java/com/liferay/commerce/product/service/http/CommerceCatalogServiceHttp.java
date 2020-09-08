@@ -57,7 +57,7 @@ public class CommerceCatalogServiceHttp {
 				String commerceCurrencyCode, String catalogDefaultLanguageId,
 				String externalReferenceCode,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext,
-				String descCatalog)
+				String descCatalog, String imagecatalog, String subcatalog)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		try {
@@ -67,7 +67,7 @@ public class CommerceCatalogServiceHttp {
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, name, commerceCurrencyCode, catalogDefaultLanguageId,
-				externalReferenceCode, serviceContext, descCatalog);
+				externalReferenceCode, serviceContext, descCatalog, imagecatalog, subcatalog);
 
 			Object returnObj = null;
 
@@ -435,7 +435,7 @@ public class CommerceCatalogServiceHttp {
 			updateCommerceCatalog(
 				HttpPrincipal httpPrincipal, long commerceCatalogId,
 				String name, String commerceCurrencyCode,
-				String catalogDefaultLanguageId, String descCatalog)
+				String catalogDefaultLanguageId, String descCatalog, String imagecatalog, String subcatalog)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		try {
@@ -445,7 +445,7 @@ public class CommerceCatalogServiceHttp {
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, commerceCatalogId, name, commerceCurrencyCode,
-				catalogDefaultLanguageId, descCatalog);
+				catalogDefaultLanguageId, descCatalog, imagecatalog, subcatalog);
 
 			Object returnObj = null;
 

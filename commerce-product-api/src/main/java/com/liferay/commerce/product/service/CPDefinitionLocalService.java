@@ -74,7 +74,7 @@ public interface CPDefinitionLocalService
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify or reference this interface directly. Always use {@link CPDefinitionLocalServiceUtil} to access the cp definition local service. Add custom service methods to <code>com.liferay.commerce.product.service.impl.CPDefinitionLocalServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface.
+	 * Never modify this interface directly. Add custom service methods to <code>com.liferay.commerce.product.service.impl.CPDefinitionLocalServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface. Consume the cp definition local service via injection or a <code>org.osgi.util.tracker.ServiceTracker</code>. Use {@link CPDefinitionLocalServiceUtil} if injection and service tracking are not available.
 	 */
 
 	/**
@@ -112,8 +112,8 @@ public interface CPDefinitionLocalService
 			int subscriptionLength, String subscriptionType,
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners)
+			ServiceContext serviceContext, String overview, String introduction,
+			String features, String benefits, String functions, String partners)
 		throws PortalException;
 
 	public void checkCPDefinitions() throws PortalException;
@@ -512,8 +512,9 @@ public interface CPDefinitionLocalService
 			int displayDateMinute, int expirationDateMonth,
 			int expirationDateDay, int expirationDateYear,
 			int expirationDateHour, int expirationDateMinute,
-			boolean neverExpire, ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners)
+			boolean neverExpire, ServiceContext serviceContext, String overview,
+			String introduction, String features, String benefits,
+			String functions, String partners)
 		throws PortalException;
 
 	public CPDefinition updateCPDefinition(
@@ -528,8 +529,9 @@ public interface CPDefinitionLocalService
 			int displayDateMinute, int expirationDateMonth,
 			int expirationDateDay, int expirationDateYear,
 			int expirationDateHour, int expirationDateMinute,
-			boolean neverExpire, ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners)
+			boolean neverExpire, ServiceContext serviceContext, String overview,
+			String introduction, String features, String benefits,
+			String functions, String partners)
 		throws PortalException;
 
 	public CPDefinition updateCPDefinitionAccountGroupFilter(
@@ -618,8 +620,8 @@ public interface CPDefinitionLocalService
 			int subscriptionLength, String subscriptionType,
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners)
+			ServiceContext serviceContext, String overview, String introduction,
+			String features, String benefits, String functions, String partners)
 		throws PortalException;
 
 }

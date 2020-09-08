@@ -56,7 +56,8 @@ public class CPDefinitionServiceWrapper
 				subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
 			com.liferay.portal.kernel.service.ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners)
+			String overview, String introduction, String features,
+			String benefits, String functions, String partners)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _cpDefinitionService.addCPDefinition(
@@ -71,7 +72,8 @@ public class CPDefinitionServiceWrapper
 			expirationDateMinute, neverExpire, defaultSku, subscriptionEnabled,
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners);
+			externalReferenceCode, serviceContext, overview, introduction,
+			features, benefits, functions, partners);
 	}
 
 	@Override
@@ -210,7 +212,8 @@ public class CPDefinitionServiceWrapper
 			int expirationDateYear, int expirationDateHour,
 			int expirationDateMinute, boolean neverExpire,
 			com.liferay.portal.kernel.service.ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners)
+			String overview, String introduction, String features,
+			String benefits, String functions, String partners)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _cpDefinitionService.updateCPDefinition(
@@ -220,7 +223,8 @@ public class CPDefinitionServiceWrapper
 			displayDateDay, displayDateYear, displayDateHour, displayDateMinute,
 			expirationDateMonth, expirationDateDay, expirationDateYear,
 			expirationDateHour, expirationDateMinute, neverExpire,
-			serviceContext, overview, introduction, features, benefits, functions, partners);
+			serviceContext, overview, introduction, features, benefits,
+			functions, partners);
 	}
 
 	@Override
@@ -341,7 +345,8 @@ public class CPDefinitionServiceWrapper
 				subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
 			com.liferay.portal.kernel.service.ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners)
+			String overview, String introduction, String features,
+			String benefits, String functions, String partners)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _cpDefinitionService.upsertCPDefinition(
@@ -356,7 +361,8 @@ public class CPDefinitionServiceWrapper
 			expirationDateMinute, neverExpire, defaultSku, subscriptionEnabled,
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners);
+			externalReferenceCode, serviceContext, overview, introduction,
+			features, benefits, functions, partners);
 	}
 
 	@Override

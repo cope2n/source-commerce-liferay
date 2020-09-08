@@ -2067,8 +2067,6 @@ public class CPDefinitionModelImpl
 
 	@Override
 	public void setCreateDate(Date createDate) {
-		_columnBitmask = -1L;
-
 		_createDate = createDate;
 	}
 
@@ -2366,7 +2364,7 @@ public class CPDefinitionModelImpl
 
 	@Override
 	public void setDisplayDate(Date displayDate) {
-		_columnBitmask = -1L;
+		_columnBitmask |= DISPLAYDATE_COLUMN_BITMASK;
 
 		if (_originalDisplayDate == null) {
 			_originalDisplayDate = _displayDate;
@@ -2945,44 +2943,36 @@ public class CPDefinitionModelImpl
 
 	@Override
 	public void resetOriginalValues() {
-		CPDefinitionModelImpl cpDefinitionModelImpl = this;
+		_originalUuid = _uuid;
 
-		cpDefinitionModelImpl._originalUuid = cpDefinitionModelImpl._uuid;
+		_originalGroupId = _groupId;
 
-		cpDefinitionModelImpl._originalGroupId = cpDefinitionModelImpl._groupId;
+		_setOriginalGroupId = false;
 
-		cpDefinitionModelImpl._setOriginalGroupId = false;
+		_originalCompanyId = _companyId;
 
-		cpDefinitionModelImpl._originalCompanyId =
-			cpDefinitionModelImpl._companyId;
+		_setOriginalCompanyId = false;
 
-		cpDefinitionModelImpl._setOriginalCompanyId = false;
+		_setModifiedDate = false;
+		_originalCProductId = _CProductId;
 
-		cpDefinitionModelImpl._setModifiedDate = false;
+		_setOriginalCProductId = false;
 
-		cpDefinitionModelImpl._originalCProductId =
-			cpDefinitionModelImpl._CProductId;
+		_originalCPTaxCategoryId = _CPTaxCategoryId;
 
-		cpDefinitionModelImpl._setOriginalCProductId = false;
+		_setOriginalCPTaxCategoryId = false;
 
-		cpDefinitionModelImpl._originalCPTaxCategoryId =
-			cpDefinitionModelImpl._CPTaxCategoryId;
+		_originalDisplayDate = _displayDate;
 
-		cpDefinitionModelImpl._setOriginalCPTaxCategoryId = false;
+		_originalSubscriptionEnabled = _subscriptionEnabled;
 
-		cpDefinitionModelImpl._originalDisplayDate =
-			cpDefinitionModelImpl._displayDate;
+		_setOriginalSubscriptionEnabled = false;
 
-		cpDefinitionModelImpl._originalSubscriptionEnabled =
-			cpDefinitionModelImpl._subscriptionEnabled;
+		_originalStatus = _status;
 
-		cpDefinitionModelImpl._setOriginalSubscriptionEnabled = false;
+		_setOriginalStatus = false;
 
-		cpDefinitionModelImpl._originalStatus = cpDefinitionModelImpl._status;
-
-		cpDefinitionModelImpl._setOriginalStatus = false;
-
-		cpDefinitionModelImpl._columnBitmask = 0;
+		_columnBitmask = 0;
 	}
 
 	@Override

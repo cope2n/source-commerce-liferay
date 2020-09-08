@@ -261,7 +261,8 @@ public class CPDefinitionServiceSoap {
 				int expirationDateHour, int expirationDateMinute,
 				boolean neverExpire,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext,
-				String overview, String introduction, String features, String benefits, String functions, String partners)
+				String overview, String introduction, String features,
+				String benefits, String functions, String partners)
 		throws RemoteException {
 
 		try {
@@ -295,8 +296,8 @@ public class CPDefinitionServiceSoap {
 					displayDateDay, displayDateYear, displayDateHour,
 					displayDateMinute, expirationDateMonth, expirationDateDay,
 					expirationDateYear, expirationDateHour,
-					expirationDateMinute, neverExpire, serviceContext,
-					overview, introduction, features, benefits, functions, partners);
+					expirationDateMinute, neverExpire, serviceContext, overview,
+					introduction, features, benefits, functions, partners);
 
 			return com.liferay.commerce.product.model.CPDefinitionSoap.
 				toSoapModel(returnValue);

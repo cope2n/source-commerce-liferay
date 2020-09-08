@@ -45,7 +45,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 
 import org.junit.After;
@@ -561,12 +560,11 @@ public class CPFriendlyURLEntryPersistenceTest {
 			_persistence.findByPrimaryKey(
 				newCPFriendlyURLEntry.getPrimaryKey());
 
-		Assert.assertTrue(
-			Objects.equals(
-				existingCPFriendlyURLEntry.getUuid(),
-				ReflectionTestUtil.invoke(
-					existingCPFriendlyURLEntry, "getOriginalUuid",
-					new Class<?>[0])));
+		Assert.assertEquals(
+			existingCPFriendlyURLEntry.getUuid(),
+			ReflectionTestUtil.invoke(
+				existingCPFriendlyURLEntry, "getOriginalUuid",
+				new Class<?>[0]));
 		Assert.assertEquals(
 			Long.valueOf(existingCPFriendlyURLEntry.getGroupId()),
 			ReflectionTestUtil.<Long>invoke(
@@ -583,46 +581,16 @@ public class CPFriendlyURLEntryPersistenceTest {
 			ReflectionTestUtil.<Long>invoke(
 				existingCPFriendlyURLEntry, "getOriginalClassNameId",
 				new Class<?>[0]));
-		Assert.assertTrue(
-			Objects.equals(
-				existingCPFriendlyURLEntry.getLanguageId(),
-				ReflectionTestUtil.invoke(
-					existingCPFriendlyURLEntry, "getOriginalLanguageId",
-					new Class<?>[0])));
-		Assert.assertTrue(
-			Objects.equals(
-				existingCPFriendlyURLEntry.getUrlTitle(),
-				ReflectionTestUtil.invoke(
-					existingCPFriendlyURLEntry, "getOriginalUrlTitle",
-					new Class<?>[0])));
-
 		Assert.assertEquals(
-			Long.valueOf(existingCPFriendlyURLEntry.getGroupId()),
-			ReflectionTestUtil.<Long>invoke(
-				existingCPFriendlyURLEntry, "getOriginalGroupId",
+			existingCPFriendlyURLEntry.getLanguageId(),
+			ReflectionTestUtil.invoke(
+				existingCPFriendlyURLEntry, "getOriginalLanguageId",
 				new Class<?>[0]));
 		Assert.assertEquals(
-			Long.valueOf(existingCPFriendlyURLEntry.getClassNameId()),
-			ReflectionTestUtil.<Long>invoke(
-				existingCPFriendlyURLEntry, "getOriginalClassNameId",
+			existingCPFriendlyURLEntry.getUrlTitle(),
+			ReflectionTestUtil.invoke(
+				existingCPFriendlyURLEntry, "getOriginalUrlTitle",
 				new Class<?>[0]));
-		Assert.assertEquals(
-			Long.valueOf(existingCPFriendlyURLEntry.getClassPK()),
-			ReflectionTestUtil.<Long>invoke(
-				existingCPFriendlyURLEntry, "getOriginalClassPK",
-				new Class<?>[0]));
-		Assert.assertTrue(
-			Objects.equals(
-				existingCPFriendlyURLEntry.getLanguageId(),
-				ReflectionTestUtil.invoke(
-					existingCPFriendlyURLEntry, "getOriginalLanguageId",
-					new Class<?>[0])));
-		Assert.assertTrue(
-			Objects.equals(
-				existingCPFriendlyURLEntry.getUrlTitle(),
-				ReflectionTestUtil.invoke(
-					existingCPFriendlyURLEntry, "getOriginalUrlTitle",
-					new Class<?>[0])));
 
 		Assert.assertEquals(
 			Long.valueOf(existingCPFriendlyURLEntry.getGroupId()),
@@ -639,12 +607,37 @@ public class CPFriendlyURLEntryPersistenceTest {
 			ReflectionTestUtil.<Long>invoke(
 				existingCPFriendlyURLEntry, "getOriginalClassPK",
 				new Class<?>[0]));
-		Assert.assertTrue(
-			Objects.equals(
-				existingCPFriendlyURLEntry.getLanguageId(),
-				ReflectionTestUtil.invoke(
-					existingCPFriendlyURLEntry, "getOriginalLanguageId",
-					new Class<?>[0])));
+		Assert.assertEquals(
+			existingCPFriendlyURLEntry.getLanguageId(),
+			ReflectionTestUtil.invoke(
+				existingCPFriendlyURLEntry, "getOriginalLanguageId",
+				new Class<?>[0]));
+		Assert.assertEquals(
+			existingCPFriendlyURLEntry.getUrlTitle(),
+			ReflectionTestUtil.invoke(
+				existingCPFriendlyURLEntry, "getOriginalUrlTitle",
+				new Class<?>[0]));
+
+		Assert.assertEquals(
+			Long.valueOf(existingCPFriendlyURLEntry.getGroupId()),
+			ReflectionTestUtil.<Long>invoke(
+				existingCPFriendlyURLEntry, "getOriginalGroupId",
+				new Class<?>[0]));
+		Assert.assertEquals(
+			Long.valueOf(existingCPFriendlyURLEntry.getClassNameId()),
+			ReflectionTestUtil.<Long>invoke(
+				existingCPFriendlyURLEntry, "getOriginalClassNameId",
+				new Class<?>[0]));
+		Assert.assertEquals(
+			Long.valueOf(existingCPFriendlyURLEntry.getClassPK()),
+			ReflectionTestUtil.<Long>invoke(
+				existingCPFriendlyURLEntry, "getOriginalClassPK",
+				new Class<?>[0]));
+		Assert.assertEquals(
+			existingCPFriendlyURLEntry.getLanguageId(),
+			ReflectionTestUtil.invoke(
+				existingCPFriendlyURLEntry, "getOriginalLanguageId",
+				new Class<?>[0]));
 		Assert.assertEquals(
 			Boolean.valueOf(existingCPFriendlyURLEntry.getMain()),
 			ReflectionTestUtil.<Boolean>invoke(

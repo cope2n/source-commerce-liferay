@@ -40,6 +40,8 @@ public class CommerceCatalogSoap implements Serializable {
 		soapModel.setModifiedDate(model.getModifiedDate());
 		soapModel.setName(model.getName());
 		soapModel.setDescCatalog(model.getDescCatalog());
+		soapModel.setSubCatalog(model.getSubCatalog());
+		soapModel.setImageCatalog(model.getImageCatalog());
 		soapModel.setCommerceCurrencyCode(model.getCommerceCurrencyCode());
 		soapModel.setCatalogDefaultLanguageId(
 			model.getCatalogDefaultLanguageId());
@@ -175,6 +177,22 @@ public class CommerceCatalogSoap implements Serializable {
 		_descCatalog = descCatalog;
 	}
 
+	public String getSubCatalog() {
+		return _subCatalog;
+	}
+
+	public void setSubCatalog(String subCatalog) {
+		_subCatalog = subCatalog;
+	}
+
+	public String getImageCatalog() {
+		return _imageCatalog;
+	}
+
+	public void setImageCatalog(String imageCatalog) {
+		_imageCatalog = imageCatalog;
+	}
+
 	public String getCommerceCurrencyCode() {
 		return _commerceCurrencyCode;
 	}
@@ -212,6 +230,8 @@ public class CommerceCatalogSoap implements Serializable {
 	private Date _modifiedDate;
 	private String _name;
 	private String _descCatalog;
+	private String _subCatalog;
+	private String _imageCatalog;
 	private String _commerceCurrencyCode;
 	private String _catalogDefaultLanguageId;
 	private boolean _system;

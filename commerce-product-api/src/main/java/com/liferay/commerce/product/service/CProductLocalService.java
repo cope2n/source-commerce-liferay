@@ -63,7 +63,7 @@ public interface CProductLocalService
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify or reference this interface directly. Always use {@link CProductLocalServiceUtil} to access the c product local service. Add custom service methods to <code>com.liferay.commerce.product.service.impl.CProductLocalServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface.
+	 * Never modify this interface directly. Add custom service methods to <code>com.liferay.commerce.product.service.impl.CProductLocalServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface. Consume the c product local service via injection or a <code>org.osgi.util.tracker.ServiceTracker</code>. Use {@link CProductLocalServiceUtil} if injection and service tracking are not available.
 	 */
 
 	/**

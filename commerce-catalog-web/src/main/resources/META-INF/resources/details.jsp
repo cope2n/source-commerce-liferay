@@ -81,7 +81,10 @@ portletDisplay.setURLBack(backURL);
 
 				</aui:select>
 
-				<aui:input bean="<%= commerceCatalog %>"  model="<%= CommerceCatalog.class %>" name="desccatalog" label="Description Catalog"/>
+				<aui:input bean="<%= commerceCatalog %>" disabled="<%= isViewOnly %>" model="<%= CommerceCatalog.class %>" name="subCatalog" label="Sub Catalog"/>
+
+				<aui:input bean="<%= commerceCatalog %>"  model="<%= CommerceCatalog.class %>" name="imageCatalog" label="Image Catalog"/>
+
 				<liferay-ui:input-editor toolbarSet="desccatalog"
 										 name="desccatalog"
 										 initMethod="initEditor"

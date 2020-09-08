@@ -42,12 +42,12 @@ public class CommerceCatalogServiceUtil {
 				String name, String commerceCurrencyCode,
 				String catalogDefaultLanguageId, String externalReferenceCode,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext,
-				String descCatalog)
+				String descCatalog, String imagecatalog, String subcatalog)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().addCommerceCatalog(
 			name, commerceCurrencyCode, catalogDefaultLanguageId,
-			externalReferenceCode, serviceContext, descCatalog);
+			externalReferenceCode, serviceContext, descCatalog, imagecatalog, subcatalog);
 	}
 
 	public static com.liferay.commerce.product.model.CommerceCatalog
@@ -125,12 +125,12 @@ public class CommerceCatalogServiceUtil {
 			updateCommerceCatalog(
 				long commerceCatalogId, String name,
 				String commerceCurrencyCode, String catalogDefaultLanguageId,
-				String descCatalog)
+				String descCatalog, String imagecatalog, String subcatalog)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().updateCommerceCatalog(
 			commerceCatalogId, name, commerceCurrencyCode,
-			catalogDefaultLanguageId, descCatalog);
+			catalogDefaultLanguageId, descCatalog, imagecatalog, subcatalog);
 	}
 
 	public static CommerceCatalogService getService() {

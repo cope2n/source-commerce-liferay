@@ -63,7 +63,7 @@ public interface CommerceCatalogLocalService
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify or reference this interface directly. Always use {@link CommerceCatalogLocalServiceUtil} to access the commerce catalog local service. Add custom service methods to <code>com.liferay.commerce.product.service.impl.CommerceCatalogLocalServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface.
+	 * Never modify this interface directly. Add custom service methods to <code>com.liferay.commerce.product.service.impl.CommerceCatalogLocalServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface. Consume the commerce catalog local service via injection or a <code>org.osgi.util.tracker.ServiceTracker</code>. Use {@link CommerceCatalogLocalServiceUtil} if injection and service tracking are not available.
 	 */
 
 	/**
@@ -84,13 +84,13 @@ public interface CommerceCatalogLocalService
 			String name, String commerceCurrencyCode,
 			String catalogDefaultLanguageId, boolean system,
 			String externalReferenceCode, ServiceContext serviceContext,
-			String descCatalog)
+			String descCatalog, String imagecatalog, String subcatalog)
 		throws PortalException;
 
 	public CommerceCatalog addCommerceCatalog(
 			String name, String commerceCurrencyCode,
 			String catalogDefaultLanguageId, String externalReferenceCode,
-			ServiceContext serviceContext, String descCatalog)
+			ServiceContext serviceContext, String descCatalog, String imagecatalog, String subcatalog)
 		throws PortalException;
 
 	public CommerceCatalog addDefaultCommerceCatalog(long companyId)
@@ -325,7 +325,7 @@ public interface CommerceCatalogLocalService
 	@Indexable(type = IndexableType.REINDEX)
 	public CommerceCatalog updateCommerceCatalog(
 			long commerceCatalogId, String name, String commerceCurrencyCode,
-			String catalogDefaultLanguageId, String descCatalog)
+			String catalogDefaultLanguageId, String descCatalog, String imagecatalog, String subcatalog)
 		throws PortalException;
 
 }

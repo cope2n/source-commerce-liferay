@@ -78,6 +78,7 @@ public class CommerceCatalogModelImpl
 		{"userId", Types.BIGINT}, {"userName", Types.VARCHAR},
 		{"createDate", Types.TIMESTAMP}, {"modifiedDate", Types.TIMESTAMP},
 		{"name", Types.VARCHAR}, {"descCatalog", Types.VARCHAR},
+		{"subCatalog", Types.VARCHAR}, {"imageCatalog", Types.VARCHAR},
 		{"commerceCurrencyCode", Types.VARCHAR},
 		{"catalogDefaultLanguageId", Types.VARCHAR}, {"system", Types.BOOLEAN}
 	};
@@ -95,13 +96,15 @@ public class CommerceCatalogModelImpl
 		TABLE_COLUMNS_MAP.put("modifiedDate", Types.TIMESTAMP);
 		TABLE_COLUMNS_MAP.put("name", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("descCatalog", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("subCatalog", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("imageCatalog", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("commerceCurrencyCode", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("catalogDefaultLanguageId", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("system", Types.BOOLEAN);
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table CommerceCatalog (externalReferenceCode VARCHAR(75) null,commerceCatalogId LONG not null primary key,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,descCatalog VARCHAR(75) null,commerceCurrencyCode VARCHAR(75) null,catalogDefaultLanguageId VARCHAR(75) null,system BOOLEAN)";
+		"create table CommerceCatalog (externalReferenceCode VARCHAR(75) null,commerceCatalogId LONG not null primary key,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,descCatalog VARCHAR(75) null,subCatalog VARCHAR(75) null,imageCatalog VARCHAR(75) null,commerceCurrencyCode VARCHAR(75) null,catalogDefaultLanguageId VARCHAR(75) null,system BOOLEAN)";
 
 	public static final String TABLE_SQL_DROP = "drop table CommerceCatalog";
 
@@ -162,6 +165,8 @@ public class CommerceCatalogModelImpl
 		model.setModifiedDate(soapModel.getModifiedDate());
 		model.setName(soapModel.getName());
 		model.setDescCatalog(soapModel.getDescCatalog());
+		model.setSubCatalog(soapModel.getSubCatalog());
+		model.setImageCatalog(soapModel.getImageCatalog());
 		model.setCommerceCurrencyCode(soapModel.getCommerceCurrencyCode());
 		model.setCatalogDefaultLanguageId(
 			soapModel.getCatalogDefaultLanguageId());
@@ -529,6 +534,51 @@ public class CommerceCatalogModelImpl
 
 			});
 		attributeGetterFunctions.put(
+			"subCatalog",
+			new Function<CommerceCatalog, Object>() {
+
+				@Override
+				public Object apply(CommerceCatalog commerceCatalog) {
+					return commerceCatalog.getSubCatalog();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"subCatalog",
+			new BiConsumer<CommerceCatalog, Object>() {
+
+				@Override
+				public void accept(
+					CommerceCatalog commerceCatalog, Object subCatalogObject) {
+
+					commerceCatalog.setSubCatalog((String)subCatalogObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"imageCatalog",
+			new Function<CommerceCatalog, Object>() {
+
+				@Override
+				public Object apply(CommerceCatalog commerceCatalog) {
+					return commerceCatalog.getImageCatalog();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"imageCatalog",
+			new BiConsumer<CommerceCatalog, Object>() {
+
+				@Override
+				public void accept(
+					CommerceCatalog commerceCatalog,
+					Object imageCatalogObject) {
+
+					commerceCatalog.setImageCatalog((String)imageCatalogObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
 			"commerceCurrencyCode",
 			new Function<CommerceCatalog, Object>() {
 
@@ -716,8 +766,6 @@ public class CommerceCatalogModelImpl
 
 	@Override
 	public void setCreateDate(Date createDate) {
-		_columnBitmask = -1L;
-
 		_createDate = createDate;
 	}
 
@@ -768,6 +816,38 @@ public class CommerceCatalogModelImpl
 	@Override
 	public void setDescCatalog(String descCatalog) {
 		_descCatalog = descCatalog;
+	}
+
+	@JSON
+	@Override
+	public String getSubCatalog() {
+		if (_subCatalog == null) {
+			return "";
+		}
+		else {
+			return _subCatalog;
+		}
+	}
+
+	@Override
+	public void setSubCatalog(String subCatalog) {
+		_subCatalog = subCatalog;
+	}
+
+	@JSON
+	@Override
+	public String getImageCatalog() {
+		if (_imageCatalog == null) {
+			return "";
+		}
+		else {
+			return _imageCatalog;
+		}
+	}
+
+	@Override
+	public void setImageCatalog(String imageCatalog) {
+		_imageCatalog = imageCatalog;
 	}
 
 	@JSON
@@ -877,6 +957,8 @@ public class CommerceCatalogModelImpl
 		commerceCatalogImpl.setModifiedDate(getModifiedDate());
 		commerceCatalogImpl.setName(getName());
 		commerceCatalogImpl.setDescCatalog(getDescCatalog());
+		commerceCatalogImpl.setSubCatalog(getSubCatalog());
+		commerceCatalogImpl.setImageCatalog(getImageCatalog());
 		commerceCatalogImpl.setCommerceCurrencyCode(getCommerceCurrencyCode());
 		commerceCatalogImpl.setCatalogDefaultLanguageId(
 			getCatalogDefaultLanguageId());
@@ -942,24 +1024,19 @@ public class CommerceCatalogModelImpl
 
 	@Override
 	public void resetOriginalValues() {
-		CommerceCatalogModelImpl commerceCatalogModelImpl = this;
+		_originalExternalReferenceCode = _externalReferenceCode;
 
-		commerceCatalogModelImpl._originalExternalReferenceCode =
-			commerceCatalogModelImpl._externalReferenceCode;
+		_originalCompanyId = _companyId;
 
-		commerceCatalogModelImpl._originalCompanyId =
-			commerceCatalogModelImpl._companyId;
+		_setOriginalCompanyId = false;
 
-		commerceCatalogModelImpl._setOriginalCompanyId = false;
+		_setModifiedDate = false;
 
-		commerceCatalogModelImpl._setModifiedDate = false;
+		_originalSystem = _system;
 
-		commerceCatalogModelImpl._originalSystem =
-			commerceCatalogModelImpl._system;
+		_setOriginalSystem = false;
 
-		commerceCatalogModelImpl._setOriginalSystem = false;
-
-		commerceCatalogModelImpl._columnBitmask = 0;
+		_columnBitmask = 0;
 	}
 
 	@Override
@@ -1025,6 +1102,22 @@ public class CommerceCatalogModelImpl
 
 		if ((descCatalog != null) && (descCatalog.length() == 0)) {
 			commerceCatalogCacheModel.descCatalog = null;
+		}
+
+		commerceCatalogCacheModel.subCatalog = getSubCatalog();
+
+		String subCatalog = commerceCatalogCacheModel.subCatalog;
+
+		if ((subCatalog != null) && (subCatalog.length() == 0)) {
+			commerceCatalogCacheModel.subCatalog = null;
+		}
+
+		commerceCatalogCacheModel.imageCatalog = getImageCatalog();
+
+		String imageCatalog = commerceCatalogCacheModel.imageCatalog;
+
+		if ((imageCatalog != null) && (imageCatalog.length() == 0)) {
+			commerceCatalogCacheModel.imageCatalog = null;
 		}
 
 		commerceCatalogCacheModel.commerceCurrencyCode =
@@ -1139,6 +1232,8 @@ public class CommerceCatalogModelImpl
 	private boolean _setModifiedDate;
 	private String _name;
 	private String _descCatalog;
+	private String _subCatalog;
+	private String _imageCatalog;
 	private String _commerceCurrencyCode;
 	private String _catalogDefaultLanguageId;
 	private boolean _system;

@@ -62,7 +62,7 @@ public class CommerceCatalogCacheModel
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(25);
+		StringBundler sb = new StringBundler(29);
 
 		sb.append("{externalReferenceCode=");
 		sb.append(externalReferenceCode);
@@ -82,6 +82,10 @@ public class CommerceCatalogCacheModel
 		sb.append(name);
 		sb.append(", descCatalog=");
 		sb.append(descCatalog);
+		sb.append(", subCatalog=");
+		sb.append(subCatalog);
+		sb.append(", imageCatalog=");
+		sb.append(imageCatalog);
 		sb.append(", commerceCurrencyCode=");
 		sb.append(commerceCurrencyCode);
 		sb.append(", catalogDefaultLanguageId=");
@@ -143,6 +147,20 @@ public class CommerceCatalogCacheModel
 			commerceCatalogImpl.setDescCatalog(descCatalog);
 		}
 
+		if (subCatalog == null) {
+			commerceCatalogImpl.setSubCatalog("");
+		}
+		else {
+			commerceCatalogImpl.setSubCatalog(subCatalog);
+		}
+
+		if (imageCatalog == null) {
+			commerceCatalogImpl.setImageCatalog("");
+		}
+		else {
+			commerceCatalogImpl.setImageCatalog(imageCatalog);
+		}
+
 		if (commerceCurrencyCode == null) {
 			commerceCatalogImpl.setCommerceCurrencyCode("");
 		}
@@ -179,6 +197,8 @@ public class CommerceCatalogCacheModel
 		modifiedDate = objectInput.readLong();
 		name = objectInput.readUTF();
 		descCatalog = objectInput.readUTF();
+		subCatalog = objectInput.readUTF();
+		imageCatalog = objectInput.readUTF();
 		commerceCurrencyCode = objectInput.readUTF();
 		catalogDefaultLanguageId = objectInput.readUTF();
 
@@ -224,6 +244,20 @@ public class CommerceCatalogCacheModel
 			objectOutput.writeUTF(descCatalog);
 		}
 
+		if (subCatalog == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(subCatalog);
+		}
+
+		if (imageCatalog == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(imageCatalog);
+		}
+
 		if (commerceCurrencyCode == null) {
 			objectOutput.writeUTF("");
 		}
@@ -250,6 +284,8 @@ public class CommerceCatalogCacheModel
 	public long modifiedDate;
 	public String name;
 	public String descCatalog;
+	public String subCatalog;
+	public String imageCatalog;
 	public String commerceCurrencyCode;
 	public String catalogDefaultLanguageId;
 	public boolean system;

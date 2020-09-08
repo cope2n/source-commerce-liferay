@@ -45,7 +45,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 
 import org.junit.After;
@@ -141,6 +140,10 @@ public class CommerceCatalogPersistenceTest {
 
 		newCommerceCatalog.setDescCatalog(RandomTestUtil.randomString());
 
+		newCommerceCatalog.setSubCatalog(RandomTestUtil.randomString());
+
+		newCommerceCatalog.setImageCatalog(RandomTestUtil.randomString());
+
 		newCommerceCatalog.setCommerceCurrencyCode(
 			RandomTestUtil.randomString());
 
@@ -180,6 +183,12 @@ public class CommerceCatalogPersistenceTest {
 		Assert.assertEquals(
 			existingCommerceCatalog.getDescCatalog(),
 			newCommerceCatalog.getDescCatalog());
+		Assert.assertEquals(
+			existingCommerceCatalog.getSubCatalog(),
+			newCommerceCatalog.getSubCatalog());
+		Assert.assertEquals(
+			existingCommerceCatalog.getImageCatalog(),
+			newCommerceCatalog.getImageCatalog());
 		Assert.assertEquals(
 			existingCommerceCatalog.getCommerceCurrencyCode(),
 			newCommerceCatalog.getCommerceCurrencyCode());
@@ -242,8 +251,9 @@ public class CommerceCatalogPersistenceTest {
 			"CommerceCatalog", "externalReferenceCode", true,
 			"commerceCatalogId", true, "companyId", true, "userId", true,
 			"userName", true, "createDate", true, "modifiedDate", true, "name",
-			true, "descCatalog", true, "commerceCurrencyCode", true,
-			"catalogDefaultLanguageId", true, "system", true);
+			true, "descCatalog", true, "subCatalog", true, "imageCatalog", true,
+			"commerceCurrencyCode", true, "catalogDefaultLanguageId", true,
+			"system", true);
 	}
 
 	@Test
@@ -475,12 +485,11 @@ public class CommerceCatalogPersistenceTest {
 			ReflectionTestUtil.<Long>invoke(
 				existingCommerceCatalog, "getOriginalCompanyId",
 				new Class<?>[0]));
-		Assert.assertTrue(
-			Objects.equals(
-				existingCommerceCatalog.getExternalReferenceCode(),
-				ReflectionTestUtil.invoke(
-					existingCommerceCatalog, "getOriginalExternalReferenceCode",
-					new Class<?>[0])));
+		Assert.assertEquals(
+			existingCommerceCatalog.getExternalReferenceCode(),
+			ReflectionTestUtil.invoke(
+				existingCommerceCatalog, "getOriginalExternalReferenceCode",
+				new Class<?>[0]));
 	}
 
 	protected CommerceCatalog addCommerceCatalog() throws Exception {
@@ -503,6 +512,10 @@ public class CommerceCatalogPersistenceTest {
 		commerceCatalog.setName(RandomTestUtil.randomString());
 
 		commerceCatalog.setDescCatalog(RandomTestUtil.randomString());
+
+		commerceCatalog.setSubCatalog(RandomTestUtil.randomString());
+
+		commerceCatalog.setImageCatalog(RandomTestUtil.randomString());
 
 		commerceCatalog.setCommerceCurrencyCode(RandomTestUtil.randomString());
 

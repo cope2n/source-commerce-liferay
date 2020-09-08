@@ -7014,7 +7014,7 @@ public class CPInstancePersistenceImpl
 		try {
 			session = openSession();
 
-			if (cpInstance.isNew()) {
+			if (isNew) {
 				session.save(cpInstance);
 
 				cpInstance.setNew(false);
@@ -7987,6 +7987,7 @@ public class CPInstancePersistenceImpl
 
 	public void destroy() {
 		entityCache.removeCache(CPInstanceImpl.class.getName());
+
 		finderCache.removeCache(FINDER_CLASS_NAME_ENTITY);
 		finderCache.removeCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
 		finderCache.removeCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
@@ -7998,7 +7999,7 @@ public class CPInstancePersistenceImpl
 	@ServiceReference(type = FinderCache.class)
 	protected FinderCache finderCache;
 
-	private Long _getTime(Date date) {
+	private static Long _getTime(Date date) {
 		if (date == null) {
 			return null;
 		}

@@ -64,6 +64,8 @@ public class CommerceCatalogWrapper
 		attributes.put("modifiedDate", getModifiedDate());
 		attributes.put("name", getName());
 		attributes.put("descCatalog", getDescCatalog());
+		attributes.put("subCatalog", getSubCatalog());
+		attributes.put("imageCatalog", getImageCatalog());
 		attributes.put("commerceCurrencyCode", getCommerceCurrencyCode());
 		attributes.put(
 			"catalogDefaultLanguageId", getCatalogDefaultLanguageId());
@@ -127,6 +129,18 @@ public class CommerceCatalogWrapper
 
 		if (descCatalog != null) {
 			setDescCatalog(descCatalog);
+		}
+
+		String subCatalog = (String)attributes.get("subCatalog");
+
+		if (subCatalog != null) {
+			setSubCatalog(subCatalog);
+		}
+
+		String imageCatalog = (String)attributes.get("imageCatalog");
+
+		if (imageCatalog != null) {
+			setImageCatalog(imageCatalog);
 		}
 
 		String commerceCurrencyCode = (String)attributes.get(
@@ -247,6 +261,16 @@ public class CommerceCatalogWrapper
 	}
 
 	/**
+	 * Returns the image catalog of this commerce catalog.
+	 *
+	 * @return the image catalog of this commerce catalog
+	 */
+	@Override
+	public String getImageCatalog() {
+		return _commerceCatalog.getImageCatalog();
+	}
+
+	/**
 	 * Returns the modified date of this commerce catalog.
 	 *
 	 * @return the modified date of this commerce catalog
@@ -279,6 +303,16 @@ public class CommerceCatalogWrapper
 	@Override
 	public Serializable getPrimaryKeyObj() {
 		return _commerceCatalog.getPrimaryKeyObj();
+	}
+
+	/**
+	 * Returns the sub catalog of this commerce catalog.
+	 *
+	 * @return the sub catalog of this commerce catalog
+	 */
+	@Override
+	public String getSubCatalog() {
+		return _commerceCatalog.getSubCatalog();
 	}
 
 	/**
@@ -449,6 +483,16 @@ public class CommerceCatalogWrapper
 	}
 
 	/**
+	 * Sets the image catalog of this commerce catalog.
+	 *
+	 * @param imageCatalog the image catalog of this commerce catalog
+	 */
+	@Override
+	public void setImageCatalog(String imageCatalog) {
+		_commerceCatalog.setImageCatalog(imageCatalog);
+	}
+
+	/**
 	 * Sets the modified date of this commerce catalog.
 	 *
 	 * @param modifiedDate the modified date of this commerce catalog
@@ -486,6 +530,16 @@ public class CommerceCatalogWrapper
 	@Override
 	public void setPrimaryKeyObj(Serializable primaryKeyObj) {
 		_commerceCatalog.setPrimaryKeyObj(primaryKeyObj);
+	}
+
+	/**
+	 * Sets the sub catalog of this commerce catalog.
+	 *
+	 * @param subCatalog the sub catalog of this commerce catalog
+	 */
+	@Override
+	public void setSubCatalog(String subCatalog) {
+		_commerceCatalog.setSubCatalog(subCatalog);
 	}
 
 	/**

@@ -59,12 +59,12 @@ public class CommerceCatalogLocalServiceWrapper
 				String catalogDefaultLanguageId, boolean system,
 				String externalReferenceCode,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext,
-				String descCatalog)
+				String descCatalog, String imagecatalog, String subcatalog)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _commerceCatalogLocalService.addCommerceCatalog(
 			name, commerceCurrencyCode, catalogDefaultLanguageId, system,
-			externalReferenceCode, serviceContext, descCatalog);
+			externalReferenceCode, serviceContext, descCatalog, imagecatalog, subcatalog);
 	}
 
 	@Override
@@ -73,12 +73,12 @@ public class CommerceCatalogLocalServiceWrapper
 				String name, String commerceCurrencyCode,
 				String catalogDefaultLanguageId, String externalReferenceCode,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext,
-				String descCatalog)
+				String descCatalog, String imagecatalog, String subcatalog)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _commerceCatalogLocalService.addCommerceCatalog(
 			name, commerceCurrencyCode, catalogDefaultLanguageId,
-			externalReferenceCode, serviceContext, descCatalog);
+			externalReferenceCode, serviceContext, descCatalog, imagecatalog, subcatalog);
 	}
 
 	@Override
@@ -446,12 +446,12 @@ public class CommerceCatalogLocalServiceWrapper
 			updateCommerceCatalog(
 				long commerceCatalogId, String name,
 				String commerceCurrencyCode, String catalogDefaultLanguageId,
-				String descCatalog)
+				String descCatalog, String imagecatalog, String subcatalog)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _commerceCatalogLocalService.updateCommerceCatalog(
 			commerceCatalogId, name, commerceCurrencyCode,
-			catalogDefaultLanguageId, descCatalog);
+			catalogDefaultLanguageId, descCatalog, imagecatalog, subcatalog);
 	}
 
 	@Override

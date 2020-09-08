@@ -78,7 +78,7 @@ if ((cpDefinition != null) && (cpDefinition.getExpirationDate() != null)) {
 				for (CommerceCatalog commerceCatalog : commerceCatalogs) {
 				%>
 
-					<aui:option label="<%= commerceCatalog.getName() %>" selected="<%= (cpDefinition == null) ? (commerceCatalogs.size() == 1) : cpDefinitionsDisplayContext.isSelectedCatalog(commerceCatalog) %>" value="<%= commerceCatalog.getGroupId() %>" />
+					<aui:option label="<%= commerceCatalog.getName() + " -- " + commerceCatalog.getSubCatalog() %>" selected="<%= (cpDefinition == null) ? (commerceCatalogs.size() == 1) : cpDefinitionsDisplayContext.isSelectedCatalog(commerceCatalog) %>" value="<%= commerceCatalog.getGroupId() %>" />
 
 				<%
 				}

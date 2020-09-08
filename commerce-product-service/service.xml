@@ -22,6 +22,8 @@
 
 		<column name="name" type="String" />
 		<column name="descCatalog" type="String" />
+		<column name="subCatalog" type="String" />
+		<column name="imageCatalog" type="String" />
 		<column name="commerceCurrencyCode" type="String" />
 		<column name="catalogDefaultLanguageId" type="String" />
 		<column name="system" type="boolean" />
