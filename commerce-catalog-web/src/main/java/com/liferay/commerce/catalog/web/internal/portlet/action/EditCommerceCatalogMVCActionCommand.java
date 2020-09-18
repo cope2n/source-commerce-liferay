@@ -127,8 +127,6 @@ public class EditCommerceCatalogMVCActionCommand extends BaseMVCActionCommand {
 				actionRequest, "subCatalog");
 		String imagecatalog = ParamUtil.getString(
 				actionRequest, "imageCatalog");
-		System.out.println(subcatalog);
-		System.out.println(imagecatalog);
 		ServiceContext serviceContext = ServiceContextFactory.getInstance(
 			CommerceCatalog.class.getName(), actionRequest);
 

@@ -8,6 +8,8 @@
 # Catalog table: commercecatalog
 
 * fields:descCatalog - varchar (ckeditor)
+* fields:subCatalog - varchar
+* fields:imageCatalog - varchar
 
 # Product table: cpdefinition
 

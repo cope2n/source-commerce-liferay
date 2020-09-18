@@ -82,15 +82,31 @@ portletDisplay.setURLBack(backURL);
 				</aui:select>
 
 				<aui:input bean="<%= commerceCatalog %>" disabled="<%= isViewOnly %>" model="<%= CommerceCatalog.class %>" name="subCatalog" label="Sub Catalog"/>
+				<aui:input bean="<%= commerceCatalog %>" disabled="<%= isViewOnly %>" model="<%= CommerceCatalog.class %>" name="imageCatalog" label="Image Catalog"/>
 
-				<aui:input bean="<%= commerceCatalog %>"  model="<%= CommerceCatalog.class %>" name="imageCatalog" label="Image Catalog"/>
+				<aui:field-wrapper>
+					<label class="control-label">Catalog Description </label>
+					<div class="entry-content form-group">
+						<liferay-ui:input-editor toolbarSet="desccatalog"
+												 name="desccatalog"
+												 initMethod="initEditor"
+												 width="100" height="400"
+												 resizable="true" >
+						</liferay-ui:input-editor>
+					</div>
+				</aui:field-wrapper>
 
-				<liferay-ui:input-editor toolbarSet="desccatalog"
-										 name="desccatalog"
-										 initMethod="initEditor"
-										 width="100" height="400"
-										 resizable="true" >
-				</liferay-ui:input-editor>
+<%--				<aui:field-wrapper>--%>
+<%--					<label class="control-label">Catalog Description </label>--%>
+<%--					<div class="entry-content form-group">--%>
+<%--						<liferay-ui:input-editor toolbarSet="imageCatalog"--%>
+<%--												 name="imageCatalog"--%>
+<%--												 initMethod="initEditorImage"--%>
+<%--												 width="100" height="400"--%>
+<%--												 resizable="true" >--%>
+<%--						</liferay-ui:input-editor>--%>
+<%--					</div>--%>
+<%--				</aui:field-wrapper>--%>
 			</aui:fieldset>
 		</aui:fieldset-group>
 	</div>
@@ -106,8 +122,11 @@ portletDisplay.setURLBack(backURL);
 
 <c:if test="<%= commerceCatalog != null %>">
 	<aui:script>
+		function <portlet:namespace/><% assert commerceCatalog != null; %>initEditorImage(){
+		return "<%= UnicodeFormatter.toString((String)commerceCatalog.getImageCatalog()) %>";
+		}
 		function <portlet:namespace/><% assert commerceCatalog != null; %>initEditor(){
-		return "<%= UnicodeFormatter.toString((String)commerceCatalog.getDescCatalog()) %>";
+			return "<%= UnicodeFormatter.toString((String)commerceCatalog.getDescCatalog()) %>";
 		}
 	</aui:script>
 </c:if>
