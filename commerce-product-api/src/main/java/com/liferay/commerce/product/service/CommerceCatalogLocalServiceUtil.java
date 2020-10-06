@@ -67,7 +67,8 @@ public class CommerceCatalogLocalServiceUtil {
 
 		return getService().addCommerceCatalog(
 			name, commerceCurrencyCode, catalogDefaultLanguageId, system,
-			externalReferenceCode, serviceContext, descCatalog, imagecatalog, subcatalog);
+			externalReferenceCode, serviceContext, descCatalog, imagecatalog,
+			subcatalog);
 	}
 
 	public static com.liferay.commerce.product.model.CommerceCatalog
@@ -80,7 +81,8 @@ public class CommerceCatalogLocalServiceUtil {
 
 		return getService().addCommerceCatalog(
 			name, commerceCurrencyCode, catalogDefaultLanguageId,
-			externalReferenceCode, serviceContext, descCatalog, imagecatalog, subcatalog);
+			externalReferenceCode, serviceContext, descCatalog, imagecatalog,
+			subcatalog);
 	}
 
 	public static com.liferay.commerce.product.model.CommerceCatalog

@@ -65,7 +65,7 @@ public class CPDefinitionServiceUtil {
 				long maxSubscriptionCycles, String externalReferenceCode,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext,
 				String overview, String introduction, String features,
-				String benefits, String functions, String partners)
+				String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().addCPDefinition(
@@ -81,7 +81,7 @@ public class CPDefinitionServiceUtil {
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
 			externalReferenceCode, serviceContext, overview, introduction,
-			features, benefits, functions, partners);
+			features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
 	}
 
 	public static void deleteAssetCategoryCPDefinition(
@@ -207,7 +207,7 @@ public class CPDefinitionServiceUtil {
 				int expirationDateMinute, boolean neverExpire,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext,
 				String overview, String introduction, String features,
-				String benefits, String functions, String partners)
+				String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().updateCPDefinition(
@@ -218,7 +218,7 @@ public class CPDefinitionServiceUtil {
 			expirationDateMonth, expirationDateDay, expirationDateYear,
 			expirationDateHour, expirationDateMinute, neverExpire,
 			serviceContext, overview, introduction, features, benefits,
-			functions, partners);
+			functions, partners, solutions, customerStory, relatedPlatforms);
 	}
 
 	public static com.liferay.commerce.product.model.CPDefinition
@@ -334,7 +334,7 @@ public class CPDefinitionServiceUtil {
 				long maxSubscriptionCycles, String externalReferenceCode,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext,
 				String overview, String introduction, String features,
-				String benefits, String functions, String partners)
+				String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().upsertCPDefinition(
@@ -350,7 +350,7 @@ public class CPDefinitionServiceUtil {
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
 			externalReferenceCode, serviceContext, overview, introduction,
-			features, benefits, functions, partners);
+			features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
 	}
 
 	public static CPDefinitionService getService() {

@@ -124,7 +124,7 @@ if ((cpDefinition != null) && (cpDefinition.getExpirationDate() != null)) {
 			</aui:field-wrapper>
 
 			<aui:field-wrapper>
-				<label class="control-label">Introduction </label>
+				<label class="control-label">Introduction -- Challenge</label>
 				<liferay-ui:input-editor toolbarSet="introduction"
 										 name="introduction"
 										 initMethod="initEditorIntroduction"
@@ -168,6 +168,33 @@ if ((cpDefinition != null) && (cpDefinition.getExpirationDate() != null)) {
 				<liferay-ui:input-editor toolbarSet="partners"
 										 name="partners"
 										 initMethod="initEditorPartners"
+										 width="100" height="400"
+										 resizable="true" >
+				</liferay-ui:input-editor>
+			</aui:field-wrapper>
+			<aui:field-wrapper>
+				<label class="control-label">Solutions -- Our capability</label>
+				<liferay-ui:input-editor toolbarSet="solutions"
+										 name="solutions"
+										 initMethod="initEditorSolutions"
+										 width="100" height="400"
+										 resizable="true" >
+				</liferay-ui:input-editor>
+			</aui:field-wrapper>
+			<aui:field-wrapper>
+				<label class="control-label">Customer Story </label>
+				<liferay-ui:input-editor toolbarSet="customerStory"
+										 name="customerStory"
+										 initMethod="initEditorCustomerStory"
+										 width="100" height="400"
+										 resizable="true" >
+				</liferay-ui:input-editor>
+			</aui:field-wrapper>
+			<aui:field-wrapper>
+				<label class="control-label">Related Platforms </label>
+				<liferay-ui:input-editor toolbarSet="relatedPlatforms"
+										 name="relatedPlatforms"
+										 initMethod="initEditorRelatedPlatforms"
 										 width="100" height="400"
 										 resizable="true" >
 				</liferay-ui:input-editor>
@@ -324,6 +351,15 @@ if ((cpDefinition != null) && (cpDefinition.getExpirationDate() != null)) {
 
 		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorPartners(){
 		return "<%= UnicodeFormatter.toString((String)cpDefinition.getPartners()) %>";
+		}
+		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorSolutions(){
+		return "<%= UnicodeFormatter.toString((String)cpDefinition.getSolutions()) %>";
+		}
+		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorCustomerStory(){
+		return "<%= UnicodeFormatter.toString((String)cpDefinition.getCustomerStory()) %>";
+		}
+		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorRelatedPlatforms(){
+		return "<%= UnicodeFormatter.toString((String)cpDefinition.getRelatedPlatforms()) %>";
 		}
 	</aui:script>
 </c:if>

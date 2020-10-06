@@ -451,6 +451,15 @@ public class EditCPDefinitionMVCActionCommand extends BaseMVCActionCommand {
 
 		String partners = ParamUtil.getString(
 				actionRequest, "partners");
+
+		String solutions = ParamUtil.getString(
+				actionRequest, "solutions");
+
+		String customerStory = ParamUtil.getString(
+				actionRequest, "customerStory");
+
+		String relatedPlatforms = ParamUtil.getString(
+				actionRequest, "relatedPlatforms");
 		//</editor-fold>
 
 		ServiceContext serviceContext = ServiceContextFactory.getInstance(
@@ -472,7 +481,7 @@ public class EditCPDefinitionMVCActionCommand extends BaseMVCActionCommand {
 				expirationDateDay, expirationDateYear, expirationDateHour,
 				expirationDateMinute, neverExpire,
 				CPInstanceConstants.DEFAULT_SKU, false, 0, null, null, 0L, null,
-				serviceContext, overview, introduction, features, benefits, functions, partners);
+				serviceContext, overview, introduction, features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
 		}
 		else {
 
@@ -496,7 +505,7 @@ public class EditCPDefinitionMVCActionCommand extends BaseMVCActionCommand {
 				displayDateMonth, displayDateDay, displayDateYear,
 				displayDateHour, displayDateMinute, expirationDateMonth,
 				expirationDateDay, expirationDateYear, expirationDateHour,
-				expirationDateMinute, neverExpire, serviceContext, overview, introduction, features, benefits, functions, partners);
+				expirationDateMinute, neverExpire, serviceContext, overview, introduction, features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
 		}
 
 		return cpDefinition;

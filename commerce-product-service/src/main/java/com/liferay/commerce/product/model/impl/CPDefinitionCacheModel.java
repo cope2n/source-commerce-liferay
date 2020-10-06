@@ -62,7 +62,7 @@ public class CPDefinitionCacheModel
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(95);
+		StringBundler sb = new StringBundler(101);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -152,12 +152,18 @@ public class CPDefinitionCacheModel
 		sb.append(introduction);
 		sb.append(", features=");
 		sb.append(features);
+		sb.append(", solutions=");
+		sb.append(solutions);
+		sb.append(", customerStory=");
+		sb.append(customerStory);
 		sb.append(", benefits=");
 		sb.append(benefits);
 		sb.append(", functions=");
 		sb.append(functions);
 		sb.append(", partners=");
 		sb.append(partners);
+		sb.append(", relatedPlatforms=");
+		sb.append(relatedPlatforms);
 		sb.append("}");
 
 		return sb.toString();
@@ -321,6 +327,20 @@ public class CPDefinitionCacheModel
 			cpDefinitionImpl.setFeatures(features);
 		}
 
+		if (solutions == null) {
+			cpDefinitionImpl.setSolutions("");
+		}
+		else {
+			cpDefinitionImpl.setSolutions(solutions);
+		}
+
+		if (customerStory == null) {
+			cpDefinitionImpl.setCustomerStory("");
+		}
+		else {
+			cpDefinitionImpl.setCustomerStory(customerStory);
+		}
+
 		if (benefits == null) {
 			cpDefinitionImpl.setBenefits("");
 		}
@@ -340,6 +360,13 @@ public class CPDefinitionCacheModel
 		}
 		else {
 			cpDefinitionImpl.setPartners(partners);
+		}
+
+		if (relatedPlatforms == null) {
+			cpDefinitionImpl.setRelatedPlatforms("");
+		}
+		else {
+			cpDefinitionImpl.setRelatedPlatforms(relatedPlatforms);
 		}
 
 		cpDefinitionImpl.resetOriginalValues();
@@ -422,9 +449,12 @@ public class CPDefinitionCacheModel
 		overview = objectInput.readUTF();
 		introduction = objectInput.readUTF();
 		features = objectInput.readUTF();
+		solutions = objectInput.readUTF();
+		customerStory = objectInput.readUTF();
 		benefits = objectInput.readUTF();
 		functions = objectInput.readUTF();
 		partners = objectInput.readUTF();
+		relatedPlatforms = objectInput.readUTF();
 	}
 
 	@Override
@@ -568,6 +598,20 @@ public class CPDefinitionCacheModel
 			objectOutput.writeUTF(features);
 		}
 
+		if (solutions == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(solutions);
+		}
+
+		if (customerStory == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(customerStory);
+		}
+
 		if (benefits == null) {
 			objectOutput.writeUTF("");
 		}
@@ -587,6 +631,13 @@ public class CPDefinitionCacheModel
 		}
 		else {
 			objectOutput.writeUTF(partners);
+		}
+
+		if (relatedPlatforms == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(relatedPlatforms);
 		}
 	}
 
@@ -634,8 +685,11 @@ public class CPDefinitionCacheModel
 	public String overview;
 	public String introduction;
 	public String features;
+	public String solutions;
+	public String customerStory;
 	public String benefits;
 	public String functions;
 	public String partners;
+	public String relatedPlatforms;
 
 }

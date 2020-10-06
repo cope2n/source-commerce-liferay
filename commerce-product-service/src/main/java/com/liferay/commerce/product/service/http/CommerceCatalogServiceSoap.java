@@ -73,7 +73,8 @@ public class CommerceCatalogServiceSoap {
 			com.liferay.commerce.product.model.CommerceCatalog returnValue =
 				CommerceCatalogServiceUtil.addCommerceCatalog(
 					name, commerceCurrencyCode, catalogDefaultLanguageId,
-					externalReferenceCode, serviceContext, descCatalog, imagecatalog, subcatalog);
+					externalReferenceCode, serviceContext, descCatalog,
+					imagecatalog, subcatalog);
 
 			return com.liferay.commerce.product.model.CommerceCatalogSoap.
 				toSoapModel(returnValue);
@@ -250,7 +251,8 @@ public class CommerceCatalogServiceSoap {
 			com.liferay.commerce.product.model.CommerceCatalog returnValue =
 				CommerceCatalogServiceUtil.updateCommerceCatalog(
 					commerceCatalogId, name, commerceCurrencyCode,
-					catalogDefaultLanguageId, descCatalog, imagecatalog, subcatalog);
+					catalogDefaultLanguageId, descCatalog, imagecatalog,
+					subcatalog);
 
 			return com.liferay.commerce.product.model.CommerceCatalogSoap.
 				toSoapModel(returnValue);

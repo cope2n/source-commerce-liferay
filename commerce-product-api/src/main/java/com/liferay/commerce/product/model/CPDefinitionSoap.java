@@ -77,9 +77,12 @@ public class CPDefinitionSoap implements Serializable {
 		soapModel.setOverview(model.getOverview());
 		soapModel.setIntroduction(model.getIntroduction());
 		soapModel.setFeatures(model.getFeatures());
+		soapModel.setSolutions(model.getSolutions());
+		soapModel.setCustomerStory(model.getCustomerStory());
 		soapModel.setBenefits(model.getBenefits());
 		soapModel.setFunctions(model.getFunctions());
 		soapModel.setPartners(model.getPartners());
+		soapModel.setRelatedPlatforms(model.getRelatedPlatforms());
 
 		return soapModel;
 	}
@@ -531,6 +534,22 @@ public class CPDefinitionSoap implements Serializable {
 		_features = features;
 	}
 
+	public String getSolutions() {
+		return _solutions;
+	}
+
+	public void setSolutions(String solutions) {
+		_solutions = solutions;
+	}
+
+	public String getCustomerStory() {
+		return _customerStory;
+	}
+
+	public void setCustomerStory(String customerStory) {
+		_customerStory = customerStory;
+	}
+
 	public String getBenefits() {
 		return _benefits;
 	}
@@ -553,6 +572,14 @@ public class CPDefinitionSoap implements Serializable {
 
 	public void setPartners(String partners) {
 		_partners = partners;
+	}
+
+	public String getRelatedPlatforms() {
+		return _relatedPlatforms;
+	}
+
+	public void setRelatedPlatforms(String relatedPlatforms) {
+		_relatedPlatforms = relatedPlatforms;
 	}
 
 	private String _uuid;
@@ -599,8 +626,11 @@ public class CPDefinitionSoap implements Serializable {
 	private String _overview;
 	private String _introduction;
 	private String _features;
+	private String _solutions;
+	private String _customerStory;
 	private String _benefits;
 	private String _functions;
 	private String _partners;
+	private String _relatedPlatforms;
 
 }

@@ -214,11 +214,17 @@ public class CPDefinitionPersistenceTest {
 
 		newCPDefinition.setFeatures(RandomTestUtil.randomString());
 
+		newCPDefinition.setSolutions(RandomTestUtil.randomString());
+
+		newCPDefinition.setCustomerStory(RandomTestUtil.randomString());
+
 		newCPDefinition.setBenefits(RandomTestUtil.randomString());
 
 		newCPDefinition.setFunctions(RandomTestUtil.randomString());
 
 		newCPDefinition.setPartners(RandomTestUtil.randomString());
+
+		newCPDefinition.setRelatedPlatforms(RandomTestUtil.randomString());
 
 		_cpDefinitions.add(_persistence.update(newCPDefinition));
 
@@ -343,12 +349,21 @@ public class CPDefinitionPersistenceTest {
 		Assert.assertEquals(
 			existingCPDefinition.getFeatures(), newCPDefinition.getFeatures());
 		Assert.assertEquals(
+			existingCPDefinition.getSolutions(),
+			newCPDefinition.getSolutions());
+		Assert.assertEquals(
+			existingCPDefinition.getCustomerStory(),
+			newCPDefinition.getCustomerStory());
+		Assert.assertEquals(
 			existingCPDefinition.getBenefits(), newCPDefinition.getBenefits());
 		Assert.assertEquals(
 			existingCPDefinition.getFunctions(),
 			newCPDefinition.getFunctions());
 		Assert.assertEquals(
 			existingCPDefinition.getPartners(), newCPDefinition.getPartners());
+		Assert.assertEquals(
+			existingCPDefinition.getRelatedPlatforms(),
+			newCPDefinition.getRelatedPlatforms());
 	}
 
 	@Test
@@ -472,7 +487,8 @@ public class CPDefinitionPersistenceTest {
 			"channelFilterEnabled", true, "version", true, "status", true,
 			"statusByUserId", true, "statusByUserName", true, "statusDate",
 			true, "overview", true, "introduction", true, "features", true,
-			"benefits", true, "functions", true, "partners", true);
+			"solutions", true, "customerStory", true, "benefits", true,
+			"functions", true, "partners", true, "relatedPlatforms", true);
 	}
 
 	@Test
@@ -799,11 +815,17 @@ public class CPDefinitionPersistenceTest {
 
 		cpDefinition.setFeatures(RandomTestUtil.randomString());
 
+		cpDefinition.setSolutions(RandomTestUtil.randomString());
+
+		cpDefinition.setCustomerStory(RandomTestUtil.randomString());
+
 		cpDefinition.setBenefits(RandomTestUtil.randomString());
 
 		cpDefinition.setFunctions(RandomTestUtil.randomString());
 
 		cpDefinition.setPartners(RandomTestUtil.randomString());
+
+		cpDefinition.setRelatedPlatforms(RandomTestUtil.randomString());
 
 		_cpDefinitions.add(_persistence.update(cpDefinition));
 

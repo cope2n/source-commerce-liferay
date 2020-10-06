@@ -264,12 +264,16 @@
 		<column name="statusByUserId" type="long" />
 		<column name="statusByUserName" type="String" />
 		<column name="statusDate" type="Date" />
+		<!-- Custom field cope2n -->
 		<column name="overview" type="String" />
 		<column name="introduction" type="String" />
 		<column name="features" type="String" />
+		<column name="solutions" type="String" />
+		<column name="customerStory" type="String" />
 		<column name="benefits" type="String" />
 		<column name="functions" type="String" />
 		<column name="partners" type="String" />
+		<column name="relatedPlatforms" type="String" />
 
 		<!-- Localized entity -->
 

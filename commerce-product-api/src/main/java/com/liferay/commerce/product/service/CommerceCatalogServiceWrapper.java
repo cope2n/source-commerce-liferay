@@ -43,7 +43,8 @@ public class CommerceCatalogServiceWrapper
 
 		return _commerceCatalogService.addCommerceCatalog(
 			name, commerceCurrencyCode, catalogDefaultLanguageId,
-			externalReferenceCode, serviceContext, descCatalog, imagecatalog, subcatalog);
+			externalReferenceCode, serviceContext, descCatalog, imagecatalog,
+			subcatalog);
 	}
 
 	@Override

@@ -163,7 +163,6 @@ public class CommerceCatalogDisplayContext
 			_commerceCatalogService.searchCommerceCatalogs(
 				themeDisplay.getCompanyId(), getKeywords(),
 				searchContainer.getStart(), searchContainer.getEnd(), sort);
-
 		searchContainer.setTotal(catalogs.size());
 		searchContainer.setResults(catalogs);
 

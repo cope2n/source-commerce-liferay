@@ -86,9 +86,12 @@ create table CPDefinition (
 	overview VARCHAR(75) null,
 	introduction VARCHAR(75) null,
 	features VARCHAR(75) null,
+	solutions VARCHAR(75) null,
+	customerStory VARCHAR(75) null,
 	benefits VARCHAR(75) null,
 	functions VARCHAR(75) null,
-	partners VARCHAR(75) null
+	partners VARCHAR(75) null,
+	relatedPlatforms VARCHAR(75) null
 );
 
 create table CPDefinitionLink (

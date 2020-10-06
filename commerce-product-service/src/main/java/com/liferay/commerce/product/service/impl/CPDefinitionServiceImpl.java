@@ -66,7 +66,7 @@ public class CPDefinitionServiceImpl extends CPDefinitionServiceBaseImpl {
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
 			ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners)
+			String overview, String introduction, String features, String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
 		throws PortalException {
 
 		_checkCommerceCatalogPermission(groupId, ActionKeys.UPDATE);
@@ -83,7 +83,7 @@ public class CPDefinitionServiceImpl extends CPDefinitionServiceBaseImpl {
 			expirationDateMinute, neverExpire, defaultSku, subscriptionEnabled,
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners);
+			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
 	}
 
 	@Override
@@ -258,7 +258,7 @@ public class CPDefinitionServiceImpl extends CPDefinitionServiceBaseImpl {
 			int expirationDateDay, int expirationDateYear,
 			int expirationDateHour, int expirationDateMinute,
 			boolean neverExpire, ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners)
+			String overview, String introduction, String features, String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
 		throws PortalException {
 
 		_checkCommerceCatalogPermissionByCPDefinitionId(
@@ -271,7 +271,7 @@ public class CPDefinitionServiceImpl extends CPDefinitionServiceBaseImpl {
 			displayDateDay, displayDateYear, displayDateHour, displayDateMinute,
 			expirationDateMonth, expirationDateDay, expirationDateYear,
 			expirationDateHour, expirationDateMinute, neverExpire,
-			serviceContext, overview, introduction, features, benefits, functions, partners);
+			serviceContext, overview, introduction, features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
 	}
 
 	@Override
@@ -404,7 +404,7 @@ public class CPDefinitionServiceImpl extends CPDefinitionServiceBaseImpl {
 			int subscriptionLength, String subscriptionType,
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			ServiceContext serviceContext, String overview, String introduction, String features, String benefits, String functions, String partners)
+			ServiceContext serviceContext, String overview, String introduction, String features, String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
 		throws PortalException {
 
 		_checkCommerceCatalogPermission(groupId, ActionKeys.UPDATE);
@@ -421,7 +421,7 @@ public class CPDefinitionServiceImpl extends CPDefinitionServiceBaseImpl {
 			expirationDateMinute, neverExpire, defaultSku, subscriptionEnabled,
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners);
+			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
 	}
 
 	private void _checkCommerceCatalogPermission(long groupId, String actionId)

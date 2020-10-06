@@ -77,7 +77,7 @@ public class CPDefinitionLocalServiceWrapper
 			long maxSubscriptionCycles, String externalReferenceCode,
 			com.liferay.portal.kernel.service.ServiceContext serviceContext,
 			String overview, String introduction, String features,
-			String benefits, String functions, String partners)
+			String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _cpDefinitionLocalService.addCPDefinition(
@@ -93,7 +93,7 @@ public class CPDefinitionLocalServiceWrapper
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
 			externalReferenceCode, serviceContext, overview, introduction,
-			features, benefits, functions, partners);
+			features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
 	}
 
 	@Override
@@ -766,7 +766,7 @@ public class CPDefinitionLocalServiceWrapper
 			boolean neverExpire,
 			com.liferay.portal.kernel.service.ServiceContext serviceContext,
 			String overview, String introduction, String features,
-			String benefits, String functions, String partners)
+			String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _cpDefinitionLocalService.updateCPDefinition(
@@ -779,7 +779,7 @@ public class CPDefinitionLocalServiceWrapper
 			displayDateMinute, expirationDateMonth, expirationDateDay,
 			expirationDateYear, expirationDateHour, expirationDateMinute,
 			neverExpire, serviceContext, overview, introduction, features,
-			benefits, functions, partners);
+			benefits, functions, partners, solutions, customerStory, relatedPlatforms);
 	}
 
 	@Override
@@ -800,7 +800,7 @@ public class CPDefinitionLocalServiceWrapper
 			int expirationDateMinute, boolean neverExpire,
 			com.liferay.portal.kernel.service.ServiceContext serviceContext,
 			String overview, String introduction, String features,
-			String benefits, String functions, String partners)
+			String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _cpDefinitionLocalService.updateCPDefinition(
@@ -811,7 +811,7 @@ public class CPDefinitionLocalServiceWrapper
 			expirationDateMonth, expirationDateDay, expirationDateYear,
 			expirationDateHour, expirationDateMinute, neverExpire,
 			serviceContext, overview, introduction, features, benefits,
-			functions, partners);
+			functions, partners, solutions, customerStory, relatedPlatforms);
 	}
 
 	@Override
@@ -976,7 +976,7 @@ public class CPDefinitionLocalServiceWrapper
 			long maxSubscriptionCycles, String externalReferenceCode,
 			com.liferay.portal.kernel.service.ServiceContext serviceContext,
 			String overview, String introduction, String features,
-			String benefits, String functions, String partners)
+			String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _cpDefinitionLocalService.upsertCPDefinition(
@@ -992,7 +992,7 @@ public class CPDefinitionLocalServiceWrapper
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
 			externalReferenceCode, serviceContext, overview, introduction,
-			features, benefits, functions, partners);
+			features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
 	}
 
 	@Override

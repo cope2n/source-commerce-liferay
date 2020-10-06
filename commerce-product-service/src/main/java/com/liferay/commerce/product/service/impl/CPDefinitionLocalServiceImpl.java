@@ -145,7 +145,7 @@ public class CPDefinitionLocalServiceImpl
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
 			ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners)
+			String overview, String introduction, String features, String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
 		throws PortalException {
 
 		// Commerce product definition
@@ -228,6 +228,9 @@ public class CPDefinitionLocalServiceImpl
 		cpDefinition.setBenefits(benefits);
 		cpDefinition.setFunctions(functions);
 		cpDefinition.setPartners(partners);
+		cpDefinition.setSolutions(solutions);
+		cpDefinition.setCustomerStory(customerStory);
+		cpDefinition.setRelatedPlatforms(relatedPlatforms);
 		//</editor-fold>
 
 		if ((expirationDate == null) || expirationDate.after(now)) {
@@ -1271,7 +1274,7 @@ public class CPDefinitionLocalServiceImpl
 			int expirationDateDay, int expirationDateYear,
 			int expirationDateHour, int expirationDateMinute,
 			boolean neverExpire, ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners)
+			String overview, String introduction, String features, String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
 		throws PortalException {
 
 		// Commerce product definition
@@ -1340,6 +1343,9 @@ public class CPDefinitionLocalServiceImpl
 		cpDefinition.setBenefits(benefits);
 		cpDefinition.setFunctions(functions);
 		cpDefinition.setPartners(partners);
+		cpDefinition.setSolutions(solutions);
+		cpDefinition.setCustomerStory(customerStory);
+		cpDefinition.setRelatedPlatforms(relatedPlatforms);
 		//</editor-fold>
 
 		if ((expirationDate == null) || expirationDate.after(now)) {
@@ -1404,7 +1410,7 @@ public class CPDefinitionLocalServiceImpl
 			int expirationDateDay, int expirationDateYear,
 			int expirationDateHour, int expirationDateMinute,
 			boolean neverExpire, ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners)
+			String overview, String introduction, String features, String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
 		throws PortalException {
 
 		CPDefinition cpDefinition = cpDefinitionPersistence.findByPrimaryKey(
@@ -1423,7 +1429,7 @@ public class CPDefinitionLocalServiceImpl
 			displayDateYear, displayDateHour, displayDateMinute,
 			expirationDateMonth, expirationDateDay, expirationDateYear,
 			expirationDateHour, expirationDateMinute, neverExpire,
-			serviceContext, overview, introduction, features, benefits, functions, partners);
+			serviceContext, overview, introduction, features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
 	}
 
 	@Override
@@ -1693,7 +1699,7 @@ public class CPDefinitionLocalServiceImpl
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
 			ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners)
+			String overview, String introduction, String features, String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
 		throws PortalException {
 
 		if (Validator.isBlank(externalReferenceCode)) {
@@ -1716,7 +1722,7 @@ public class CPDefinitionLocalServiceImpl
 					displayDateDay, displayDateYear, displayDateHour,
 					displayDateMinute, expirationDateMonth, expirationDateDay,
 					expirationDateYear, expirationDateHour,
-					expirationDateMinute, neverExpire, serviceContext, overview, introduction, features, benefits, functions, partners);
+					expirationDateMinute, neverExpire, serviceContext, overview, introduction, features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
 			}
 		}
 
@@ -1732,7 +1738,7 @@ public class CPDefinitionLocalServiceImpl
 			expirationDateMinute, neverExpire, defaultSku, subscriptionEnabled,
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners);
+			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
 	}
 
 	protected SearchContext buildSearchContext(

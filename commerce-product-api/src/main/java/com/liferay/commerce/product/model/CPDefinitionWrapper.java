@@ -102,9 +102,12 @@ public class CPDefinitionWrapper
 		attributes.put("overview", getOverview());
 		attributes.put("introduction", getIntroduction());
 		attributes.put("features", getFeatures());
+		attributes.put("solutions", getSolutions());
+		attributes.put("customerStory", getCustomerStory());
 		attributes.put("benefits", getBenefits());
 		attributes.put("functions", getFunctions());
 		attributes.put("partners", getPartners());
+		attributes.put("relatedPlatforms", getRelatedPlatforms());
 
 		return attributes;
 	}
@@ -385,6 +388,18 @@ public class CPDefinitionWrapper
 			setFeatures(features);
 		}
 
+		String solutions = (String)attributes.get("solutions");
+
+		if (solutions != null) {
+			setSolutions(solutions);
+		}
+
+		String customerStory = (String)attributes.get("customerStory");
+
+		if (customerStory != null) {
+			setCustomerStory(customerStory);
+		}
+
 		String benefits = (String)attributes.get("benefits");
 
 		if (benefits != null) {
@@ -401,6 +416,12 @@ public class CPDefinitionWrapper
 
 		if (partners != null) {
 			setPartners(partners);
+		}
+
+		String relatedPlatforms = (String)attributes.get("relatedPlatforms");
+
+		if (relatedPlatforms != null) {
+			setRelatedPlatforms(relatedPlatforms);
 		}
 	}
 
@@ -551,6 +572,16 @@ public class CPDefinitionWrapper
 	@Override
 	public Date getCreateDate() {
 		return _cpDefinition.getCreateDate();
+	}
+
+	/**
+	 * Returns the customer story of this cp definition.
+	 *
+	 * @return the customer story of this cp definition
+	 */
+	@Override
+	public String getCustomerStory() {
+		return _cpDefinition.getCustomerStory();
 	}
 
 	/**
@@ -941,6 +972,16 @@ public class CPDefinitionWrapper
 	}
 
 	/**
+	 * Returns the related platforms of this cp definition.
+	 *
+	 * @return the related platforms of this cp definition
+	 */
+	@Override
+	public String getRelatedPlatforms() {
+		return _cpDefinition.getRelatedPlatforms();
+	}
+
+	/**
 	 * Returns the shippable of this cp definition.
 	 *
 	 * @return the shippable of this cp definition
@@ -993,6 +1034,16 @@ public class CPDefinitionWrapper
 	@Override
 	public String getShortDescriptionMapAsXML() {
 		return _cpDefinition.getShortDescriptionMapAsXML();
+	}
+
+	/**
+	 * Returns the solutions of this cp definition.
+	 *
+	 * @return the solutions of this cp definition
+	 */
+	@Override
+	public String getSolutions() {
+		return _cpDefinition.getSolutions();
 	}
 
 	/**
@@ -1505,6 +1556,16 @@ public class CPDefinitionWrapper
 	}
 
 	/**
+	 * Sets the customer story of this cp definition.
+	 *
+	 * @param customerStory the customer story of this cp definition
+	 */
+	@Override
+	public void setCustomerStory(String customerStory) {
+		_cpDefinition.setCustomerStory(customerStory);
+	}
+
+	/**
 	 * Sets the ddm structure key of this cp definition.
 	 *
 	 * @param DDMStructureKey the ddm structure key of this cp definition
@@ -1749,6 +1810,16 @@ public class CPDefinitionWrapper
 	}
 
 	/**
+	 * Sets the related platforms of this cp definition.
+	 *
+	 * @param relatedPlatforms the related platforms of this cp definition
+	 */
+	@Override
+	public void setRelatedPlatforms(String relatedPlatforms) {
+		_cpDefinition.setRelatedPlatforms(relatedPlatforms);
+	}
+
+	/**
 	 * Sets whether this cp definition is shippable.
 	 *
 	 * @param shippable the shippable of this cp definition
@@ -1783,6 +1854,16 @@ public class CPDefinitionWrapper
 		Map<java.util.Locale, String> shortDescriptionMap) {
 
 		_cpDefinition.setShortDescriptionMap(shortDescriptionMap);
+	}
+
+	/**
+	 * Sets the solutions of this cp definition.
+	 *
+	 * @param solutions the solutions of this cp definition
+	 */
+	@Override
+	public void setSolutions(String solutions) {
+		_cpDefinition.setSolutions(solutions);
 	}
 
 	/**

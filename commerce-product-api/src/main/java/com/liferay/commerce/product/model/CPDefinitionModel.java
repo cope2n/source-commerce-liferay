@@ -827,6 +827,36 @@ public interface CPDefinitionModel
 	public void setFeatures(String features);
 
 	/**
+	 * Returns the solutions of this cp definition.
+	 *
+	 * @return the solutions of this cp definition
+	 */
+	@AutoEscape
+	public String getSolutions();
+
+	/**
+	 * Sets the solutions of this cp definition.
+	 *
+	 * @param solutions the solutions of this cp definition
+	 */
+	public void setSolutions(String solutions);
+
+	/**
+	 * Returns the customer story of this cp definition.
+	 *
+	 * @return the customer story of this cp definition
+	 */
+	@AutoEscape
+	public String getCustomerStory();
+
+	/**
+	 * Sets the customer story of this cp definition.
+	 *
+	 * @param customerStory the customer story of this cp definition
+	 */
+	public void setCustomerStory(String customerStory);
+
+	/**
 	 * Returns the benefits of this cp definition.
 	 *
 	 * @return the benefits of this cp definition
@@ -870,6 +900,21 @@ public interface CPDefinitionModel
 	 * @param partners the partners of this cp definition
 	 */
 	public void setPartners(String partners);
+
+	/**
+	 * Returns the related platforms of this cp definition.
+	 *
+	 * @return the related platforms of this cp definition
+	 */
+	@AutoEscape
+	public String getRelatedPlatforms();
+
+	/**
+	 * Sets the related platforms of this cp definition.
+	 *
+	 * @param relatedPlatforms the related platforms of this cp definition
+	 */
+	public void setRelatedPlatforms(String relatedPlatforms);
 
 	public String[] getAvailableLanguageIds();
 

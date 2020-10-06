@@ -21,4 +21,7 @@
 4. benefits : varchar (ckeditor)
 5. functions : varchar (ckeditor)
 6. partners : varchar (ckeditor)
+7. solutions : varchar (ckeditor)
+8. customerstory : varchar (ckeditor)
+9. relatedplatforms : varchar (ckeditor)
 

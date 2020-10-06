@@ -64,7 +64,8 @@ public class CommerceCatalogLocalServiceWrapper
 
 		return _commerceCatalogLocalService.addCommerceCatalog(
 			name, commerceCurrencyCode, catalogDefaultLanguageId, system,
-			externalReferenceCode, serviceContext, descCatalog, imagecatalog, subcatalog);
+			externalReferenceCode, serviceContext, descCatalog, imagecatalog,
+			subcatalog);
 	}
 
 	@Override
@@ -78,7 +79,8 @@ public class CommerceCatalogLocalServiceWrapper
 
 		return _commerceCatalogLocalService.addCommerceCatalog(
 			name, commerceCurrencyCode, catalogDefaultLanguageId,
-			externalReferenceCode, serviceContext, descCatalog, imagecatalog, subcatalog);
+			externalReferenceCode, serviceContext, descCatalog, imagecatalog,
+			subcatalog);
 	}
 
 	@Override

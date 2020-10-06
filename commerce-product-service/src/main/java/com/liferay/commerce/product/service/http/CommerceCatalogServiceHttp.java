@@ -67,7 +67,8 @@ public class CommerceCatalogServiceHttp {
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, name, commerceCurrencyCode, catalogDefaultLanguageId,
-				externalReferenceCode, serviceContext, descCatalog, imagecatalog, subcatalog);
+				externalReferenceCode, serviceContext, descCatalog,
+				imagecatalog, subcatalog);
 
 			Object returnObj = null;
 
@@ -435,7 +436,8 @@ public class CommerceCatalogServiceHttp {
 			updateCommerceCatalog(
 				HttpPrincipal httpPrincipal, long commerceCatalogId,
 				String name, String commerceCurrencyCode,
-				String catalogDefaultLanguageId, String descCatalog, String imagecatalog, String subcatalog)
+				String catalogDefaultLanguageId, String descCatalog,
+				String imagecatalog, String subcatalog)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		try {
@@ -445,7 +447,8 @@ public class CommerceCatalogServiceHttp {
 
 			MethodHandler methodHandler = new MethodHandler(
 				methodKey, commerceCatalogId, name, commerceCurrencyCode,
-				catalogDefaultLanguageId, descCatalog, imagecatalog, subcatalog);
+				catalogDefaultLanguageId, descCatalog, imagecatalog,
+				subcatalog);
 
 			Object returnObj = null;
 
@@ -482,7 +485,8 @@ public class CommerceCatalogServiceHttp {
 	private static final Class<?>[] _addCommerceCatalogParameterTypes0 =
 		new Class[] {
 			String.class, String.class, String.class, String.class,
-			com.liferay.portal.kernel.service.ServiceContext.class, String.class
+			com.liferay.portal.kernel.service.ServiceContext.class,
+			String.class, String.class, String.class
 		};
 	private static final Class<?>[] _deleteCommerceCatalogParameterTypes1 =
 		new Class[] {long.class};
@@ -511,7 +515,8 @@ public class CommerceCatalogServiceHttp {
 		};
 	private static final Class<?>[] _updateCommerceCatalogParameterTypes9 =
 		new Class[] {
-			long.class, String.class, String.class, String.class, String.class
+			long.class, String.class, String.class, String.class, String.class,
+			String.class, String.class
 		};
 
 }
