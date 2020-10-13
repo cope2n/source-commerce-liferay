@@ -466,7 +466,6 @@ public class EditCPDefinitionMVCActionCommand extends BaseMVCActionCommand {
 			CPDefinition.class.getName(), actionRequest);
 
 		CPDefinition cpDefinition = null;
-
 		if (cpDefinitionId <= 0) {
 
 			// Add commerce product definition

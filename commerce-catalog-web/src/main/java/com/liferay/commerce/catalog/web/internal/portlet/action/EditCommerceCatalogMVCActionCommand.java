@@ -115,6 +115,7 @@ public class EditCommerceCatalogMVCActionCommand extends BaseMVCActionCommand {
 
 		long commerceCatalogId = ParamUtil.getLong(
 			actionRequest, "commerceCatalogId");
+
 		String name = ParamUtil.getString(actionRequest, "name");
 		String commerceCurrencyCode = ParamUtil.getString(
 			actionRequest, "commerceCurrencyCode");
@@ -127,18 +128,21 @@ public class EditCommerceCatalogMVCActionCommand extends BaseMVCActionCommand {
 				actionRequest, "subCatalog");
 		String imagecatalog = ParamUtil.getString(
 				actionRequest, "imageCatalog");
+		String nameLocation = ParamUtil.getString(
+				actionRequest, "nameLocation");
+		String subCatalogLocation = ParamUtil.getString(
+				actionRequest, "subCatalogLocation");
 		ServiceContext serviceContext = ServiceContextFactory.getInstance(
 			CommerceCatalog.class.getName(), actionRequest);
 
 		if (commerceCatalogId <= 0) {
 			return _commerceCatalogService.addCommerceCatalog(
 				name, commerceCurrencyCode, catalogDefaultLanguageId, null,
-				serviceContext, desccatalog, imagecatalog, subcatalog);
+				serviceContext, desccatalog, imagecatalog, subcatalog, nameLocation, subCatalogLocation);
 		}
-
 		return _commerceCatalogService.updateCommerceCatalog(
 			commerceCatalogId, name, commerceCurrencyCode,
-			catalogDefaultLanguageId, desccatalog, imagecatalog, subcatalog);
+			catalogDefaultLanguageId, desccatalog, imagecatalog, subcatalog, nameLocation, subCatalogLocation);
 	}
 
 	@Reference

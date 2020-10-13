@@ -56,7 +56,7 @@ portletURL.setParameter("searchContainerId", "commerceCatalogs");
 							cssClass="important table-cell-content"
 							href="<%= commerceCatalogDisplayContext.getCatalogURL(commerceCatalog) %>"
 							name="name"
-							value="<%= HtmlUtil.escape(commerceCatalog.getName()) + " --- " + HtmlUtil.escape(commerceCatalog.getSubCatalog())%>"
+							value="<%= HtmlUtil.escape(commerceCatalog.getName()) + " --- " + HtmlUtil.escape(commerceCatalog.getSubCatalog()) + " --- " + HtmlUtil.escape(commerceCatalog.getCatalogDefaultLanguageId())%>"
 						/>
 
 						<liferay-ui:search-container-column-date

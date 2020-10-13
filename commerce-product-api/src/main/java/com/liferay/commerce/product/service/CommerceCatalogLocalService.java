@@ -84,14 +84,14 @@ public interface CommerceCatalogLocalService
 			String name, String commerceCurrencyCode,
 			String catalogDefaultLanguageId, boolean system,
 			String externalReferenceCode, ServiceContext serviceContext,
-			String descCatalog, String imagecatalog, String subcatalog)
+			String descCatalog, String imagecatalog, String subcatalog, String nameLocation, String subCatalogLocation)
 		throws PortalException;
 
 	public CommerceCatalog addCommerceCatalog(
 			String name, String commerceCurrencyCode,
 			String catalogDefaultLanguageId, String externalReferenceCode,
 			ServiceContext serviceContext, String descCatalog,
-			String imagecatalog, String subcatalog)
+			String imagecatalog, String subcatalog, String nameLocation, String subCatalogLocation)
 		throws PortalException;
 
 	public CommerceCatalog addDefaultCommerceCatalog(long companyId)
@@ -327,7 +327,7 @@ public interface CommerceCatalogLocalService
 	public CommerceCatalog updateCommerceCatalog(
 			long commerceCatalogId, String name, String commerceCurrencyCode,
 			String catalogDefaultLanguageId, String descCatalog,
-			String imagecatalog, String subcatalog)
+			String imagecatalog, String subcatalog, String nameLocation, String subCatalogLocation)
 		throws PortalException;
 
 }

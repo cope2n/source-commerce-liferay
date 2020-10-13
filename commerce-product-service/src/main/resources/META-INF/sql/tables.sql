@@ -349,6 +349,8 @@ create table CommerceCatalog (
 	name VARCHAR(75) null,
 	descCatalog VARCHAR(75) null,
 	subCatalog VARCHAR(75) null,
+	nameLocation VARCHAR(75) null,
+	subCatalogLocation VARCHAR(75) null,
 	imageCatalog VARCHAR(75) null,
 	commerceCurrencyCode VARCHAR(75) null,
 	catalogDefaultLanguageId VARCHAR(75) null,

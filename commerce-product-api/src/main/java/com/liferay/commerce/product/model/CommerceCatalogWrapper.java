@@ -65,6 +65,8 @@ public class CommerceCatalogWrapper
 		attributes.put("name", getName());
 		attributes.put("descCatalog", getDescCatalog());
 		attributes.put("subCatalog", getSubCatalog());
+		attributes.put("nameLocation", getNameLocation());
+		attributes.put("subCatalogLocation", getSubCatalogLocation());
 		attributes.put("imageCatalog", getImageCatalog());
 		attributes.put("commerceCurrencyCode", getCommerceCurrencyCode());
 		attributes.put(
@@ -135,6 +137,19 @@ public class CommerceCatalogWrapper
 
 		if (subCatalog != null) {
 			setSubCatalog(subCatalog);
+		}
+
+		String nameLocation = (String)attributes.get("nameLocation");
+
+		if (nameLocation != null) {
+			setNameLocation(nameLocation);
+		}
+
+		String subCatalogLocation = (String)attributes.get(
+			"subCatalogLocation");
+
+		if (subCatalogLocation != null) {
+			setSubCatalogLocation(subCatalogLocation);
 		}
 
 		String imageCatalog = (String)attributes.get("imageCatalog");
@@ -291,6 +306,16 @@ public class CommerceCatalogWrapper
 	}
 
 	/**
+	 * Returns the name location of this commerce catalog.
+	 *
+	 * @return the name location of this commerce catalog
+	 */
+	@Override
+	public String getNameLocation() {
+		return _commerceCatalog.getNameLocation();
+	}
+
+	/**
 	 * Returns the primary key of this commerce catalog.
 	 *
 	 * @return the primary key of this commerce catalog
@@ -313,6 +338,16 @@ public class CommerceCatalogWrapper
 	@Override
 	public String getSubCatalog() {
 		return _commerceCatalog.getSubCatalog();
+	}
+
+	/**
+	 * Returns the sub catalog location of this commerce catalog.
+	 *
+	 * @return the sub catalog location of this commerce catalog
+	 */
+	@Override
+	public String getSubCatalogLocation() {
+		return _commerceCatalog.getSubCatalogLocation();
 	}
 
 	/**
@@ -512,6 +547,16 @@ public class CommerceCatalogWrapper
 		_commerceCatalog.setName(name);
 	}
 
+	/**
+	 * Sets the name location of this commerce catalog.
+	 *
+	 * @param nameLocation the name location of this commerce catalog
+	 */
+	@Override
+	public void setNameLocation(String nameLocation) {
+		_commerceCatalog.setNameLocation(nameLocation);
+	}
+
 	@Override
 	public void setNew(boolean n) {
 		_commerceCatalog.setNew(n);
@@ -540,6 +585,16 @@ public class CommerceCatalogWrapper
 	@Override
 	public void setSubCatalog(String subCatalog) {
 		_commerceCatalog.setSubCatalog(subCatalog);
+	}
+
+	/**
+	 * Sets the sub catalog location of this commerce catalog.
+	 *
+	 * @param subCatalogLocation the sub catalog location of this commerce catalog
+	 */
+	@Override
+	public void setSubCatalogLocation(String subCatalogLocation) {
+		_commerceCatalog.setSubCatalogLocation(subCatalogLocation);
 	}
 
 	/**

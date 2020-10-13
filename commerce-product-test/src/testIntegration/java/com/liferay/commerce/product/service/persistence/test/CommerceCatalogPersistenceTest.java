@@ -142,6 +142,10 @@ public class CommerceCatalogPersistenceTest {
 
 		newCommerceCatalog.setSubCatalog(RandomTestUtil.randomString());
 
+		newCommerceCatalog.setNameLocation(RandomTestUtil.randomString());
+
+		newCommerceCatalog.setSubCatalogLocation(RandomTestUtil.randomString());
+
 		newCommerceCatalog.setImageCatalog(RandomTestUtil.randomString());
 
 		newCommerceCatalog.setCommerceCurrencyCode(
@@ -186,6 +190,12 @@ public class CommerceCatalogPersistenceTest {
 		Assert.assertEquals(
 			existingCommerceCatalog.getSubCatalog(),
 			newCommerceCatalog.getSubCatalog());
+		Assert.assertEquals(
+			existingCommerceCatalog.getNameLocation(),
+			newCommerceCatalog.getNameLocation());
+		Assert.assertEquals(
+			existingCommerceCatalog.getSubCatalogLocation(),
+			newCommerceCatalog.getSubCatalogLocation());
 		Assert.assertEquals(
 			existingCommerceCatalog.getImageCatalog(),
 			newCommerceCatalog.getImageCatalog());
@@ -251,7 +261,8 @@ public class CommerceCatalogPersistenceTest {
 			"CommerceCatalog", "externalReferenceCode", true,
 			"commerceCatalogId", true, "companyId", true, "userId", true,
 			"userName", true, "createDate", true, "modifiedDate", true, "name",
-			true, "descCatalog", true, "subCatalog", true, "imageCatalog", true,
+			true, "descCatalog", true, "subCatalog", true, "nameLocation", true,
+			"subCatalogLocation", true, "imageCatalog", true,
 			"commerceCurrencyCode", true, "catalogDefaultLanguageId", true,
 			"system", true);
 	}
@@ -514,6 +525,10 @@ public class CommerceCatalogPersistenceTest {
 		commerceCatalog.setDescCatalog(RandomTestUtil.randomString());
 
 		commerceCatalog.setSubCatalog(RandomTestUtil.randomString());
+
+		commerceCatalog.setNameLocation(RandomTestUtil.randomString());
+
+		commerceCatalog.setSubCatalogLocation(RandomTestUtil.randomString());
 
 		commerceCatalog.setImageCatalog(RandomTestUtil.randomString());
 

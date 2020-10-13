@@ -44,6 +44,8 @@ portletDisplay.setURLBack(backURL);
 			<aui:fieldset>
 				<aui:input bean="<%= commerceCatalog %>" disabled="<%= isViewOnly %>" model="<%= CommerceCatalog.class %>" name="name" required="<%= true %>" />
 
+				<aui:input bean="<%= commerceCatalog %>" disabled="<%= isViewOnly %>" model="<%= CommerceCatalog.class %>" name="subCatalog" label="Sub Catalog"/>
+
 				<aui:select disabled="<%= isViewOnly %>" helpMessage="the-default-language-for-the-content-within-this-catalog" label="default-catalog-language" name="catalogDefaultLanguageId" required="<%= true %>" title="language">
 
 					<%
@@ -66,6 +68,10 @@ portletDisplay.setURLBack(backURL);
 
 				</aui:select>
 
+				<aui:input bean="<%= commerceCatalog %>" disabled="<%= isViewOnly %>" model="<%= CommerceCatalog.class %>" name="nameLocation" label="Name Location"/>
+
+				<aui:input bean="<%= commerceCatalog %>" disabled="<%= isViewOnly %>" model="<%= CommerceCatalog.class %>" name="subCatalogLocation" label="Sub Catalog Location"/>
+
 				<aui:select disabled="<%= isViewOnly %>" label="currency" name="commerceCurrencyCode" required="<%= true %>" title="currency">
 
 					<%
@@ -81,7 +87,6 @@ portletDisplay.setURLBack(backURL);
 
 				</aui:select>
 
-				<aui:input bean="<%= commerceCatalog %>" disabled="<%= isViewOnly %>" model="<%= CommerceCatalog.class %>" name="subCatalog" label="Sub Catalog"/>
 				<aui:input bean="<%= commerceCatalog %>" disabled="<%= isViewOnly %>" model="<%= CommerceCatalog.class %>" name="imageCatalog" label="Image Catalog"/>
 
 				<aui:field-wrapper>

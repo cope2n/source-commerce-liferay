@@ -41,6 +41,8 @@ public class CommerceCatalogSoap implements Serializable {
 		soapModel.setName(model.getName());
 		soapModel.setDescCatalog(model.getDescCatalog());
 		soapModel.setSubCatalog(model.getSubCatalog());
+		soapModel.setNameLocation(model.getNameLocation());
+		soapModel.setSubCatalogLocation(model.getSubCatalogLocation());
 		soapModel.setImageCatalog(model.getImageCatalog());
 		soapModel.setCommerceCurrencyCode(model.getCommerceCurrencyCode());
 		soapModel.setCatalogDefaultLanguageId(
@@ -185,6 +187,22 @@ public class CommerceCatalogSoap implements Serializable {
 		_subCatalog = subCatalog;
 	}
 
+	public String getNameLocation() {
+		return _nameLocation;
+	}
+
+	public void setNameLocation(String nameLocation) {
+		_nameLocation = nameLocation;
+	}
+
+	public String getSubCatalogLocation() {
+		return _subCatalogLocation;
+	}
+
+	public void setSubCatalogLocation(String subCatalogLocation) {
+		_subCatalogLocation = subCatalogLocation;
+	}
+
 	public String getImageCatalog() {
 		return _imageCatalog;
 	}
@@ -231,6 +249,8 @@ public class CommerceCatalogSoap implements Serializable {
 	private String _name;
 	private String _descCatalog;
 	private String _subCatalog;
+	private String _nameLocation;
+	private String _subCatalogLocation;
 	private String _imageCatalog;
 	private String _commerceCurrencyCode;
 	private String _catalogDefaultLanguageId;

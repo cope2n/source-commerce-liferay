@@ -79,7 +79,8 @@ public class CPDefinitionServiceHttp {
 				long maxSubscriptionCycles, String externalReferenceCode,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext,
 				String overview, String introduction, String features,
-				String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
+				String benefits, String functions, String partners,
+				String solutions, String customerStory, String relatedPlatforms)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		try {
@@ -101,7 +102,8 @@ public class CPDefinitionServiceHttp {
 				subscriptionEnabled, subscriptionLength, subscriptionType,
 				subscriptionTypeSettingsProperties, maxSubscriptionCycles,
 				externalReferenceCode, serviceContext, overview, introduction,
-				features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
+				features, benefits, functions, partners, solutions,
+				customerStory, relatedPlatforms);
 
 			Object returnObj = null;
 
@@ -642,7 +644,8 @@ public class CPDefinitionServiceHttp {
 				int expirationDateMinute, boolean neverExpire,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext,
 				String overview, String introduction, String features,
-				String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
+				String benefits, String functions, String partners,
+				String solutions, String customerStory, String relatedPlatforms)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		try {
@@ -658,7 +661,8 @@ public class CPDefinitionServiceHttp {
 				displayDateHour, displayDateMinute, expirationDateMonth,
 				expirationDateDay, expirationDateYear, expirationDateHour,
 				expirationDateMinute, neverExpire, serviceContext, overview,
-				introduction, features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
+				introduction, features, benefits, functions, partners,
+				solutions, customerStory, relatedPlatforms);
 
 			Object returnObj = null;
 
@@ -1067,7 +1071,8 @@ public class CPDefinitionServiceHttp {
 				long maxSubscriptionCycles, String externalReferenceCode,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext,
 				String overview, String introduction, String features,
-				String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
+				String benefits, String functions, String partners,
+				String solutions, String customerStory, String relatedPlatforms)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		try {
@@ -1089,7 +1094,8 @@ public class CPDefinitionServiceHttp {
 				subscriptionEnabled, subscriptionLength, subscriptionType,
 				subscriptionTypeSettingsProperties, maxSubscriptionCycles,
 				externalReferenceCode, serviceContext, overview, introduction,
-				features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
+				features, benefits, functions, partners, solutions,
+				customerStory, relatedPlatforms);
 
 			Object returnObj = null;
 
@@ -1138,7 +1144,7 @@ public class CPDefinitionServiceHttp {
 			String.class,
 			com.liferay.portal.kernel.service.ServiceContext.class,
 			String.class, String.class, String.class, String.class,
-			String.class, String.class
+			String.class, String.class, String.class, String.class, String.class
 		};
 	private static final Class<?>[]
 		_deleteAssetCategoryCPDefinitionParameterTypes1 = new Class[] {
@@ -1189,7 +1195,7 @@ public class CPDefinitionServiceHttp {
 			int.class, boolean.class,
 			com.liferay.portal.kernel.service.ServiceContext.class,
 			String.class, String.class, String.class, String.class,
-			String.class, String.class
+			String.class, String.class, String.class, String.class, String.class
 		};
 	private static final Class<?>[]
 		_updateCPDefinitionAccountGroupFilterParameterTypes14 = new Class[] {
@@ -1244,7 +1250,7 @@ public class CPDefinitionServiceHttp {
 			String.class,
 			com.liferay.portal.kernel.service.ServiceContext.class,
 			String.class, String.class, String.class, String.class,
-			String.class, String.class
+			String.class, String.class, String.class, String.class, String.class
 		};
 
 }

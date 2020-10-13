@@ -235,6 +235,36 @@ public interface CommerceCatalogModel
 	public void setSubCatalog(String subCatalog);
 
 	/**
+	 * Returns the name location of this commerce catalog.
+	 *
+	 * @return the name location of this commerce catalog
+	 */
+	@AutoEscape
+	public String getNameLocation();
+
+	/**
+	 * Sets the name location of this commerce catalog.
+	 *
+	 * @param nameLocation the name location of this commerce catalog
+	 */
+	public void setNameLocation(String nameLocation);
+
+	/**
+	 * Returns the sub catalog location of this commerce catalog.
+	 *
+	 * @return the sub catalog location of this commerce catalog
+	 */
+	@AutoEscape
+	public String getSubCatalogLocation();
+
+	/**
+	 * Sets the sub catalog location of this commerce catalog.
+	 *
+	 * @param subCatalogLocation the sub catalog location of this commerce catalog
+	 */
+	public void setSubCatalogLocation(String subCatalogLocation);
+
+	/**
 	 * Returns the image catalog of this commerce catalog.
 	 *
 	 * @return the image catalog of this commerce catalog

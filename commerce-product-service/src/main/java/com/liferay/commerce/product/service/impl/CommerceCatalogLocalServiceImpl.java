@@ -61,7 +61,7 @@ public class CommerceCatalogLocalServiceImpl
 	public CommerceCatalog addCommerceCatalog(
 			String name, String commerceCurrencyCode,
 			String catalogDefaultLanguageId, boolean system,
-			String externalReferenceCode, ServiceContext serviceContext, String descCatalog, String imagecatalog, String subcatalog)
+			String externalReferenceCode, ServiceContext serviceContext, String descCatalog, String imagecatalog, String subcatalog, String nameLocation, String subCatalogLocation)
 		throws PortalException {
 
 		User user = userLocalService.getUser(serviceContext.getUserId());
@@ -88,6 +88,8 @@ public class CommerceCatalogLocalServiceImpl
 		commerceCatalog.setDescCatalog(descCatalog);
 		commerceCatalog.setImageCatalog(imagecatalog);
 		commerceCatalog.setSubCatalog(subcatalog);
+		commerceCatalog.setNameLocation(nameLocation);
+		commerceCatalog.setSubCatalogLocation(subCatalogLocation);
 		// Group
 
 		groupLocalService.addGroup(
@@ -111,12 +113,12 @@ public class CommerceCatalogLocalServiceImpl
 	public CommerceCatalog addCommerceCatalog(
 			String name, String commerceCurrencyCode,
 			String catalogDefaultLanguageId, String externalReferenceCode,
-			ServiceContext serviceContext, String descCatalog, String imagecatalog, String subcatalog)
+			ServiceContext serviceContext, String descCatalog, String imagecatalog, String subcatalog, String nameLocation, String subCatalogLocation)
 		throws PortalException {
 
 		return commerceCatalogLocalService.addCommerceCatalog(
 			name, commerceCurrencyCode, catalogDefaultLanguageId, false,
-			externalReferenceCode, serviceContext,descCatalog, imagecatalog, subcatalog);
+			externalReferenceCode, serviceContext,descCatalog, imagecatalog, subcatalog, nameLocation, subCatalogLocation);
 	}
 
 	@Override
@@ -136,7 +138,7 @@ public class CommerceCatalogLocalServiceImpl
 		return commerceCatalogLocalService.addCommerceCatalog(
 			CommerceCatalogConstants.MASTER_COMMERCE_CATALOG,
 			CommerceCatalogConstants.MASTER_COMMERCE_DEFAULT_CURRENCY,
-			defaultUser.getLanguageId(), true, null, serviceContext, null, null, null);
+			defaultUser.getLanguageId(), true, null, serviceContext, null, null, null, null, null);
 	}
 
 	@Indexable(type = IndexableType.DELETE)
@@ -274,7 +276,7 @@ public class CommerceCatalogLocalServiceImpl
 	@Override
 	public CommerceCatalog updateCommerceCatalog(
 			long commerceCatalogId, String name, String commerceCurrencyCode,
-			String catalogDefaultLanguageId, String descCatalog, String imagecatalog, String subcatalog)
+			String catalogDefaultLanguageId, String descCatalog, String imagecatalog, String subcatalog, String nameLocation, String subCatalogLocation)
 		throws PortalException {
 
 		CommerceCatalog commerceCatalog =
@@ -289,7 +291,9 @@ public class CommerceCatalogLocalServiceImpl
 		commerceCatalog.setCatalogDefaultLanguageId(catalogDefaultLanguageId);
 		commerceCatalog.setDescCatalog(descCatalog);
 		commerceCatalog.setImageCatalog(imagecatalog);
+		commerceCatalog.setNameLocation(nameLocation);
 		commerceCatalog.setSubCatalog(subcatalog);
+		commerceCatalog.setSubCatalogLocation(subCatalogLocation);
 		commerceCatalog = commerceCatalogPersistence.update(commerceCatalog);
 
 		return commerceCatalog;

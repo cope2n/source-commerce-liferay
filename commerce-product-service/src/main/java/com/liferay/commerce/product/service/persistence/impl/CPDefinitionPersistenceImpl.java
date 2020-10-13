@@ -4707,9 +4707,8 @@ public class CPDefinitionPersistenceImpl
 
 			if ((list != null) && !list.isEmpty()) {
 				for (CPDefinition cpDefinition : list) {
-					if ((displayDate.getTime() <=
-							cpDefinition.getDisplayDate().getTime()) ||
-						(status != cpDefinition.getStatus())) {
+					if ((displayDate.getTime() <= cpDefinition.getDisplayDate(
+						).getTime()) || (status != cpDefinition.getStatus())) {
 
 						list = null;
 
@@ -5934,7 +5933,7 @@ public class CPDefinitionPersistenceImpl
 		}
 
 		StringBundler sb = new StringBundler(
-			uncachedPrimaryKeys.size() * 2 + 1);
+			(uncachedPrimaryKeys.size() * 2) + 1);
 
 		sb.append(_SQL_SELECT_CPDEFINITION_WHERE_PKS_IN);
 

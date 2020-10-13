@@ -112,7 +112,6 @@ if ((cpDefinition != null) && (cpDefinition.getExpirationDate() != null)) {
 					/>
 				</div>
 			</aui:field-wrapper>
-
 			<aui:field-wrapper>
 				<label class="control-label">Overview </label>
 				<liferay-ui:input-editor toolbarSet="overview"

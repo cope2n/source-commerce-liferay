@@ -62,7 +62,7 @@ public class CommerceCatalogCacheModel
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(29);
+		StringBundler sb = new StringBundler(33);
 
 		sb.append("{externalReferenceCode=");
 		sb.append(externalReferenceCode);
@@ -84,6 +84,10 @@ public class CommerceCatalogCacheModel
 		sb.append(descCatalog);
 		sb.append(", subCatalog=");
 		sb.append(subCatalog);
+		sb.append(", nameLocation=");
+		sb.append(nameLocation);
+		sb.append(", subCatalogLocation=");
+		sb.append(subCatalogLocation);
 		sb.append(", imageCatalog=");
 		sb.append(imageCatalog);
 		sb.append(", commerceCurrencyCode=");
@@ -154,6 +158,20 @@ public class CommerceCatalogCacheModel
 			commerceCatalogImpl.setSubCatalog(subCatalog);
 		}
 
+		if (nameLocation == null) {
+			commerceCatalogImpl.setNameLocation("");
+		}
+		else {
+			commerceCatalogImpl.setNameLocation(nameLocation);
+		}
+
+		if (subCatalogLocation == null) {
+			commerceCatalogImpl.setSubCatalogLocation("");
+		}
+		else {
+			commerceCatalogImpl.setSubCatalogLocation(subCatalogLocation);
+		}
+
 		if (imageCatalog == null) {
 			commerceCatalogImpl.setImageCatalog("");
 		}
@@ -198,6 +216,8 @@ public class CommerceCatalogCacheModel
 		name = objectInput.readUTF();
 		descCatalog = objectInput.readUTF();
 		subCatalog = objectInput.readUTF();
+		nameLocation = objectInput.readUTF();
+		subCatalogLocation = objectInput.readUTF();
 		imageCatalog = objectInput.readUTF();
 		commerceCurrencyCode = objectInput.readUTF();
 		catalogDefaultLanguageId = objectInput.readUTF();
@@ -251,6 +271,20 @@ public class CommerceCatalogCacheModel
 			objectOutput.writeUTF(subCatalog);
 		}
 
+		if (nameLocation == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(nameLocation);
+		}
+
+		if (subCatalogLocation == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(subCatalogLocation);
+		}
+
 		if (imageCatalog == null) {
 			objectOutput.writeUTF("");
 		}
@@ -285,6 +319,8 @@ public class CommerceCatalogCacheModel
 	public String name;
 	public String descCatalog;
 	public String subCatalog;
+	public String nameLocation;
+	public String subCatalogLocation;
 	public String imageCatalog;
 	public String commerceCurrencyCode;
 	public String catalogDefaultLanguageId;

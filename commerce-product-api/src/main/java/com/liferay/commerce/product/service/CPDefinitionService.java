@@ -90,7 +90,8 @@ public interface CPDefinitionService extends BaseService {
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
 			ServiceContext serviceContext, String overview, String introduction,
-			String features, String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
+			String features, String benefits, String functions, String partners,
+			String solutions, String customerStory, String relatedPlatforms)
 		throws PortalException;
 
 	public void deleteAssetCategoryCPDefinition(
@@ -166,7 +167,8 @@ public interface CPDefinitionService extends BaseService {
 			int expirationDateHour, int expirationDateMinute,
 			boolean neverExpire, ServiceContext serviceContext, String overview,
 			String introduction, String features, String benefits,
-			String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
+			String functions, String partners, String solutions,
+			String customerStory, String relatedPlatforms)
 		throws PortalException;
 
 	public CPDefinition updateCPDefinitionAccountGroupFilter(
@@ -233,7 +235,8 @@ public interface CPDefinitionService extends BaseService {
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
 			ServiceContext serviceContext, String overview, String introduction,
-			String features, String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
+			String features, String benefits, String functions, String partners,
+			String solutions, String customerStory, String relatedPlatforms)
 		throws PortalException;
 
 }
