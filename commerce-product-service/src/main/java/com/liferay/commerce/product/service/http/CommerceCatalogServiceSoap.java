@@ -65,16 +65,14 @@ public class CommerceCatalogServiceSoap {
 			addCommerceCatalog(
 				String name, String commerceCurrencyCode,
 				String catalogDefaultLanguageId, String externalReferenceCode,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext,
-				String descCatalog, String imagecatalog, String subcatalog, String nameLocation, String subCatalogLocation)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext)
 		throws RemoteException {
 
 		try {
 			com.liferay.commerce.product.model.CommerceCatalog returnValue =
 				CommerceCatalogServiceUtil.addCommerceCatalog(
 					name, commerceCurrencyCode, catalogDefaultLanguageId,
-					externalReferenceCode, serviceContext, descCatalog,
-					imagecatalog, subcatalog, nameLocation, subCatalogLocation);
+					externalReferenceCode, serviceContext);
 
 			return com.liferay.commerce.product.model.CommerceCatalogSoap.
 				toSoapModel(returnValue);
@@ -243,15 +241,14 @@ public class CommerceCatalogServiceSoap {
 	public static com.liferay.commerce.product.model.CommerceCatalogSoap
 			updateCommerceCatalog(
 				long commerceCatalogId, String name,
-				String commerceCurrencyCode, String catalogDefaultLanguageId,
-				String descCatalog, String imagecatalog, String subcatalog, String nameLocation, String subCatalogLocation)
+				String commerceCurrencyCode, String catalogDefaultLanguageId)
 		throws RemoteException {
 
 		try {
 			com.liferay.commerce.product.model.CommerceCatalog returnValue =
 				CommerceCatalogServiceUtil.updateCommerceCatalog(
 					commerceCatalogId, name, commerceCurrencyCode,
-					catalogDefaultLanguageId, descCatalog, imagecatalog, subcatalog, nameLocation, subCatalogLocation);
+					catalogDefaultLanguageId);
 
 			return com.liferay.commerce.product.model.CommerceCatalogSoap.
 				toSoapModel(returnValue);

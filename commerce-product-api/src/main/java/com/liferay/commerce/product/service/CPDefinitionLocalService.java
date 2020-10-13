@@ -97,7 +97,14 @@ public interface CPDefinitionLocalService
 			Map<Locale, String> descriptionMap, Map<Locale, String> urlTitleMap,
 			Map<Locale, String> metaTitleMap,
 			Map<Locale, String> metaDescriptionMap,
-			Map<Locale, String> metaKeywordsMap, String productTypeName,
+			Map<Locale, String> metaKeywordsMap,
+			Map<Locale, String> overviewMap,
+			Map<Locale, String> introductionMap,
+			Map<Locale, String> featuresMap, Map<Locale, String> solutionsMap,
+			Map<Locale, String> customerStoryMap,
+			Map<Locale, String> benefitsMap, Map<Locale, String> functionsMap,
+			Map<Locale, String> partnersMap,
+			Map<Locale, String> relatedPlatformsMap, String productTypeName,
 			boolean ignoreSKUCombinations, boolean shippable,
 			boolean freeShipping, boolean shipSeparately,
 			double shippingExtraPrice, double width, double height,
@@ -112,9 +119,7 @@ public interface CPDefinitionLocalService
 			int subscriptionLength, String subscriptionType,
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			ServiceContext serviceContext, String overview, String introduction,
-			String features, String benefits, String functions, String partners,
-			String solutions, String customerStory, String relatedPlatforms)
+			ServiceContext serviceContext)
 		throws PortalException;
 
 	public void checkCPDefinitions() throws PortalException;
@@ -503,8 +508,16 @@ public interface CPDefinitionLocalService
 			Map<Locale, String> descriptionMap, Map<Locale, String> urlTitleMap,
 			Map<Locale, String> metaTitleMap,
 			Map<Locale, String> metaDescriptionMap,
-			Map<Locale, String> metaKeywordsMap, boolean ignoreSKUCombinations,
-			boolean shippable, boolean freeShipping, boolean shipSeparately,
+			Map<Locale, String> metaKeywordsMap,
+			Map<Locale, String> overviewMap,
+			Map<Locale, String> introductionMap,
+			Map<Locale, String> featuresMap, Map<Locale, String> solutionsMap,
+			Map<Locale, String> customerStoryMap,
+			Map<Locale, String> benefitsMap, Map<Locale, String> functionsMap,
+			Map<Locale, String> partnersMap,
+			Map<Locale, String> relatedPlatformsMap,
+			boolean ignoreSKUCombinations, boolean shippable,
+			boolean freeShipping, boolean shipSeparately,
 			double shippingExtraPrice, double width, double height,
 			double depth, double weight, long cpTaxCategoryId,
 			boolean taxExempt, boolean telcoOrElectronics,
@@ -513,10 +526,7 @@ public interface CPDefinitionLocalService
 			int displayDateMinute, int expirationDateMonth,
 			int expirationDateDay, int expirationDateYear,
 			int expirationDateHour, int expirationDateMinute,
-			boolean neverExpire, ServiceContext serviceContext, String overview,
-			String introduction, String features, String benefits,
-			String functions, String partners, String solutions,
-			String customerStory, String relatedPlatforms)
+			boolean neverExpire, ServiceContext serviceContext)
 		throws PortalException;
 
 	public CPDefinition updateCPDefinition(
@@ -525,16 +535,21 @@ public interface CPDefinitionLocalService
 			Map<Locale, String> descriptionMap, Map<Locale, String> urlTitleMap,
 			Map<Locale, String> metaTitleMap,
 			Map<Locale, String> metaDescriptionMap,
-			Map<Locale, String> metaKeywordsMap, boolean ignoreSKUCombinations,
-			String ddmStructureKey, boolean published, int displayDateMonth,
-			int displayDateDay, int displayDateYear, int displayDateHour,
-			int displayDateMinute, int expirationDateMonth,
-			int expirationDateDay, int expirationDateYear,
-			int expirationDateHour, int expirationDateMinute,
-			boolean neverExpire, ServiceContext serviceContext, String overview,
-			String introduction, String features, String benefits,
-			String functions, String partners, String solutions,
-			String customerStory, String relatedPlatforms)
+			Map<Locale, String> metaKeywordsMap,
+			Map<Locale, String> overviewMap,
+			Map<Locale, String> introductionMap,
+			Map<Locale, String> featuresMap, Map<Locale, String> solutionsMap,
+			Map<Locale, String> customerStoryMap,
+			Map<Locale, String> benefitsMap, Map<Locale, String> functionsMap,
+			Map<Locale, String> partnersMap,
+			Map<Locale, String> relatedPlatformsMap,
+			boolean ignoreSKUCombinations, String ddmStructureKey,
+			boolean published, int displayDateMonth, int displayDateDay,
+			int displayDateYear, int displayDateHour, int displayDateMinute,
+			int expirationDateMonth, int expirationDateDay,
+			int expirationDateYear, int expirationDateHour,
+			int expirationDateMinute, boolean neverExpire,
+			ServiceContext serviceContext)
 		throws PortalException;
 
 	public CPDefinition updateCPDefinitionAccountGroupFilter(
@@ -559,7 +574,10 @@ public interface CPDefinitionLocalService
 	public CPDefinitionLocalization updateCPDefinitionLocalization(
 			CPDefinition cpDefinition, String languageId, String name,
 			String shortDescription, String description, String metaTitle,
-			String metaDescription, String metaKeywords)
+			String metaDescription, String metaKeywords, String overview,
+			String introduction, String features, String solutions,
+			String customerStory, String benefits, String functions,
+			String partners, String relatedPlatforms)
 		throws PortalException;
 
 	public List<CPDefinitionLocalization> updateCPDefinitionLocalizations(
@@ -568,7 +586,14 @@ public interface CPDefinitionLocalService
 			Map<String, String> descriptionMap,
 			Map<String, String> metaTitleMap,
 			Map<String, String> metaDescriptionMap,
-			Map<String, String> metaKeywordsMap)
+			Map<String, String> metaKeywordsMap,
+			Map<String, String> overviewMap,
+			Map<String, String> introductionMap,
+			Map<String, String> featuresMap, Map<String, String> solutionsMap,
+			Map<String, String> customerStoryMap,
+			Map<String, String> benefitsMap, Map<String, String> functionsMap,
+			Map<String, String> partnersMap,
+			Map<String, String> relatedPlatformsMap)
 		throws PortalException;
 
 	public void updateCPDefinitionsByCPTaxCategoryId(long cpTaxCategoryId)
@@ -608,7 +633,14 @@ public interface CPDefinitionLocalService
 			Map<Locale, String> descriptionMap, Map<Locale, String> urlTitleMap,
 			Map<Locale, String> metaTitleMap,
 			Map<Locale, String> metaDescriptionMap,
-			Map<Locale, String> metaKeywordsMap, String productTypeName,
+			Map<Locale, String> metaKeywordsMap,
+			Map<Locale, String> overviewMap,
+			Map<Locale, String> introductionMap,
+			Map<Locale, String> featuresMap, Map<Locale, String> solutionsMap,
+			Map<Locale, String> customerStoryMap,
+			Map<Locale, String> benefitsMap, Map<Locale, String> functionsMap,
+			Map<Locale, String> partnersMap,
+			Map<Locale, String> relatedPlatformsMap, String productTypeName,
 			boolean ignoreSKUCombinations, boolean shippable,
 			boolean freeShipping, boolean shipSeparately,
 			double shippingExtraPrice, double width, double height,
@@ -623,9 +655,7 @@ public interface CPDefinitionLocalService
 			int subscriptionLength, String subscriptionType,
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			ServiceContext serviceContext, String overview, String introduction,
-			String features, String benefits, String functions, String partners,
-			String solutions, String customerStory, String relatedPlatforms)
+			ServiceContext serviceContext)
 		throws PortalException;
 
 }

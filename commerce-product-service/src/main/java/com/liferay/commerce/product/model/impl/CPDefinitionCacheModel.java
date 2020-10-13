@@ -62,7 +62,7 @@ public class CPDefinitionCacheModel
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(101);
+		StringBundler sb = new StringBundler(83);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -146,24 +146,6 @@ public class CPDefinitionCacheModel
 		sb.append(statusByUserName);
 		sb.append(", statusDate=");
 		sb.append(statusDate);
-		sb.append(", overview=");
-		sb.append(overview);
-		sb.append(", introduction=");
-		sb.append(introduction);
-		sb.append(", features=");
-		sb.append(features);
-		sb.append(", solutions=");
-		sb.append(solutions);
-		sb.append(", customerStory=");
-		sb.append(customerStory);
-		sb.append(", benefits=");
-		sb.append(benefits);
-		sb.append(", functions=");
-		sb.append(functions);
-		sb.append(", partners=");
-		sb.append(partners);
-		sb.append(", relatedPlatforms=");
-		sb.append(relatedPlatforms);
 		sb.append("}");
 
 		return sb.toString();
@@ -306,69 +288,6 @@ public class CPDefinitionCacheModel
 			cpDefinitionImpl.setStatusDate(new Date(statusDate));
 		}
 
-		if (overview == null) {
-			cpDefinitionImpl.setOverview("");
-		}
-		else {
-			cpDefinitionImpl.setOverview(overview);
-		}
-
-		if (introduction == null) {
-			cpDefinitionImpl.setIntroduction("");
-		}
-		else {
-			cpDefinitionImpl.setIntroduction(introduction);
-		}
-
-		if (features == null) {
-			cpDefinitionImpl.setFeatures("");
-		}
-		else {
-			cpDefinitionImpl.setFeatures(features);
-		}
-
-		if (solutions == null) {
-			cpDefinitionImpl.setSolutions("");
-		}
-		else {
-			cpDefinitionImpl.setSolutions(solutions);
-		}
-
-		if (customerStory == null) {
-			cpDefinitionImpl.setCustomerStory("");
-		}
-		else {
-			cpDefinitionImpl.setCustomerStory(customerStory);
-		}
-
-		if (benefits == null) {
-			cpDefinitionImpl.setBenefits("");
-		}
-		else {
-			cpDefinitionImpl.setBenefits(benefits);
-		}
-
-		if (functions == null) {
-			cpDefinitionImpl.setFunctions("");
-		}
-		else {
-			cpDefinitionImpl.setFunctions(functions);
-		}
-
-		if (partners == null) {
-			cpDefinitionImpl.setPartners("");
-		}
-		else {
-			cpDefinitionImpl.setPartners(partners);
-		}
-
-		if (relatedPlatforms == null) {
-			cpDefinitionImpl.setRelatedPlatforms("");
-		}
-		else {
-			cpDefinitionImpl.setRelatedPlatforms(relatedPlatforms);
-		}
-
 		cpDefinitionImpl.resetOriginalValues();
 
 		return cpDefinitionImpl;
@@ -446,15 +365,6 @@ public class CPDefinitionCacheModel
 		statusByUserId = objectInput.readLong();
 		statusByUserName = objectInput.readUTF();
 		statusDate = objectInput.readLong();
-		overview = objectInput.readUTF();
-		introduction = objectInput.readUTF();
-		features = objectInput.readUTF();
-		solutions = objectInput.readUTF();
-		customerStory = objectInput.readUTF();
-		benefits = objectInput.readUTF();
-		functions = objectInput.readUTF();
-		partners = objectInput.readUTF();
-		relatedPlatforms = objectInput.readUTF();
 	}
 
 	@Override
@@ -576,69 +486,6 @@ public class CPDefinitionCacheModel
 		}
 
 		objectOutput.writeLong(statusDate);
-
-		if (overview == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(overview);
-		}
-
-		if (introduction == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(introduction);
-		}
-
-		if (features == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(features);
-		}
-
-		if (solutions == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(solutions);
-		}
-
-		if (customerStory == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(customerStory);
-		}
-
-		if (benefits == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(benefits);
-		}
-
-		if (functions == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(functions);
-		}
-
-		if (partners == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(partners);
-		}
-
-		if (relatedPlatforms == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(relatedPlatforms);
-		}
 	}
 
 	public String uuid;
@@ -682,14 +529,5 @@ public class CPDefinitionCacheModel
 	public long statusByUserId;
 	public String statusByUserName;
 	public long statusDate;
-	public String overview;
-	public String introduction;
-	public String features;
-	public String solutions;
-	public String customerStory;
-	public String benefits;
-	public String functions;
-	public String partners;
-	public String relatedPlatforms;
 
 }

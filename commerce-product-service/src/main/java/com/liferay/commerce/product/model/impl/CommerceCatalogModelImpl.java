@@ -77,10 +77,7 @@ public class CommerceCatalogModelImpl
 		{"commerceCatalogId", Types.BIGINT}, {"companyId", Types.BIGINT},
 		{"userId", Types.BIGINT}, {"userName", Types.VARCHAR},
 		{"createDate", Types.TIMESTAMP}, {"modifiedDate", Types.TIMESTAMP},
-		{"name", Types.VARCHAR}, {"descCatalog", Types.VARCHAR},
-		{"subCatalog", Types.VARCHAR}, {"nameLocation", Types.VARCHAR},
-		{"subCatalogLocation", Types.VARCHAR}, {"imageCatalog", Types.VARCHAR},
-		{"commerceCurrencyCode", Types.VARCHAR},
+		{"name", Types.VARCHAR}, {"commerceCurrencyCode", Types.VARCHAR},
 		{"catalogDefaultLanguageId", Types.VARCHAR}, {"system", Types.BOOLEAN}
 	};
 
@@ -96,18 +93,13 @@ public class CommerceCatalogModelImpl
 		TABLE_COLUMNS_MAP.put("createDate", Types.TIMESTAMP);
 		TABLE_COLUMNS_MAP.put("modifiedDate", Types.TIMESTAMP);
 		TABLE_COLUMNS_MAP.put("name", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("descCatalog", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("subCatalog", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("nameLocation", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("subCatalogLocation", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("imageCatalog", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("commerceCurrencyCode", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("catalogDefaultLanguageId", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("system", Types.BOOLEAN);
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table CommerceCatalog (externalReferenceCode VARCHAR(75) null,commerceCatalogId LONG not null primary key,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,descCatalog VARCHAR(75) null,subCatalog VARCHAR(75) null,nameLocation VARCHAR(75) null,subCatalogLocation VARCHAR(75) null,imageCatalog VARCHAR(75) null,commerceCurrencyCode VARCHAR(75) null,catalogDefaultLanguageId VARCHAR(75) null,system BOOLEAN)";
+		"create table CommerceCatalog (externalReferenceCode VARCHAR(75) null,commerceCatalogId LONG not null primary key,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,commerceCurrencyCode VARCHAR(75) null,catalogDefaultLanguageId VARCHAR(75) null,system BOOLEAN)";
 
 	public static final String TABLE_SQL_DROP = "drop table CommerceCatalog";
 
@@ -167,11 +159,6 @@ public class CommerceCatalogModelImpl
 		model.setCreateDate(soapModel.getCreateDate());
 		model.setModifiedDate(soapModel.getModifiedDate());
 		model.setName(soapModel.getName());
-		model.setDescCatalog(soapModel.getDescCatalog());
-		model.setSubCatalog(soapModel.getSubCatalog());
-		model.setNameLocation(soapModel.getNameLocation());
-		model.setSubCatalogLocation(soapModel.getSubCatalogLocation());
-		model.setImageCatalog(soapModel.getImageCatalog());
 		model.setCommerceCurrencyCode(soapModel.getCommerceCurrencyCode());
 		model.setCatalogDefaultLanguageId(
 			soapModel.getCatalogDefaultLanguageId());
@@ -517,120 +504,6 @@ public class CommerceCatalogModelImpl
 
 			});
 		attributeGetterFunctions.put(
-			"descCatalog",
-			new Function<CommerceCatalog, Object>() {
-
-				@Override
-				public Object apply(CommerceCatalog commerceCatalog) {
-					return commerceCatalog.getDescCatalog();
-				}
-
-			});
-		attributeSetterBiConsumers.put(
-			"descCatalog",
-			new BiConsumer<CommerceCatalog, Object>() {
-
-				@Override
-				public void accept(
-					CommerceCatalog commerceCatalog, Object descCatalogObject) {
-
-					commerceCatalog.setDescCatalog((String)descCatalogObject);
-				}
-
-			});
-		attributeGetterFunctions.put(
-			"subCatalog",
-			new Function<CommerceCatalog, Object>() {
-
-				@Override
-				public Object apply(CommerceCatalog commerceCatalog) {
-					return commerceCatalog.getSubCatalog();
-				}
-
-			});
-		attributeSetterBiConsumers.put(
-			"subCatalog",
-			new BiConsumer<CommerceCatalog, Object>() {
-
-				@Override
-				public void accept(
-					CommerceCatalog commerceCatalog, Object subCatalogObject) {
-
-					commerceCatalog.setSubCatalog((String)subCatalogObject);
-				}
-
-			});
-		attributeGetterFunctions.put(
-			"nameLocation",
-			new Function<CommerceCatalog, Object>() {
-
-				@Override
-				public Object apply(CommerceCatalog commerceCatalog) {
-					return commerceCatalog.getNameLocation();
-				}
-
-			});
-		attributeSetterBiConsumers.put(
-			"nameLocation",
-			new BiConsumer<CommerceCatalog, Object>() {
-
-				@Override
-				public void accept(
-					CommerceCatalog commerceCatalog,
-					Object nameLocationObject) {
-
-					commerceCatalog.setNameLocation((String)nameLocationObject);
-				}
-
-			});
-		attributeGetterFunctions.put(
-			"subCatalogLocation",
-			new Function<CommerceCatalog, Object>() {
-
-				@Override
-				public Object apply(CommerceCatalog commerceCatalog) {
-					return commerceCatalog.getSubCatalogLocation();
-				}
-
-			});
-		attributeSetterBiConsumers.put(
-			"subCatalogLocation",
-			new BiConsumer<CommerceCatalog, Object>() {
-
-				@Override
-				public void accept(
-					CommerceCatalog commerceCatalog,
-					Object subCatalogLocationObject) {
-
-					commerceCatalog.setSubCatalogLocation(
-						(String)subCatalogLocationObject);
-				}
-
-			});
-		attributeGetterFunctions.put(
-			"imageCatalog",
-			new Function<CommerceCatalog, Object>() {
-
-				@Override
-				public Object apply(CommerceCatalog commerceCatalog) {
-					return commerceCatalog.getImageCatalog();
-				}
-
-			});
-		attributeSetterBiConsumers.put(
-			"imageCatalog",
-			new BiConsumer<CommerceCatalog, Object>() {
-
-				@Override
-				public void accept(
-					CommerceCatalog commerceCatalog,
-					Object imageCatalogObject) {
-
-					commerceCatalog.setImageCatalog((String)imageCatalogObject);
-				}
-
-			});
-		attributeGetterFunctions.put(
 			"commerceCurrencyCode",
 			new Function<CommerceCatalog, Object>() {
 
@@ -856,86 +729,6 @@ public class CommerceCatalogModelImpl
 
 	@JSON
 	@Override
-	public String getDescCatalog() {
-		if (_descCatalog == null) {
-			return "";
-		}
-		else {
-			return _descCatalog;
-		}
-	}
-
-	@Override
-	public void setDescCatalog(String descCatalog) {
-		_descCatalog = descCatalog;
-	}
-
-	@JSON
-	@Override
-	public String getSubCatalog() {
-		if (_subCatalog == null) {
-			return "";
-		}
-		else {
-			return _subCatalog;
-		}
-	}
-
-	@Override
-	public void setSubCatalog(String subCatalog) {
-		_subCatalog = subCatalog;
-	}
-
-	@JSON
-	@Override
-	public String getNameLocation() {
-		if (_nameLocation == null) {
-			return "";
-		}
-		else {
-			return _nameLocation;
-		}
-	}
-
-	@Override
-	public void setNameLocation(String nameLocation) {
-		_nameLocation = nameLocation;
-	}
-
-	@JSON
-	@Override
-	public String getSubCatalogLocation() {
-		if (_subCatalogLocation == null) {
-			return "";
-		}
-		else {
-			return _subCatalogLocation;
-		}
-	}
-
-	@Override
-	public void setSubCatalogLocation(String subCatalogLocation) {
-		_subCatalogLocation = subCatalogLocation;
-	}
-
-	@JSON
-	@Override
-	public String getImageCatalog() {
-		if (_imageCatalog == null) {
-			return "";
-		}
-		else {
-			return _imageCatalog;
-		}
-	}
-
-	@Override
-	public void setImageCatalog(String imageCatalog) {
-		_imageCatalog = imageCatalog;
-	}
-
-	@JSON
-	@Override
 	public String getCommerceCurrencyCode() {
 		if (_commerceCurrencyCode == null) {
 			return "";
@@ -1040,11 +833,6 @@ public class CommerceCatalogModelImpl
 		commerceCatalogImpl.setCreateDate(getCreateDate());
 		commerceCatalogImpl.setModifiedDate(getModifiedDate());
 		commerceCatalogImpl.setName(getName());
-		commerceCatalogImpl.setDescCatalog(getDescCatalog());
-		commerceCatalogImpl.setSubCatalog(getSubCatalog());
-		commerceCatalogImpl.setNameLocation(getNameLocation());
-		commerceCatalogImpl.setSubCatalogLocation(getSubCatalogLocation());
-		commerceCatalogImpl.setImageCatalog(getImageCatalog());
 		commerceCatalogImpl.setCommerceCurrencyCode(getCommerceCurrencyCode());
 		commerceCatalogImpl.setCatalogDefaultLanguageId(
 			getCatalogDefaultLanguageId());
@@ -1182,49 +970,6 @@ public class CommerceCatalogModelImpl
 			commerceCatalogCacheModel.name = null;
 		}
 
-		commerceCatalogCacheModel.descCatalog = getDescCatalog();
-
-		String descCatalog = commerceCatalogCacheModel.descCatalog;
-
-		if ((descCatalog != null) && (descCatalog.length() == 0)) {
-			commerceCatalogCacheModel.descCatalog = null;
-		}
-
-		commerceCatalogCacheModel.subCatalog = getSubCatalog();
-
-		String subCatalog = commerceCatalogCacheModel.subCatalog;
-
-		if ((subCatalog != null) && (subCatalog.length() == 0)) {
-			commerceCatalogCacheModel.subCatalog = null;
-		}
-
-		commerceCatalogCacheModel.nameLocation = getNameLocation();
-
-		String nameLocation = commerceCatalogCacheModel.nameLocation;
-
-		if ((nameLocation != null) && (nameLocation.length() == 0)) {
-			commerceCatalogCacheModel.nameLocation = null;
-		}
-
-		commerceCatalogCacheModel.subCatalogLocation = getSubCatalogLocation();
-
-		String subCatalogLocation =
-			commerceCatalogCacheModel.subCatalogLocation;
-
-		if ((subCatalogLocation != null) &&
-			(subCatalogLocation.length() == 0)) {
-
-			commerceCatalogCacheModel.subCatalogLocation = null;
-		}
-
-		commerceCatalogCacheModel.imageCatalog = getImageCatalog();
-
-		String imageCatalog = commerceCatalogCacheModel.imageCatalog;
-
-		if ((imageCatalog != null) && (imageCatalog.length() == 0)) {
-			commerceCatalogCacheModel.imageCatalog = null;
-		}
-
 		commerceCatalogCacheModel.commerceCurrencyCode =
 			getCommerceCurrencyCode();
 
@@ -1260,7 +1005,7 @@ public class CommerceCatalogModelImpl
 			attributeGetterFunctions = getAttributeGetterFunctions();
 
 		StringBundler sb = new StringBundler(
-			(4 * attributeGetterFunctions.size()) + 2);
+			4 * attributeGetterFunctions.size() + 2);
 
 		sb.append("{");
 
@@ -1292,7 +1037,7 @@ public class CommerceCatalogModelImpl
 			attributeGetterFunctions = getAttributeGetterFunctions();
 
 		StringBundler sb = new StringBundler(
-			(5 * attributeGetterFunctions.size()) + 4);
+			5 * attributeGetterFunctions.size() + 4);
 
 		sb.append("<model><model-name>");
 		sb.append(getModelClassName());
@@ -1336,11 +1081,6 @@ public class CommerceCatalogModelImpl
 	private Date _modifiedDate;
 	private boolean _setModifiedDate;
 	private String _name;
-	private String _descCatalog;
-	private String _subCatalog;
-	private String _nameLocation;
-	private String _subCatalogLocation;
-	private String _imageCatalog;
 	private String _commerceCurrencyCode;
 	private String _catalogDefaultLanguageId;
 	private boolean _system;

@@ -45,6 +45,15 @@ public class CPDefinitionLocalizationSoap implements Serializable {
 		soapModel.setMetaTitle(model.getMetaTitle());
 		soapModel.setMetaDescription(model.getMetaDescription());
 		soapModel.setMetaKeywords(model.getMetaKeywords());
+		soapModel.setOverview(model.getOverview());
+		soapModel.setIntroduction(model.getIntroduction());
+		soapModel.setFeatures(model.getFeatures());
+		soapModel.setSolutions(model.getSolutions());
+		soapModel.setCustomerStory(model.getCustomerStory());
+		soapModel.setBenefits(model.getBenefits());
+		soapModel.setFunctions(model.getFunctions());
+		soapModel.setPartners(model.getPartners());
+		soapModel.setRelatedPlatforms(model.getRelatedPlatforms());
 
 		return soapModel;
 	}
@@ -196,6 +205,78 @@ public class CPDefinitionLocalizationSoap implements Serializable {
 		_metaKeywords = metaKeywords;
 	}
 
+	public String getOverview() {
+		return _overview;
+	}
+
+	public void setOverview(String overview) {
+		_overview = overview;
+	}
+
+	public String getIntroduction() {
+		return _introduction;
+	}
+
+	public void setIntroduction(String introduction) {
+		_introduction = introduction;
+	}
+
+	public String getFeatures() {
+		return _features;
+	}
+
+	public void setFeatures(String features) {
+		_features = features;
+	}
+
+	public String getSolutions() {
+		return _solutions;
+	}
+
+	public void setSolutions(String solutions) {
+		_solutions = solutions;
+	}
+
+	public String getCustomerStory() {
+		return _customerStory;
+	}
+
+	public void setCustomerStory(String customerStory) {
+		_customerStory = customerStory;
+	}
+
+	public String getBenefits() {
+		return _benefits;
+	}
+
+	public void setBenefits(String benefits) {
+		_benefits = benefits;
+	}
+
+	public String getFunctions() {
+		return _functions;
+	}
+
+	public void setFunctions(String functions) {
+		_functions = functions;
+	}
+
+	public String getPartners() {
+		return _partners;
+	}
+
+	public void setPartners(String partners) {
+		_partners = partners;
+	}
+
+	public String getRelatedPlatforms() {
+		return _relatedPlatforms;
+	}
+
+	public void setRelatedPlatforms(String relatedPlatforms) {
+		_relatedPlatforms = relatedPlatforms;
+	}
+
 	private long _mvccVersion;
 	private long _cpDefinitionLocalizationId;
 	private long _companyId;
@@ -207,5 +288,14 @@ public class CPDefinitionLocalizationSoap implements Serializable {
 	private String _metaTitle;
 	private String _metaDescription;
 	private String _metaKeywords;
+	private String _overview;
+	private String _introduction;
+	private String _features;
+	private String _solutions;
+	private String _customerStory;
+	private String _benefits;
+	private String _functions;
+	private String _partners;
+	private String _relatedPlatforms;
 
 }

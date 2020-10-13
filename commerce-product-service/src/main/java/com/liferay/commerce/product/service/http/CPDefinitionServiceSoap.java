@@ -253,17 +253,25 @@ public class CPDefinitionServiceSoap {
 				String[] metaDescriptionMapLanguageIds,
 				String[] metaDescriptionMapValues,
 				String[] metaKeywordsMapLanguageIds,
-				String[] metaKeywordsMapValues, boolean ignoreSKUCombinations,
-				String ddmStructureKey, boolean published, int displayDateMonth,
-				int displayDateDay, int displayDateYear, int displayDateHour,
-				int displayDateMinute, int expirationDateMonth,
-				int expirationDateDay, int expirationDateYear,
-				int expirationDateHour, int expirationDateMinute,
-				boolean neverExpire,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext,
-				String overview, String introduction, String features,
-				String benefits, String functions, String partners,
-				String solutions, String customerStory, String relatedPlatforms)
+				String[] metaKeywordsMapValues, String[] overviewMapLanguageIds,
+				String[] overviewMapValues, String[] introductionMapLanguageIds,
+				String[] introductionMapValues, String[] featuresMapLanguageIds,
+				String[] featuresMapValues, String[] solutionsMapLanguageIds,
+				String[] solutionsMapValues,
+				String[] customerStoryMapLanguageIds,
+				String[] customerStoryMapValues,
+				String[] benefitsMapLanguageIds, String[] benefitsMapValues,
+				String[] functionsMapLanguageIds, String[] functionsMapValues,
+				String[] partnersMapLanguageIds, String[] partnersMapValues,
+				String[] relatedPlatformsMapLanguageIds,
+				String[] relatedPlatformsMapValues,
+				boolean ignoreSKUCombinations, String ddmStructureKey,
+				boolean published, int displayDateMonth, int displayDateDay,
+				int displayDateYear, int displayDateHour, int displayDateMinute,
+				int expirationDateMonth, int expirationDateDay,
+				int expirationDateYear, int expirationDateHour,
+				int expirationDateMinute, boolean neverExpire,
+				com.liferay.portal.kernel.service.ServiceContext serviceContext)
 		throws RemoteException {
 
 		try {
@@ -287,19 +295,47 @@ public class CPDefinitionServiceSoap {
 			Map<Locale, String> metaKeywordsMap =
 				LocalizationUtil.getLocalizationMap(
 					metaKeywordsMapLanguageIds, metaKeywordsMapValues);
+			Map<Locale, String> overviewMap =
+				LocalizationUtil.getLocalizationMap(
+					overviewMapLanguageIds, overviewMapValues);
+			Map<Locale, String> introductionMap =
+				LocalizationUtil.getLocalizationMap(
+					introductionMapLanguageIds, introductionMapValues);
+			Map<Locale, String> featuresMap =
+				LocalizationUtil.getLocalizationMap(
+					featuresMapLanguageIds, featuresMapValues);
+			Map<Locale, String> solutionsMap =
+				LocalizationUtil.getLocalizationMap(
+					solutionsMapLanguageIds, solutionsMapValues);
+			Map<Locale, String> customerStoryMap =
+				LocalizationUtil.getLocalizationMap(
+					customerStoryMapLanguageIds, customerStoryMapValues);
+			Map<Locale, String> benefitsMap =
+				LocalizationUtil.getLocalizationMap(
+					benefitsMapLanguageIds, benefitsMapValues);
+			Map<Locale, String> functionsMap =
+				LocalizationUtil.getLocalizationMap(
+					functionsMapLanguageIds, functionsMapValues);
+			Map<Locale, String> partnersMap =
+				LocalizationUtil.getLocalizationMap(
+					partnersMapLanguageIds, partnersMapValues);
+			Map<Locale, String> relatedPlatformsMap =
+				LocalizationUtil.getLocalizationMap(
+					relatedPlatformsMapLanguageIds, relatedPlatformsMapValues);
 
 			com.liferay.commerce.product.model.CPDefinition returnValue =
 				CPDefinitionServiceUtil.updateCPDefinition(
 					cpDefinitionId, nameMap, shortDescriptionMap,
 					descriptionMap, urlTitleMap, metaTitleMap,
-					metaDescriptionMap, metaKeywordsMap, ignoreSKUCombinations,
-					ddmStructureKey, published, displayDateMonth,
-					displayDateDay, displayDateYear, displayDateHour,
-					displayDateMinute, expirationDateMonth, expirationDateDay,
-					expirationDateYear, expirationDateHour,
-					expirationDateMinute, neverExpire, serviceContext, overview,
-					introduction, features, benefits, functions, partners,
-					solutions, customerStory, relatedPlatforms);
+					metaDescriptionMap, metaKeywordsMap, overviewMap,
+					introductionMap, featuresMap, solutionsMap,
+					customerStoryMap, benefitsMap, functionsMap, partnersMap,
+					relatedPlatformsMap, ignoreSKUCombinations, ddmStructureKey,
+					published, displayDateMonth, displayDateDay,
+					displayDateYear, displayDateHour, displayDateMinute,
+					expirationDateMonth, expirationDateDay, expirationDateYear,
+					expirationDateHour, expirationDateMinute, neverExpire,
+					serviceContext);
 
 			return com.liferay.commerce.product.model.CPDefinitionSoap.
 				toSoapModel(returnValue);

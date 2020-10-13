@@ -64,8 +64,7 @@ public interface CommerceCatalogService extends BaseService {
 	public CommerceCatalog addCommerceCatalog(
 			String name, String commerceCurrencyCode,
 			String catalogDefaultLanguageId, String externalReferenceCode,
-			ServiceContext serviceContext, String descCatalog,
-			String imagecatalog, String subcatalog, String nameLocation, String subCatalogLocation)
+			ServiceContext serviceContext)
 		throws PortalException;
 
 	public CommerceCatalog deleteCommerceCatalog(long commerceCatalogId)
@@ -110,8 +109,7 @@ public interface CommerceCatalogService extends BaseService {
 
 	public CommerceCatalog updateCommerceCatalog(
 			long commerceCatalogId, String name, String commerceCurrencyCode,
-			String catalogDefaultLanguageId, String descCatalog,
-			String imagecatalog, String subcatalog, String nameLocation, String subCatalogLocation)
+			String catalogDefaultLanguageId)
 		throws PortalException;
 
 }

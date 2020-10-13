@@ -62,7 +62,7 @@ public class CommerceCatalogCacheModel
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(33);
+		StringBundler sb = new StringBundler(23);
 
 		sb.append("{externalReferenceCode=");
 		sb.append(externalReferenceCode);
@@ -80,16 +80,6 @@ public class CommerceCatalogCacheModel
 		sb.append(modifiedDate);
 		sb.append(", name=");
 		sb.append(name);
-		sb.append(", descCatalog=");
-		sb.append(descCatalog);
-		sb.append(", subCatalog=");
-		sb.append(subCatalog);
-		sb.append(", nameLocation=");
-		sb.append(nameLocation);
-		sb.append(", subCatalogLocation=");
-		sb.append(subCatalogLocation);
-		sb.append(", imageCatalog=");
-		sb.append(imageCatalog);
 		sb.append(", commerceCurrencyCode=");
 		sb.append(commerceCurrencyCode);
 		sb.append(", catalogDefaultLanguageId=");
@@ -144,41 +134,6 @@ public class CommerceCatalogCacheModel
 			commerceCatalogImpl.setName(name);
 		}
 
-		if (descCatalog == null) {
-			commerceCatalogImpl.setDescCatalog("");
-		}
-		else {
-			commerceCatalogImpl.setDescCatalog(descCatalog);
-		}
-
-		if (subCatalog == null) {
-			commerceCatalogImpl.setSubCatalog("");
-		}
-		else {
-			commerceCatalogImpl.setSubCatalog(subCatalog);
-		}
-
-		if (nameLocation == null) {
-			commerceCatalogImpl.setNameLocation("");
-		}
-		else {
-			commerceCatalogImpl.setNameLocation(nameLocation);
-		}
-
-		if (subCatalogLocation == null) {
-			commerceCatalogImpl.setSubCatalogLocation("");
-		}
-		else {
-			commerceCatalogImpl.setSubCatalogLocation(subCatalogLocation);
-		}
-
-		if (imageCatalog == null) {
-			commerceCatalogImpl.setImageCatalog("");
-		}
-		else {
-			commerceCatalogImpl.setImageCatalog(imageCatalog);
-		}
-
 		if (commerceCurrencyCode == null) {
 			commerceCatalogImpl.setCommerceCurrencyCode("");
 		}
@@ -214,11 +169,6 @@ public class CommerceCatalogCacheModel
 		createDate = objectInput.readLong();
 		modifiedDate = objectInput.readLong();
 		name = objectInput.readUTF();
-		descCatalog = objectInput.readUTF();
-		subCatalog = objectInput.readUTF();
-		nameLocation = objectInput.readUTF();
-		subCatalogLocation = objectInput.readUTF();
-		imageCatalog = objectInput.readUTF();
 		commerceCurrencyCode = objectInput.readUTF();
 		catalogDefaultLanguageId = objectInput.readUTF();
 
@@ -257,41 +207,6 @@ public class CommerceCatalogCacheModel
 			objectOutput.writeUTF(name);
 		}
 
-		if (descCatalog == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(descCatalog);
-		}
-
-		if (subCatalog == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(subCatalog);
-		}
-
-		if (nameLocation == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(nameLocation);
-		}
-
-		if (subCatalogLocation == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(subCatalogLocation);
-		}
-
-		if (imageCatalog == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(imageCatalog);
-		}
-
 		if (commerceCurrencyCode == null) {
 			objectOutput.writeUTF("");
 		}
@@ -317,11 +232,6 @@ public class CommerceCatalogCacheModel
 	public long createDate;
 	public long modifiedDate;
 	public String name;
-	public String descCatalog;
-	public String subCatalog;
-	public String nameLocation;
-	public String subCatalogLocation;
-	public String imageCatalog;
 	public String commerceCurrencyCode;
 	public String catalogDefaultLanguageId;
 	public boolean system;

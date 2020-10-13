@@ -69,6 +69,15 @@ public class CPDefinitionLocalizationWrapper
 		attributes.put("metaTitle", getMetaTitle());
 		attributes.put("metaDescription", getMetaDescription());
 		attributes.put("metaKeywords", getMetaKeywords());
+		attributes.put("overview", getOverview());
+		attributes.put("introduction", getIntroduction());
+		attributes.put("features", getFeatures());
+		attributes.put("solutions", getSolutions());
+		attributes.put("customerStory", getCustomerStory());
+		attributes.put("benefits", getBenefits());
+		attributes.put("functions", getFunctions());
+		attributes.put("partners", getPartners());
+		attributes.put("relatedPlatforms", getRelatedPlatforms());
 
 		return attributes;
 	}
@@ -141,6 +150,60 @@ public class CPDefinitionLocalizationWrapper
 		if (metaKeywords != null) {
 			setMetaKeywords(metaKeywords);
 		}
+
+		String overview = (String)attributes.get("overview");
+
+		if (overview != null) {
+			setOverview(overview);
+		}
+
+		String introduction = (String)attributes.get("introduction");
+
+		if (introduction != null) {
+			setIntroduction(introduction);
+		}
+
+		String features = (String)attributes.get("features");
+
+		if (features != null) {
+			setFeatures(features);
+		}
+
+		String solutions = (String)attributes.get("solutions");
+
+		if (solutions != null) {
+			setSolutions(solutions);
+		}
+
+		String customerStory = (String)attributes.get("customerStory");
+
+		if (customerStory != null) {
+			setCustomerStory(customerStory);
+		}
+
+		String benefits = (String)attributes.get("benefits");
+
+		if (benefits != null) {
+			setBenefits(benefits);
+		}
+
+		String functions = (String)attributes.get("functions");
+
+		if (functions != null) {
+			setFunctions(functions);
+		}
+
+		String partners = (String)attributes.get("partners");
+
+		if (partners != null) {
+			setPartners(partners);
+		}
+
+		String relatedPlatforms = (String)attributes.get("relatedPlatforms");
+
+		if (relatedPlatforms != null) {
+			setRelatedPlatforms(relatedPlatforms);
+		}
 	}
 
 	@Override
@@ -152,6 +215,16 @@ public class CPDefinitionLocalizationWrapper
 	@Override
 	public int compareTo(CPDefinitionLocalization cpDefinitionLocalization) {
 		return _cpDefinitionLocalization.compareTo(cpDefinitionLocalization);
+	}
+
+	/**
+	 * Returns the benefits of this cp definition localization.
+	 *
+	 * @return the benefits of this cp definition localization
+	 */
+	@Override
+	public String getBenefits() {
+		return _cpDefinitionLocalization.getBenefits();
 	}
 
 	/**
@@ -185,6 +258,16 @@ public class CPDefinitionLocalizationWrapper
 	}
 
 	/**
+	 * Returns the customer story of this cp definition localization.
+	 *
+	 * @return the customer story of this cp definition localization
+	 */
+	@Override
+	public String getCustomerStory() {
+		return _cpDefinitionLocalization.getCustomerStory();
+	}
+
+	/**
 	 * Returns the description of this cp definition localization.
 	 *
 	 * @return the description of this cp definition localization
@@ -197,6 +280,36 @@ public class CPDefinitionLocalizationWrapper
 	@Override
 	public ExpandoBridge getExpandoBridge() {
 		return _cpDefinitionLocalization.getExpandoBridge();
+	}
+
+	/**
+	 * Returns the features of this cp definition localization.
+	 *
+	 * @return the features of this cp definition localization
+	 */
+	@Override
+	public String getFeatures() {
+		return _cpDefinitionLocalization.getFeatures();
+	}
+
+	/**
+	 * Returns the functions of this cp definition localization.
+	 *
+	 * @return the functions of this cp definition localization
+	 */
+	@Override
+	public String getFunctions() {
+		return _cpDefinitionLocalization.getFunctions();
+	}
+
+	/**
+	 * Returns the introduction of this cp definition localization.
+	 *
+	 * @return the introduction of this cp definition localization
+	 */
+	@Override
+	public String getIntroduction() {
+		return _cpDefinitionLocalization.getIntroduction();
 	}
 
 	/**
@@ -260,6 +373,26 @@ public class CPDefinitionLocalizationWrapper
 	}
 
 	/**
+	 * Returns the overview of this cp definition localization.
+	 *
+	 * @return the overview of this cp definition localization
+	 */
+	@Override
+	public String getOverview() {
+		return _cpDefinitionLocalization.getOverview();
+	}
+
+	/**
+	 * Returns the partners of this cp definition localization.
+	 *
+	 * @return the partners of this cp definition localization
+	 */
+	@Override
+	public String getPartners() {
+		return _cpDefinitionLocalization.getPartners();
+	}
+
+	/**
 	 * Returns the primary key of this cp definition localization.
 	 *
 	 * @return the primary key of this cp definition localization
@@ -275,6 +408,16 @@ public class CPDefinitionLocalizationWrapper
 	}
 
 	/**
+	 * Returns the related platforms of this cp definition localization.
+	 *
+	 * @return the related platforms of this cp definition localization
+	 */
+	@Override
+	public String getRelatedPlatforms() {
+		return _cpDefinitionLocalization.getRelatedPlatforms();
+	}
+
+	/**
 	 * Returns the short description of this cp definition localization.
 	 *
 	 * @return the short description of this cp definition localization
@@ -282,6 +425,16 @@ public class CPDefinitionLocalizationWrapper
 	@Override
 	public String getShortDescription() {
 		return _cpDefinitionLocalization.getShortDescription();
+	}
+
+	/**
+	 * Returns the solutions of this cp definition localization.
+	 *
+	 * @return the solutions of this cp definition localization
+	 */
+	@Override
+	public String getSolutions() {
+		return _cpDefinitionLocalization.getSolutions();
 	}
 
 	@Override
@@ -302,6 +455,16 @@ public class CPDefinitionLocalizationWrapper
 	@Override
 	public boolean isNew() {
 		return _cpDefinitionLocalization.isNew();
+	}
+
+	/**
+	 * Sets the benefits of this cp definition localization.
+	 *
+	 * @param benefits the benefits of this cp definition localization
+	 */
+	@Override
+	public void setBenefits(String benefits) {
+		_cpDefinitionLocalization.setBenefits(benefits);
 	}
 
 	@Override
@@ -341,6 +504,16 @@ public class CPDefinitionLocalizationWrapper
 	}
 
 	/**
+	 * Sets the customer story of this cp definition localization.
+	 *
+	 * @param customerStory the customer story of this cp definition localization
+	 */
+	@Override
+	public void setCustomerStory(String customerStory) {
+		_cpDefinitionLocalization.setCustomerStory(customerStory);
+	}
+
+	/**
 	 * Sets the description of this cp definition localization.
 	 *
 	 * @param description the description of this cp definition localization
@@ -365,6 +538,36 @@ public class CPDefinitionLocalizationWrapper
 	@Override
 	public void setExpandoBridgeAttributes(ServiceContext serviceContext) {
 		_cpDefinitionLocalization.setExpandoBridgeAttributes(serviceContext);
+	}
+
+	/**
+	 * Sets the features of this cp definition localization.
+	 *
+	 * @param features the features of this cp definition localization
+	 */
+	@Override
+	public void setFeatures(String features) {
+		_cpDefinitionLocalization.setFeatures(features);
+	}
+
+	/**
+	 * Sets the functions of this cp definition localization.
+	 *
+	 * @param functions the functions of this cp definition localization
+	 */
+	@Override
+	public void setFunctions(String functions) {
+		_cpDefinitionLocalization.setFunctions(functions);
+	}
+
+	/**
+	 * Sets the introduction of this cp definition localization.
+	 *
+	 * @param introduction the introduction of this cp definition localization
+	 */
+	@Override
+	public void setIntroduction(String introduction) {
+		_cpDefinitionLocalization.setIntroduction(introduction);
 	}
 
 	/**
@@ -433,6 +636,26 @@ public class CPDefinitionLocalizationWrapper
 	}
 
 	/**
+	 * Sets the overview of this cp definition localization.
+	 *
+	 * @param overview the overview of this cp definition localization
+	 */
+	@Override
+	public void setOverview(String overview) {
+		_cpDefinitionLocalization.setOverview(overview);
+	}
+
+	/**
+	 * Sets the partners of this cp definition localization.
+	 *
+	 * @param partners the partners of this cp definition localization
+	 */
+	@Override
+	public void setPartners(String partners) {
+		_cpDefinitionLocalization.setPartners(partners);
+	}
+
+	/**
 	 * Sets the primary key of this cp definition localization.
 	 *
 	 * @param primaryKey the primary key of this cp definition localization
@@ -448,6 +671,16 @@ public class CPDefinitionLocalizationWrapper
 	}
 
 	/**
+	 * Sets the related platforms of this cp definition localization.
+	 *
+	 * @param relatedPlatforms the related platforms of this cp definition localization
+	 */
+	@Override
+	public void setRelatedPlatforms(String relatedPlatforms) {
+		_cpDefinitionLocalization.setRelatedPlatforms(relatedPlatforms);
+	}
+
+	/**
 	 * Sets the short description of this cp definition localization.
 	 *
 	 * @param shortDescription the short description of this cp definition localization
@@ -455,6 +688,16 @@ public class CPDefinitionLocalizationWrapper
 	@Override
 	public void setShortDescription(String shortDescription) {
 		_cpDefinitionLocalization.setShortDescription(shortDescription);
+	}
+
+	/**
+	 * Sets the solutions of this cp definition localization.
+	 *
+	 * @param solutions the solutions of this cp definition localization
+	 */
+	@Override
+	public void setSolutions(String solutions) {
+		_cpDefinitionLocalization.setSolutions(solutions);
 	}
 
 	@Override

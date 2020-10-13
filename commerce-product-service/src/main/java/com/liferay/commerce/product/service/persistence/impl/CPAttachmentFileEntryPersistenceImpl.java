@@ -2136,8 +2136,7 @@ public class CPAttachmentFileEntryPersistenceImpl
 			if ((list != null) && !list.isEmpty()) {
 				for (CPAttachmentFileEntry cpAttachmentFileEntry : list) {
 					if ((displayDate.getTime() <=
-							cpAttachmentFileEntry.getDisplayDate(
-							).getTime()) ||
+							cpAttachmentFileEntry.getDisplayDate().getTime()) ||
 						(status != cpAttachmentFileEntry.getStatus())) {
 
 						list = null;
@@ -2983,8 +2982,7 @@ public class CPAttachmentFileEntryPersistenceImpl
 							cpAttachmentFileEntry.getClassNameId()) ||
 						(classPK != cpAttachmentFileEntry.getClassPK()) ||
 						(displayDate.getTime() <=
-							cpAttachmentFileEntry.getDisplayDate(
-							).getTime()) ||
+							cpAttachmentFileEntry.getDisplayDate().getTime()) ||
 						(status != cpAttachmentFileEntry.getStatus())) {
 
 						list = null;
@@ -5824,7 +5822,7 @@ public class CPAttachmentFileEntryPersistenceImpl
 		}
 
 		StringBundler sb = new StringBundler(
-			(uncachedPrimaryKeys.size() * 2) + 1);
+			uncachedPrimaryKeys.size() * 2 + 1);
 
 		sb.append(_SQL_SELECT_CPATTACHMENTFILEENTRY_WHERE_PKS_IN);
 

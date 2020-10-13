@@ -226,6 +226,141 @@ public interface CPDefinitionLocalizationModel
 	 */
 	public void setMetaKeywords(String metaKeywords);
 
+	/**
+	 * Returns the overview of this cp definition localization.
+	 *
+	 * @return the overview of this cp definition localization
+	 */
+	@AutoEscape
+	public String getOverview();
+
+	/**
+	 * Sets the overview of this cp definition localization.
+	 *
+	 * @param overview the overview of this cp definition localization
+	 */
+	public void setOverview(String overview);
+
+	/**
+	 * Returns the introduction of this cp definition localization.
+	 *
+	 * @return the introduction of this cp definition localization
+	 */
+	@AutoEscape
+	public String getIntroduction();
+
+	/**
+	 * Sets the introduction of this cp definition localization.
+	 *
+	 * @param introduction the introduction of this cp definition localization
+	 */
+	public void setIntroduction(String introduction);
+
+	/**
+	 * Returns the features of this cp definition localization.
+	 *
+	 * @return the features of this cp definition localization
+	 */
+	@AutoEscape
+	public String getFeatures();
+
+	/**
+	 * Sets the features of this cp definition localization.
+	 *
+	 * @param features the features of this cp definition localization
+	 */
+	public void setFeatures(String features);
+
+	/**
+	 * Returns the solutions of this cp definition localization.
+	 *
+	 * @return the solutions of this cp definition localization
+	 */
+	@AutoEscape
+	public String getSolutions();
+
+	/**
+	 * Sets the solutions of this cp definition localization.
+	 *
+	 * @param solutions the solutions of this cp definition localization
+	 */
+	public void setSolutions(String solutions);
+
+	/**
+	 * Returns the customer story of this cp definition localization.
+	 *
+	 * @return the customer story of this cp definition localization
+	 */
+	@AutoEscape
+	public String getCustomerStory();
+
+	/**
+	 * Sets the customer story of this cp definition localization.
+	 *
+	 * @param customerStory the customer story of this cp definition localization
+	 */
+	public void setCustomerStory(String customerStory);
+
+	/**
+	 * Returns the benefits of this cp definition localization.
+	 *
+	 * @return the benefits of this cp definition localization
+	 */
+	@AutoEscape
+	public String getBenefits();
+
+	/**
+	 * Sets the benefits of this cp definition localization.
+	 *
+	 * @param benefits the benefits of this cp definition localization
+	 */
+	public void setBenefits(String benefits);
+
+	/**
+	 * Returns the functions of this cp definition localization.
+	 *
+	 * @return the functions of this cp definition localization
+	 */
+	@AutoEscape
+	public String getFunctions();
+
+	/**
+	 * Sets the functions of this cp definition localization.
+	 *
+	 * @param functions the functions of this cp definition localization
+	 */
+	public void setFunctions(String functions);
+
+	/**
+	 * Returns the partners of this cp definition localization.
+	 *
+	 * @return the partners of this cp definition localization
+	 */
+	@AutoEscape
+	public String getPartners();
+
+	/**
+	 * Sets the partners of this cp definition localization.
+	 *
+	 * @param partners the partners of this cp definition localization
+	 */
+	public void setPartners(String partners);
+
+	/**
+	 * Returns the related platforms of this cp definition localization.
+	 *
+	 * @return the related platforms of this cp definition localization
+	 */
+	@AutoEscape
+	public String getRelatedPlatforms();
+
+	/**
+	 * Sets the related platforms of this cp definition localization.
+	 *
+	 * @param relatedPlatforms the related platforms of this cp definition localization
+	 */
+	public void setRelatedPlatforms(String relatedPlatforms);
+
 	@Override
 	public boolean isNew();
 

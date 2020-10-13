@@ -77,7 +77,7 @@ public class CPDefinitionLocalizationCacheModel
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(23);
+		StringBundler sb = new StringBundler(41);
 
 		sb.append("{mvccVersion=");
 		sb.append(mvccVersion);
@@ -101,6 +101,24 @@ public class CPDefinitionLocalizationCacheModel
 		sb.append(metaDescription);
 		sb.append(", metaKeywords=");
 		sb.append(metaKeywords);
+		sb.append(", overview=");
+		sb.append(overview);
+		sb.append(", introduction=");
+		sb.append(introduction);
+		sb.append(", features=");
+		sb.append(features);
+		sb.append(", solutions=");
+		sb.append(solutions);
+		sb.append(", customerStory=");
+		sb.append(customerStory);
+		sb.append(", benefits=");
+		sb.append(benefits);
+		sb.append(", functions=");
+		sb.append(functions);
+		sb.append(", partners=");
+		sb.append(partners);
+		sb.append(", relatedPlatforms=");
+		sb.append(relatedPlatforms);
 		sb.append("}");
 
 		return sb.toString();
@@ -166,6 +184,69 @@ public class CPDefinitionLocalizationCacheModel
 			cpDefinitionLocalizationImpl.setMetaKeywords(metaKeywords);
 		}
 
+		if (overview == null) {
+			cpDefinitionLocalizationImpl.setOverview("");
+		}
+		else {
+			cpDefinitionLocalizationImpl.setOverview(overview);
+		}
+
+		if (introduction == null) {
+			cpDefinitionLocalizationImpl.setIntroduction("");
+		}
+		else {
+			cpDefinitionLocalizationImpl.setIntroduction(introduction);
+		}
+
+		if (features == null) {
+			cpDefinitionLocalizationImpl.setFeatures("");
+		}
+		else {
+			cpDefinitionLocalizationImpl.setFeatures(features);
+		}
+
+		if (solutions == null) {
+			cpDefinitionLocalizationImpl.setSolutions("");
+		}
+		else {
+			cpDefinitionLocalizationImpl.setSolutions(solutions);
+		}
+
+		if (customerStory == null) {
+			cpDefinitionLocalizationImpl.setCustomerStory("");
+		}
+		else {
+			cpDefinitionLocalizationImpl.setCustomerStory(customerStory);
+		}
+
+		if (benefits == null) {
+			cpDefinitionLocalizationImpl.setBenefits("");
+		}
+		else {
+			cpDefinitionLocalizationImpl.setBenefits(benefits);
+		}
+
+		if (functions == null) {
+			cpDefinitionLocalizationImpl.setFunctions("");
+		}
+		else {
+			cpDefinitionLocalizationImpl.setFunctions(functions);
+		}
+
+		if (partners == null) {
+			cpDefinitionLocalizationImpl.setPartners("");
+		}
+		else {
+			cpDefinitionLocalizationImpl.setPartners(partners);
+		}
+
+		if (relatedPlatforms == null) {
+			cpDefinitionLocalizationImpl.setRelatedPlatforms("");
+		}
+		else {
+			cpDefinitionLocalizationImpl.setRelatedPlatforms(relatedPlatforms);
+		}
+
 		cpDefinitionLocalizationImpl.resetOriginalValues();
 
 		return cpDefinitionLocalizationImpl;
@@ -189,6 +270,15 @@ public class CPDefinitionLocalizationCacheModel
 		metaTitle = objectInput.readUTF();
 		metaDescription = objectInput.readUTF();
 		metaKeywords = objectInput.readUTF();
+		overview = objectInput.readUTF();
+		introduction = objectInput.readUTF();
+		features = objectInput.readUTF();
+		solutions = objectInput.readUTF();
+		customerStory = objectInput.readUTF();
+		benefits = objectInput.readUTF();
+		functions = objectInput.readUTF();
+		partners = objectInput.readUTF();
+		relatedPlatforms = objectInput.readUTF();
 	}
 
 	@Override
@@ -249,6 +339,69 @@ public class CPDefinitionLocalizationCacheModel
 		else {
 			objectOutput.writeUTF(metaKeywords);
 		}
+
+		if (overview == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(overview);
+		}
+
+		if (introduction == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(introduction);
+		}
+
+		if (features == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(features);
+		}
+
+		if (solutions == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(solutions);
+		}
+
+		if (customerStory == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(customerStory);
+		}
+
+		if (benefits == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(benefits);
+		}
+
+		if (functions == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(functions);
+		}
+
+		if (partners == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(partners);
+		}
+
+		if (relatedPlatforms == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(relatedPlatforms);
+		}
 	}
 
 	public long mvccVersion;
@@ -262,5 +415,14 @@ public class CPDefinitionLocalizationCacheModel
 	public String metaTitle;
 	public String metaDescription;
 	public String metaKeywords;
+	public String overview;
+	public String introduction;
+	public String features;
+	public String solutions;
+	public String customerStory;
+	public String benefits;
+	public String functions;
+	public String partners;
+	public String relatedPlatforms;
 
 }

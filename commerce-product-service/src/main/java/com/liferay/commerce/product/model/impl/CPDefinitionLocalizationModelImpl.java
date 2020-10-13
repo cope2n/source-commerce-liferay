@@ -70,7 +70,11 @@ public class CPDefinitionLocalizationModelImpl
 		{"languageId", Types.VARCHAR}, {"name", Types.VARCHAR},
 		{"shortDescription", Types.VARCHAR}, {"description", Types.CLOB},
 		{"metaTitle", Types.VARCHAR}, {"metaDescription", Types.VARCHAR},
-		{"metaKeywords", Types.VARCHAR}
+		{"metaKeywords", Types.VARCHAR}, {"overview", Types.VARCHAR},
+		{"introduction", Types.VARCHAR}, {"features", Types.VARCHAR},
+		{"solutions", Types.VARCHAR}, {"customerStory", Types.VARCHAR},
+		{"benefits", Types.VARCHAR}, {"functions", Types.VARCHAR},
+		{"partners", Types.VARCHAR}, {"relatedPlatforms", Types.VARCHAR}
 	};
 
 	public static final Map<String, Integer> TABLE_COLUMNS_MAP =
@@ -88,10 +92,19 @@ public class CPDefinitionLocalizationModelImpl
 		TABLE_COLUMNS_MAP.put("metaTitle", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("metaDescription", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("metaKeywords", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("overview", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("introduction", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("features", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("solutions", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("customerStory", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("benefits", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("functions", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("partners", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("relatedPlatforms", Types.VARCHAR);
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table CPDefinitionLocalization (mvccVersion LONG default 0 not null,cpDefinitionLocalizationId LONG not null primary key,companyId LONG,CPDefinitionId LONG,languageId VARCHAR(75) null,name STRING null,shortDescription STRING null,description TEXT null,metaTitle VARCHAR(255) null,metaDescription VARCHAR(255) null,metaKeywords VARCHAR(255) null)";
+		"create table CPDefinitionLocalization (mvccVersion LONG default 0 not null,cpDefinitionLocalizationId LONG not null primary key,companyId LONG,CPDefinitionId LONG,languageId VARCHAR(75) null,name STRING null,shortDescription STRING null,description TEXT null,metaTitle VARCHAR(255) null,metaDescription VARCHAR(255) null,metaKeywords VARCHAR(255) null,overview VARCHAR(75) null,introduction VARCHAR(75) null,features VARCHAR(75) null,solutions VARCHAR(75) null,customerStory VARCHAR(75) null,benefits VARCHAR(75) null,functions VARCHAR(75) null,partners VARCHAR(75) null,relatedPlatforms VARCHAR(75) null)";
 
 	public static final String TABLE_SQL_DROP =
 		"drop table CPDefinitionLocalization";
@@ -552,6 +565,240 @@ public class CPDefinitionLocalizationModelImpl
 				}
 
 			});
+		attributeGetterFunctions.put(
+			"overview",
+			new Function<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public Object apply(
+					CPDefinitionLocalization cpDefinitionLocalization) {
+
+					return cpDefinitionLocalization.getOverview();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"overview",
+			new BiConsumer<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public void accept(
+					CPDefinitionLocalization cpDefinitionLocalization,
+					Object overviewObject) {
+
+					cpDefinitionLocalization.setOverview(
+						(String)overviewObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"introduction",
+			new Function<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public Object apply(
+					CPDefinitionLocalization cpDefinitionLocalization) {
+
+					return cpDefinitionLocalization.getIntroduction();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"introduction",
+			new BiConsumer<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public void accept(
+					CPDefinitionLocalization cpDefinitionLocalization,
+					Object introductionObject) {
+
+					cpDefinitionLocalization.setIntroduction(
+						(String)introductionObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"features",
+			new Function<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public Object apply(
+					CPDefinitionLocalization cpDefinitionLocalization) {
+
+					return cpDefinitionLocalization.getFeatures();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"features",
+			new BiConsumer<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public void accept(
+					CPDefinitionLocalization cpDefinitionLocalization,
+					Object featuresObject) {
+
+					cpDefinitionLocalization.setFeatures(
+						(String)featuresObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"solutions",
+			new Function<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public Object apply(
+					CPDefinitionLocalization cpDefinitionLocalization) {
+
+					return cpDefinitionLocalization.getSolutions();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"solutions",
+			new BiConsumer<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public void accept(
+					CPDefinitionLocalization cpDefinitionLocalization,
+					Object solutionsObject) {
+
+					cpDefinitionLocalization.setSolutions(
+						(String)solutionsObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"customerStory",
+			new Function<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public Object apply(
+					CPDefinitionLocalization cpDefinitionLocalization) {
+
+					return cpDefinitionLocalization.getCustomerStory();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"customerStory",
+			new BiConsumer<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public void accept(
+					CPDefinitionLocalization cpDefinitionLocalization,
+					Object customerStoryObject) {
+
+					cpDefinitionLocalization.setCustomerStory(
+						(String)customerStoryObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"benefits",
+			new Function<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public Object apply(
+					CPDefinitionLocalization cpDefinitionLocalization) {
+
+					return cpDefinitionLocalization.getBenefits();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"benefits",
+			new BiConsumer<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public void accept(
+					CPDefinitionLocalization cpDefinitionLocalization,
+					Object benefitsObject) {
+
+					cpDefinitionLocalization.setBenefits(
+						(String)benefitsObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"functions",
+			new Function<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public Object apply(
+					CPDefinitionLocalization cpDefinitionLocalization) {
+
+					return cpDefinitionLocalization.getFunctions();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"functions",
+			new BiConsumer<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public void accept(
+					CPDefinitionLocalization cpDefinitionLocalization,
+					Object functionsObject) {
+
+					cpDefinitionLocalization.setFunctions(
+						(String)functionsObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"partners",
+			new Function<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public Object apply(
+					CPDefinitionLocalization cpDefinitionLocalization) {
+
+					return cpDefinitionLocalization.getPartners();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"partners",
+			new BiConsumer<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public void accept(
+					CPDefinitionLocalization cpDefinitionLocalization,
+					Object partnersObject) {
+
+					cpDefinitionLocalization.setPartners(
+						(String)partnersObject);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"relatedPlatforms",
+			new Function<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public Object apply(
+					CPDefinitionLocalization cpDefinitionLocalization) {
+
+					return cpDefinitionLocalization.getRelatedPlatforms();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"relatedPlatforms",
+			new BiConsumer<CPDefinitionLocalization, Object>() {
+
+				@Override
+				public void accept(
+					CPDefinitionLocalization cpDefinitionLocalization,
+					Object relatedPlatformsObject) {
+
+					cpDefinitionLocalization.setRelatedPlatforms(
+						(String)relatedPlatformsObject);
+				}
+
+			});
 
 		_attributeGetterFunctions = Collections.unmodifiableMap(
 			attributeGetterFunctions);
@@ -726,6 +973,141 @@ public class CPDefinitionLocalizationModelImpl
 		_metaKeywords = metaKeywords;
 	}
 
+	@Override
+	public String getOverview() {
+		if (_overview == null) {
+			return "";
+		}
+		else {
+			return _overview;
+		}
+	}
+
+	@Override
+	public void setOverview(String overview) {
+		_overview = overview;
+	}
+
+	@Override
+	public String getIntroduction() {
+		if (_introduction == null) {
+			return "";
+		}
+		else {
+			return _introduction;
+		}
+	}
+
+	@Override
+	public void setIntroduction(String introduction) {
+		_introduction = introduction;
+	}
+
+	@Override
+	public String getFeatures() {
+		if (_features == null) {
+			return "";
+		}
+		else {
+			return _features;
+		}
+	}
+
+	@Override
+	public void setFeatures(String features) {
+		_features = features;
+	}
+
+	@Override
+	public String getSolutions() {
+		if (_solutions == null) {
+			return "";
+		}
+		else {
+			return _solutions;
+		}
+	}
+
+	@Override
+	public void setSolutions(String solutions) {
+		_solutions = solutions;
+	}
+
+	@Override
+	public String getCustomerStory() {
+		if (_customerStory == null) {
+			return "";
+		}
+		else {
+			return _customerStory;
+		}
+	}
+
+	@Override
+	public void setCustomerStory(String customerStory) {
+		_customerStory = customerStory;
+	}
+
+	@Override
+	public String getBenefits() {
+		if (_benefits == null) {
+			return "";
+		}
+		else {
+			return _benefits;
+		}
+	}
+
+	@Override
+	public void setBenefits(String benefits) {
+		_benefits = benefits;
+	}
+
+	@Override
+	public String getFunctions() {
+		if (_functions == null) {
+			return "";
+		}
+		else {
+			return _functions;
+		}
+	}
+
+	@Override
+	public void setFunctions(String functions) {
+		_functions = functions;
+	}
+
+	@Override
+	public String getPartners() {
+		if (_partners == null) {
+			return "";
+		}
+		else {
+			return _partners;
+		}
+	}
+
+	@Override
+	public void setPartners(String partners) {
+		_partners = partners;
+	}
+
+	@Override
+	public String getRelatedPlatforms() {
+		if (_relatedPlatforms == null) {
+			return "";
+		}
+		else {
+			return _relatedPlatforms;
+		}
+	}
+
+	@Override
+	public void setRelatedPlatforms(String relatedPlatforms) {
+		_relatedPlatforms = relatedPlatforms;
+	}
+
 	public long getColumnBitmask() {
 		return _columnBitmask;
 	}
@@ -776,6 +1158,15 @@ public class CPDefinitionLocalizationModelImpl
 		cpDefinitionLocalizationImpl.setMetaTitle(getMetaTitle());
 		cpDefinitionLocalizationImpl.setMetaDescription(getMetaDescription());
 		cpDefinitionLocalizationImpl.setMetaKeywords(getMetaKeywords());
+		cpDefinitionLocalizationImpl.setOverview(getOverview());
+		cpDefinitionLocalizationImpl.setIntroduction(getIntroduction());
+		cpDefinitionLocalizationImpl.setFeatures(getFeatures());
+		cpDefinitionLocalizationImpl.setSolutions(getSolutions());
+		cpDefinitionLocalizationImpl.setCustomerStory(getCustomerStory());
+		cpDefinitionLocalizationImpl.setBenefits(getBenefits());
+		cpDefinitionLocalizationImpl.setFunctions(getFunctions());
+		cpDefinitionLocalizationImpl.setPartners(getPartners());
+		cpDefinitionLocalizationImpl.setRelatedPlatforms(getRelatedPlatforms());
 
 		cpDefinitionLocalizationImpl.resetOriginalValues();
 
@@ -920,6 +1311,80 @@ public class CPDefinitionLocalizationModelImpl
 			cpDefinitionLocalizationCacheModel.metaKeywords = null;
 		}
 
+		cpDefinitionLocalizationCacheModel.overview = getOverview();
+
+		String overview = cpDefinitionLocalizationCacheModel.overview;
+
+		if ((overview != null) && (overview.length() == 0)) {
+			cpDefinitionLocalizationCacheModel.overview = null;
+		}
+
+		cpDefinitionLocalizationCacheModel.introduction = getIntroduction();
+
+		String introduction = cpDefinitionLocalizationCacheModel.introduction;
+
+		if ((introduction != null) && (introduction.length() == 0)) {
+			cpDefinitionLocalizationCacheModel.introduction = null;
+		}
+
+		cpDefinitionLocalizationCacheModel.features = getFeatures();
+
+		String features = cpDefinitionLocalizationCacheModel.features;
+
+		if ((features != null) && (features.length() == 0)) {
+			cpDefinitionLocalizationCacheModel.features = null;
+		}
+
+		cpDefinitionLocalizationCacheModel.solutions = getSolutions();
+
+		String solutions = cpDefinitionLocalizationCacheModel.solutions;
+
+		if ((solutions != null) && (solutions.length() == 0)) {
+			cpDefinitionLocalizationCacheModel.solutions = null;
+		}
+
+		cpDefinitionLocalizationCacheModel.customerStory = getCustomerStory();
+
+		String customerStory = cpDefinitionLocalizationCacheModel.customerStory;
+
+		if ((customerStory != null) && (customerStory.length() == 0)) {
+			cpDefinitionLocalizationCacheModel.customerStory = null;
+		}
+
+		cpDefinitionLocalizationCacheModel.benefits = getBenefits();
+
+		String benefits = cpDefinitionLocalizationCacheModel.benefits;
+
+		if ((benefits != null) && (benefits.length() == 0)) {
+			cpDefinitionLocalizationCacheModel.benefits = null;
+		}
+
+		cpDefinitionLocalizationCacheModel.functions = getFunctions();
+
+		String functions = cpDefinitionLocalizationCacheModel.functions;
+
+		if ((functions != null) && (functions.length() == 0)) {
+			cpDefinitionLocalizationCacheModel.functions = null;
+		}
+
+		cpDefinitionLocalizationCacheModel.partners = getPartners();
+
+		String partners = cpDefinitionLocalizationCacheModel.partners;
+
+		if ((partners != null) && (partners.length() == 0)) {
+			cpDefinitionLocalizationCacheModel.partners = null;
+		}
+
+		cpDefinitionLocalizationCacheModel.relatedPlatforms =
+			getRelatedPlatforms();
+
+		String relatedPlatforms =
+			cpDefinitionLocalizationCacheModel.relatedPlatforms;
+
+		if ((relatedPlatforms != null) && (relatedPlatforms.length() == 0)) {
+			cpDefinitionLocalizationCacheModel.relatedPlatforms = null;
+		}
+
 		return cpDefinitionLocalizationCacheModel;
 	}
 
@@ -929,7 +1394,7 @@ public class CPDefinitionLocalizationModelImpl
 			attributeGetterFunctions = getAttributeGetterFunctions();
 
 		StringBundler sb = new StringBundler(
-			(4 * attributeGetterFunctions.size()) + 2);
+			4 * attributeGetterFunctions.size() + 2);
 
 		sb.append("{");
 
@@ -962,7 +1427,7 @@ public class CPDefinitionLocalizationModelImpl
 			attributeGetterFunctions = getAttributeGetterFunctions();
 
 		StringBundler sb = new StringBundler(
-			(5 * attributeGetterFunctions.size()) + 4);
+			5 * attributeGetterFunctions.size() + 4);
 
 		sb.append("<model><model-name>");
 		sb.append(getModelClassName());
@@ -1011,6 +1476,15 @@ public class CPDefinitionLocalizationModelImpl
 	private String _metaTitle;
 	private String _metaDescription;
 	private String _metaKeywords;
+	private String _overview;
+	private String _introduction;
+	private String _features;
+	private String _solutions;
+	private String _customerStory;
+	private String _benefits;
+	private String _functions;
+	private String _partners;
+	private String _relatedPlatforms;
 	private long _columnBitmask;
 	private CPDefinitionLocalization _escapedModel;
 

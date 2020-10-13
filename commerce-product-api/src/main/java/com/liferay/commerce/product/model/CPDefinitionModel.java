@@ -781,141 +781,6 @@ public interface CPDefinitionModel
 	@Override
 	public void setStatusDate(Date statusDate);
 
-	/**
-	 * Returns the overview of this cp definition.
-	 *
-	 * @return the overview of this cp definition
-	 */
-	@AutoEscape
-	public String getOverview();
-
-	/**
-	 * Sets the overview of this cp definition.
-	 *
-	 * @param overview the overview of this cp definition
-	 */
-	public void setOverview(String overview);
-
-	/**
-	 * Returns the introduction of this cp definition.
-	 *
-	 * @return the introduction of this cp definition
-	 */
-	@AutoEscape
-	public String getIntroduction();
-
-	/**
-	 * Sets the introduction of this cp definition.
-	 *
-	 * @param introduction the introduction of this cp definition
-	 */
-	public void setIntroduction(String introduction);
-
-	/**
-	 * Returns the features of this cp definition.
-	 *
-	 * @return the features of this cp definition
-	 */
-	@AutoEscape
-	public String getFeatures();
-
-	/**
-	 * Sets the features of this cp definition.
-	 *
-	 * @param features the features of this cp definition
-	 */
-	public void setFeatures(String features);
-
-	/**
-	 * Returns the solutions of this cp definition.
-	 *
-	 * @return the solutions of this cp definition
-	 */
-	@AutoEscape
-	public String getSolutions();
-
-	/**
-	 * Sets the solutions of this cp definition.
-	 *
-	 * @param solutions the solutions of this cp definition
-	 */
-	public void setSolutions(String solutions);
-
-	/**
-	 * Returns the customer story of this cp definition.
-	 *
-	 * @return the customer story of this cp definition
-	 */
-	@AutoEscape
-	public String getCustomerStory();
-
-	/**
-	 * Sets the customer story of this cp definition.
-	 *
-	 * @param customerStory the customer story of this cp definition
-	 */
-	public void setCustomerStory(String customerStory);
-
-	/**
-	 * Returns the benefits of this cp definition.
-	 *
-	 * @return the benefits of this cp definition
-	 */
-	@AutoEscape
-	public String getBenefits();
-
-	/**
-	 * Sets the benefits of this cp definition.
-	 *
-	 * @param benefits the benefits of this cp definition
-	 */
-	public void setBenefits(String benefits);
-
-	/**
-	 * Returns the functions of this cp definition.
-	 *
-	 * @return the functions of this cp definition
-	 */
-	@AutoEscape
-	public String getFunctions();
-
-	/**
-	 * Sets the functions of this cp definition.
-	 *
-	 * @param functions the functions of this cp definition
-	 */
-	public void setFunctions(String functions);
-
-	/**
-	 * Returns the partners of this cp definition.
-	 *
-	 * @return the partners of this cp definition
-	 */
-	@AutoEscape
-	public String getPartners();
-
-	/**
-	 * Sets the partners of this cp definition.
-	 *
-	 * @param partners the partners of this cp definition
-	 */
-	public void setPartners(String partners);
-
-	/**
-	 * Returns the related platforms of this cp definition.
-	 *
-	 * @return the related platforms of this cp definition
-	 */
-	@AutoEscape
-	public String getRelatedPlatforms();
-
-	/**
-	 * Sets the related platforms of this cp definition.
-	 *
-	 * @param relatedPlatforms the related platforms of this cp definition
-	 */
-	public void setRelatedPlatforms(String relatedPlatforms);
-
 	public String[] getAvailableLanguageIds();
 
 	public String getName();
@@ -977,6 +842,96 @@ public interface CPDefinitionModel
 	public String getMetaKeywordsMapAsXML();
 
 	public Map<String, String> getLanguageIdToMetaKeywordsMap();
+
+	public String getOverview();
+
+	public String getOverview(String languageId);
+
+	public String getOverview(String languageId, boolean useDefault);
+
+	public String getOverviewMapAsXML();
+
+	public Map<String, String> getLanguageIdToOverviewMap();
+
+	public String getIntroduction();
+
+	public String getIntroduction(String languageId);
+
+	public String getIntroduction(String languageId, boolean useDefault);
+
+	public String getIntroductionMapAsXML();
+
+	public Map<String, String> getLanguageIdToIntroductionMap();
+
+	public String getFeatures();
+
+	public String getFeatures(String languageId);
+
+	public String getFeatures(String languageId, boolean useDefault);
+
+	public String getFeaturesMapAsXML();
+
+	public Map<String, String> getLanguageIdToFeaturesMap();
+
+	public String getSolutions();
+
+	public String getSolutions(String languageId);
+
+	public String getSolutions(String languageId, boolean useDefault);
+
+	public String getSolutionsMapAsXML();
+
+	public Map<String, String> getLanguageIdToSolutionsMap();
+
+	public String getCustomerStory();
+
+	public String getCustomerStory(String languageId);
+
+	public String getCustomerStory(String languageId, boolean useDefault);
+
+	public String getCustomerStoryMapAsXML();
+
+	public Map<String, String> getLanguageIdToCustomerStoryMap();
+
+	public String getBenefits();
+
+	public String getBenefits(String languageId);
+
+	public String getBenefits(String languageId, boolean useDefault);
+
+	public String getBenefitsMapAsXML();
+
+	public Map<String, String> getLanguageIdToBenefitsMap();
+
+	public String getFunctions();
+
+	public String getFunctions(String languageId);
+
+	public String getFunctions(String languageId, boolean useDefault);
+
+	public String getFunctionsMapAsXML();
+
+	public Map<String, String> getLanguageIdToFunctionsMap();
+
+	public String getPartners();
+
+	public String getPartners(String languageId);
+
+	public String getPartners(String languageId, boolean useDefault);
+
+	public String getPartnersMapAsXML();
+
+	public Map<String, String> getLanguageIdToPartnersMap();
+
+	public String getRelatedPlatforms();
+
+	public String getRelatedPlatforms(String languageId);
+
+	public String getRelatedPlatforms(String languageId, boolean useDefault);
+
+	public String getRelatedPlatformsMapAsXML();
+
+	public Map<String, String> getLanguageIdToRelatedPlatformsMap();
 
 	/**
 	 * Returns <code>true</code> if this cp definition is approved.

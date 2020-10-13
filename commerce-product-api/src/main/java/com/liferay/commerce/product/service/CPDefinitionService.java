@@ -74,7 +74,14 @@ public interface CPDefinitionService extends BaseService {
 			Map<Locale, String> descriptionMap, Map<Locale, String> urlTitleMap,
 			Map<Locale, String> metaTitleMap,
 			Map<Locale, String> metaDescriptionMap,
-			Map<Locale, String> metaKeywordsMap, String productTypeName,
+			Map<Locale, String> metaKeywordsMap,
+			Map<Locale, String> overviewMap,
+			Map<Locale, String> introductionMap,
+			Map<Locale, String> featuresMap, Map<Locale, String> solutionsMap,
+			Map<Locale, String> customerStoryMap,
+			Map<Locale, String> benefitsMap, Map<Locale, String> functionsMap,
+			Map<Locale, String> partnersMap,
+			Map<Locale, String> relatedPlatformsMap, String productTypeName,
 			boolean ignoreSKUCombinations, boolean shippable,
 			boolean freeShipping, boolean shipSeparately,
 			double shippingExtraPrice, double width, double height,
@@ -89,9 +96,7 @@ public interface CPDefinitionService extends BaseService {
 			int subscriptionLength, String subscriptionType,
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			ServiceContext serviceContext, String overview, String introduction,
-			String features, String benefits, String functions, String partners,
-			String solutions, String customerStory, String relatedPlatforms)
+			ServiceContext serviceContext)
 		throws PortalException;
 
 	public void deleteAssetCategoryCPDefinition(
@@ -159,16 +164,21 @@ public interface CPDefinitionService extends BaseService {
 			Map<Locale, String> descriptionMap, Map<Locale, String> urlTitleMap,
 			Map<Locale, String> metaTitleMap,
 			Map<Locale, String> metaDescriptionMap,
-			Map<Locale, String> metaKeywordsMap, boolean ignoreSKUCombinations,
-			String ddmStructureKey, boolean published, int displayDateMonth,
-			int displayDateDay, int displayDateYear, int displayDateHour,
-			int displayDateMinute, int expirationDateMonth,
-			int expirationDateDay, int expirationDateYear,
-			int expirationDateHour, int expirationDateMinute,
-			boolean neverExpire, ServiceContext serviceContext, String overview,
-			String introduction, String features, String benefits,
-			String functions, String partners, String solutions,
-			String customerStory, String relatedPlatforms)
+			Map<Locale, String> metaKeywordsMap,
+			Map<Locale, String> overviewMap,
+			Map<Locale, String> introductionMap,
+			Map<Locale, String> featuresMap, Map<Locale, String> solutionsMap,
+			Map<Locale, String> customerStoryMap,
+			Map<Locale, String> benefitsMap, Map<Locale, String> functionsMap,
+			Map<Locale, String> partnersMap,
+			Map<Locale, String> relatedPlatformsMap,
+			boolean ignoreSKUCombinations, String ddmStructureKey,
+			boolean published, int displayDateMonth, int displayDateDay,
+			int displayDateYear, int displayDateHour, int displayDateMinute,
+			int expirationDateMonth, int expirationDateDay,
+			int expirationDateYear, int expirationDateHour,
+			int expirationDateMinute, boolean neverExpire,
+			ServiceContext serviceContext)
 		throws PortalException;
 
 	public CPDefinition updateCPDefinitionAccountGroupFilter(
@@ -219,7 +229,14 @@ public interface CPDefinitionService extends BaseService {
 			Map<Locale, String> descriptionMap, Map<Locale, String> urlTitleMap,
 			Map<Locale, String> metaTitleMap,
 			Map<Locale, String> metaDescriptionMap,
-			Map<Locale, String> metaKeywordsMap, String productTypeName,
+			Map<Locale, String> metaKeywordsMap,
+			Map<Locale, String> overviewMap,
+			Map<Locale, String> introductionMap,
+			Map<Locale, String> featuresMap, Map<Locale, String> solutionsMap,
+			Map<Locale, String> customerStoryMap,
+			Map<Locale, String> benefitsMap, Map<Locale, String> functionsMap,
+			Map<Locale, String> partnersMap,
+			Map<Locale, String> relatedPlatformsMap, String productTypeName,
 			boolean ignoreSKUCombinations, boolean shippable,
 			boolean freeShipping, boolean shipSeparately,
 			double shippingExtraPrice, double width, double height,
@@ -234,9 +251,7 @@ public interface CPDefinitionService extends BaseService {
 			int subscriptionLength, String subscriptionType,
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			ServiceContext serviceContext, String overview, String introduction,
-			String features, String benefits, String functions, String partners,
-			String solutions, String customerStory, String relatedPlatforms)
+			ServiceContext serviceContext)
 		throws PortalException;
 
 }

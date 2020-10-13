@@ -103,12 +103,7 @@ public class CPDefinitionModelImpl
 		{"accountGroupFilterEnabled", Types.BOOLEAN},
 		{"channelFilterEnabled", Types.BOOLEAN}, {"version", Types.INTEGER},
 		{"status", Types.INTEGER}, {"statusByUserId", Types.BIGINT},
-		{"statusByUserName", Types.VARCHAR}, {"statusDate", Types.TIMESTAMP},
-		{"overview", Types.VARCHAR}, {"introduction", Types.VARCHAR},
-		{"features", Types.VARCHAR}, {"solutions", Types.VARCHAR},
-		{"customerStory", Types.VARCHAR}, {"benefits", Types.VARCHAR},
-		{"functions", Types.VARCHAR}, {"partners", Types.VARCHAR},
-		{"relatedPlatforms", Types.VARCHAR}
+		{"statusByUserName", Types.VARCHAR}, {"statusDate", Types.TIMESTAMP}
 	};
 
 	public static final Map<String, Integer> TABLE_COLUMNS_MAP =
@@ -156,19 +151,10 @@ public class CPDefinitionModelImpl
 		TABLE_COLUMNS_MAP.put("statusByUserId", Types.BIGINT);
 		TABLE_COLUMNS_MAP.put("statusByUserName", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("statusDate", Types.TIMESTAMP);
-		TABLE_COLUMNS_MAP.put("overview", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("introduction", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("features", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("solutions", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("customerStory", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("benefits", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("functions", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("partners", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("relatedPlatforms", Types.VARCHAR);
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table CPDefinition (uuid_ VARCHAR(75) null,defaultLanguageId VARCHAR(75) null,CPDefinitionId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,CProductId LONG,CPTaxCategoryId LONG,productTypeName VARCHAR(75) null,availableIndividually BOOLEAN,ignoreSKUCombinations BOOLEAN,shippable BOOLEAN,freeShipping BOOLEAN,shipSeparately BOOLEAN,shippingExtraPrice DOUBLE,width DOUBLE,height DOUBLE,depth DOUBLE,weight DOUBLE,taxExempt BOOLEAN,telcoOrElectronics BOOLEAN,DDMStructureKey VARCHAR(75) null,published BOOLEAN,displayDate DATE null,expirationDate DATE null,lastPublishDate DATE null,subscriptionEnabled BOOLEAN,subscriptionLength INTEGER,subscriptionType VARCHAR(75) null,subscriptionTypeSettings TEXT null,maxSubscriptionCycles LONG,accountGroupFilterEnabled BOOLEAN,channelFilterEnabled BOOLEAN,version INTEGER,status INTEGER,statusByUserId LONG,statusByUserName VARCHAR(75) null,statusDate DATE null,overview VARCHAR(75) null,introduction VARCHAR(75) null,features VARCHAR(75) null,solutions VARCHAR(75) null,customerStory VARCHAR(75) null,benefits VARCHAR(75) null,functions VARCHAR(75) null,partners VARCHAR(75) null,relatedPlatforms VARCHAR(75) null)";
+		"create table CPDefinition (uuid_ VARCHAR(75) null,defaultLanguageId VARCHAR(75) null,CPDefinitionId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,CProductId LONG,CPTaxCategoryId LONG,productTypeName VARCHAR(75) null,availableIndividually BOOLEAN,ignoreSKUCombinations BOOLEAN,shippable BOOLEAN,freeShipping BOOLEAN,shipSeparately BOOLEAN,shippingExtraPrice DOUBLE,width DOUBLE,height DOUBLE,depth DOUBLE,weight DOUBLE,taxExempt BOOLEAN,telcoOrElectronics BOOLEAN,DDMStructureKey VARCHAR(75) null,published BOOLEAN,displayDate DATE null,expirationDate DATE null,lastPublishDate DATE null,subscriptionEnabled BOOLEAN,subscriptionLength INTEGER,subscriptionType VARCHAR(75) null,subscriptionTypeSettings TEXT null,maxSubscriptionCycles LONG,accountGroupFilterEnabled BOOLEAN,channelFilterEnabled BOOLEAN,version INTEGER,status INTEGER,statusByUserId LONG,statusByUserName VARCHAR(75) null,statusDate DATE null)";
 
 	public static final String TABLE_SQL_DROP = "drop table CPDefinition";
 
@@ -273,15 +259,6 @@ public class CPDefinitionModelImpl
 		model.setStatusByUserId(soapModel.getStatusByUserId());
 		model.setStatusByUserName(soapModel.getStatusByUserName());
 		model.setStatusDate(soapModel.getStatusDate());
-		model.setOverview(soapModel.getOverview());
-		model.setIntroduction(soapModel.getIntroduction());
-		model.setFeatures(soapModel.getFeatures());
-		model.setSolutions(soapModel.getSolutions());
-		model.setCustomerStory(soapModel.getCustomerStory());
-		model.setBenefits(soapModel.getBenefits());
-		model.setFunctions(soapModel.getFunctions());
-		model.setPartners(soapModel.getPartners());
-		model.setRelatedPlatforms(soapModel.getRelatedPlatforms());
 
 		return model;
 	}
@@ -1368,205 +1345,6 @@ public class CPDefinitionModelImpl
 				}
 
 			});
-		attributeGetterFunctions.put(
-			"overview",
-			new Function<CPDefinition, Object>() {
-
-				@Override
-				public Object apply(CPDefinition cpDefinition) {
-					return cpDefinition.getOverview();
-				}
-
-			});
-		attributeSetterBiConsumers.put(
-			"overview",
-			new BiConsumer<CPDefinition, Object>() {
-
-				@Override
-				public void accept(
-					CPDefinition cpDefinition, Object overviewObject) {
-
-					cpDefinition.setOverview((String)overviewObject);
-				}
-
-			});
-		attributeGetterFunctions.put(
-			"introduction",
-			new Function<CPDefinition, Object>() {
-
-				@Override
-				public Object apply(CPDefinition cpDefinition) {
-					return cpDefinition.getIntroduction();
-				}
-
-			});
-		attributeSetterBiConsumers.put(
-			"introduction",
-			new BiConsumer<CPDefinition, Object>() {
-
-				@Override
-				public void accept(
-					CPDefinition cpDefinition, Object introductionObject) {
-
-					cpDefinition.setIntroduction((String)introductionObject);
-				}
-
-			});
-		attributeGetterFunctions.put(
-			"features",
-			new Function<CPDefinition, Object>() {
-
-				@Override
-				public Object apply(CPDefinition cpDefinition) {
-					return cpDefinition.getFeatures();
-				}
-
-			});
-		attributeSetterBiConsumers.put(
-			"features",
-			new BiConsumer<CPDefinition, Object>() {
-
-				@Override
-				public void accept(
-					CPDefinition cpDefinition, Object featuresObject) {
-
-					cpDefinition.setFeatures((String)featuresObject);
-				}
-
-			});
-		attributeGetterFunctions.put(
-			"solutions",
-			new Function<CPDefinition, Object>() {
-
-				@Override
-				public Object apply(CPDefinition cpDefinition) {
-					return cpDefinition.getSolutions();
-				}
-
-			});
-		attributeSetterBiConsumers.put(
-			"solutions",
-			new BiConsumer<CPDefinition, Object>() {
-
-				@Override
-				public void accept(
-					CPDefinition cpDefinition, Object solutionsObject) {
-
-					cpDefinition.setSolutions((String)solutionsObject);
-				}
-
-			});
-		attributeGetterFunctions.put(
-			"customerStory",
-			new Function<CPDefinition, Object>() {
-
-				@Override
-				public Object apply(CPDefinition cpDefinition) {
-					return cpDefinition.getCustomerStory();
-				}
-
-			});
-		attributeSetterBiConsumers.put(
-			"customerStory",
-			new BiConsumer<CPDefinition, Object>() {
-
-				@Override
-				public void accept(
-					CPDefinition cpDefinition, Object customerStoryObject) {
-
-					cpDefinition.setCustomerStory((String)customerStoryObject);
-				}
-
-			});
-		attributeGetterFunctions.put(
-			"benefits",
-			new Function<CPDefinition, Object>() {
-
-				@Override
-				public Object apply(CPDefinition cpDefinition) {
-					return cpDefinition.getBenefits();
-				}
-
-			});
-		attributeSetterBiConsumers.put(
-			"benefits",
-			new BiConsumer<CPDefinition, Object>() {
-
-				@Override
-				public void accept(
-					CPDefinition cpDefinition, Object benefitsObject) {
-
-					cpDefinition.setBenefits((String)benefitsObject);
-				}
-
-			});
-		attributeGetterFunctions.put(
-			"functions",
-			new Function<CPDefinition, Object>() {
-
-				@Override
-				public Object apply(CPDefinition cpDefinition) {
-					return cpDefinition.getFunctions();
-				}
-
-			});
-		attributeSetterBiConsumers.put(
-			"functions",
-			new BiConsumer<CPDefinition, Object>() {
-
-				@Override
-				public void accept(
-					CPDefinition cpDefinition, Object functionsObject) {
-
-					cpDefinition.setFunctions((String)functionsObject);
-				}
-
-			});
-		attributeGetterFunctions.put(
-			"partners",
-			new Function<CPDefinition, Object>() {
-
-				@Override
-				public Object apply(CPDefinition cpDefinition) {
-					return cpDefinition.getPartners();
-				}
-
-			});
-		attributeSetterBiConsumers.put(
-			"partners",
-			new BiConsumer<CPDefinition, Object>() {
-
-				@Override
-				public void accept(
-					CPDefinition cpDefinition, Object partnersObject) {
-
-					cpDefinition.setPartners((String)partnersObject);
-				}
-
-			});
-		attributeGetterFunctions.put(
-			"relatedPlatforms",
-			new Function<CPDefinition, Object>() {
-
-				@Override
-				public Object apply(CPDefinition cpDefinition) {
-					return cpDefinition.getRelatedPlatforms();
-				}
-
-			});
-		attributeSetterBiConsumers.put(
-			"relatedPlatforms",
-			new BiConsumer<CPDefinition, Object>() {
-
-				@Override
-				public void accept(
-					CPDefinition cpDefinition, Object relatedPlatformsObject) {
-
-					cpDefinition.setRelatedPlatforms(
-						(String)relatedPlatformsObject);
-				}
-
-			});
 
 		_attributeGetterFunctions = Collections.unmodifiableMap(
 			attributeGetterFunctions);
@@ -1990,6 +1768,603 @@ public class CPDefinitionModelImpl
 		}
 
 		return cpDefinitionLocalization.getMetaKeywords();
+	}
+
+	@Override
+	public String getOverview() {
+		return getOverview(getDefaultLanguageId(), false);
+	}
+
+	@Override
+	public String getOverview(String languageId) {
+		return getOverview(languageId, true);
+	}
+
+	@Override
+	public String getOverview(String languageId, boolean useDefault) {
+		if (useDefault) {
+			return LocalizationUtil.getLocalization(
+				new Function<String, String>() {
+
+					@Override
+					public String apply(String languageId) {
+						return _getOverview(languageId);
+					}
+
+				},
+				languageId, getDefaultLanguageId());
+		}
+
+		return _getOverview(languageId);
+	}
+
+	@Override
+	public String getOverviewMapAsXML() {
+		return LocalizationUtil.getXml(
+			getLanguageIdToOverviewMap(), getDefaultLanguageId(), "Overview");
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToOverviewMap() {
+		Map<String, String> languageIdToOverviewMap =
+			new HashMap<String, String>();
+
+		List<CPDefinitionLocalization> cpDefinitionLocalizations =
+			CPDefinitionLocalServiceUtil.getCPDefinitionLocalizations(
+				getPrimaryKey());
+
+		for (CPDefinitionLocalization cpDefinitionLocalization :
+				cpDefinitionLocalizations) {
+
+			languageIdToOverviewMap.put(
+				cpDefinitionLocalization.getLanguageId(),
+				cpDefinitionLocalization.getOverview());
+		}
+
+		return languageIdToOverviewMap;
+	}
+
+	private String _getOverview(String languageId) {
+		CPDefinitionLocalization cpDefinitionLocalization =
+			CPDefinitionLocalServiceUtil.fetchCPDefinitionLocalization(
+				getPrimaryKey(), languageId);
+
+		if (cpDefinitionLocalization == null) {
+			return "";
+		}
+
+		return cpDefinitionLocalization.getOverview();
+	}
+
+	@Override
+	public String getIntroduction() {
+		return getIntroduction(getDefaultLanguageId(), false);
+	}
+
+	@Override
+	public String getIntroduction(String languageId) {
+		return getIntroduction(languageId, true);
+	}
+
+	@Override
+	public String getIntroduction(String languageId, boolean useDefault) {
+		if (useDefault) {
+			return LocalizationUtil.getLocalization(
+				new Function<String, String>() {
+
+					@Override
+					public String apply(String languageId) {
+						return _getIntroduction(languageId);
+					}
+
+				},
+				languageId, getDefaultLanguageId());
+		}
+
+		return _getIntroduction(languageId);
+	}
+
+	@Override
+	public String getIntroductionMapAsXML() {
+		return LocalizationUtil.getXml(
+			getLanguageIdToIntroductionMap(), getDefaultLanguageId(),
+			"Introduction");
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToIntroductionMap() {
+		Map<String, String> languageIdToIntroductionMap =
+			new HashMap<String, String>();
+
+		List<CPDefinitionLocalization> cpDefinitionLocalizations =
+			CPDefinitionLocalServiceUtil.getCPDefinitionLocalizations(
+				getPrimaryKey());
+
+		for (CPDefinitionLocalization cpDefinitionLocalization :
+				cpDefinitionLocalizations) {
+
+			languageIdToIntroductionMap.put(
+				cpDefinitionLocalization.getLanguageId(),
+				cpDefinitionLocalization.getIntroduction());
+		}
+
+		return languageIdToIntroductionMap;
+	}
+
+	private String _getIntroduction(String languageId) {
+		CPDefinitionLocalization cpDefinitionLocalization =
+			CPDefinitionLocalServiceUtil.fetchCPDefinitionLocalization(
+				getPrimaryKey(), languageId);
+
+		if (cpDefinitionLocalization == null) {
+			return "";
+		}
+
+		return cpDefinitionLocalization.getIntroduction();
+	}
+
+	@Override
+	public String getFeatures() {
+		return getFeatures(getDefaultLanguageId(), false);
+	}
+
+	@Override
+	public String getFeatures(String languageId) {
+		return getFeatures(languageId, true);
+	}
+
+	@Override
+	public String getFeatures(String languageId, boolean useDefault) {
+		if (useDefault) {
+			return LocalizationUtil.getLocalization(
+				new Function<String, String>() {
+
+					@Override
+					public String apply(String languageId) {
+						return _getFeatures(languageId);
+					}
+
+				},
+				languageId, getDefaultLanguageId());
+		}
+
+		return _getFeatures(languageId);
+	}
+
+	@Override
+	public String getFeaturesMapAsXML() {
+		return LocalizationUtil.getXml(
+			getLanguageIdToFeaturesMap(), getDefaultLanguageId(), "Features");
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToFeaturesMap() {
+		Map<String, String> languageIdToFeaturesMap =
+			new HashMap<String, String>();
+
+		List<CPDefinitionLocalization> cpDefinitionLocalizations =
+			CPDefinitionLocalServiceUtil.getCPDefinitionLocalizations(
+				getPrimaryKey());
+
+		for (CPDefinitionLocalization cpDefinitionLocalization :
+				cpDefinitionLocalizations) {
+
+			languageIdToFeaturesMap.put(
+				cpDefinitionLocalization.getLanguageId(),
+				cpDefinitionLocalization.getFeatures());
+		}
+
+		return languageIdToFeaturesMap;
+	}
+
+	private String _getFeatures(String languageId) {
+		CPDefinitionLocalization cpDefinitionLocalization =
+			CPDefinitionLocalServiceUtil.fetchCPDefinitionLocalization(
+				getPrimaryKey(), languageId);
+
+		if (cpDefinitionLocalization == null) {
+			return "";
+		}
+
+		return cpDefinitionLocalization.getFeatures();
+	}
+
+	@Override
+	public String getSolutions() {
+		return getSolutions(getDefaultLanguageId(), false);
+	}
+
+	@Override
+	public String getSolutions(String languageId) {
+		return getSolutions(languageId, true);
+	}
+
+	@Override
+	public String getSolutions(String languageId, boolean useDefault) {
+		if (useDefault) {
+			return LocalizationUtil.getLocalization(
+				new Function<String, String>() {
+
+					@Override
+					public String apply(String languageId) {
+						return _getSolutions(languageId);
+					}
+
+				},
+				languageId, getDefaultLanguageId());
+		}
+
+		return _getSolutions(languageId);
+	}
+
+	@Override
+	public String getSolutionsMapAsXML() {
+		return LocalizationUtil.getXml(
+			getLanguageIdToSolutionsMap(), getDefaultLanguageId(), "Solutions");
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToSolutionsMap() {
+		Map<String, String> languageIdToSolutionsMap =
+			new HashMap<String, String>();
+
+		List<CPDefinitionLocalization> cpDefinitionLocalizations =
+			CPDefinitionLocalServiceUtil.getCPDefinitionLocalizations(
+				getPrimaryKey());
+
+		for (CPDefinitionLocalization cpDefinitionLocalization :
+				cpDefinitionLocalizations) {
+
+			languageIdToSolutionsMap.put(
+				cpDefinitionLocalization.getLanguageId(),
+				cpDefinitionLocalization.getSolutions());
+		}
+
+		return languageIdToSolutionsMap;
+	}
+
+	private String _getSolutions(String languageId) {
+		CPDefinitionLocalization cpDefinitionLocalization =
+			CPDefinitionLocalServiceUtil.fetchCPDefinitionLocalization(
+				getPrimaryKey(), languageId);
+
+		if (cpDefinitionLocalization == null) {
+			return "";
+		}
+
+		return cpDefinitionLocalization.getSolutions();
+	}
+
+	@Override
+	public String getCustomerStory() {
+		return getCustomerStory(getDefaultLanguageId(), false);
+	}
+
+	@Override
+	public String getCustomerStory(String languageId) {
+		return getCustomerStory(languageId, true);
+	}
+
+	@Override
+	public String getCustomerStory(String languageId, boolean useDefault) {
+		if (useDefault) {
+			return LocalizationUtil.getLocalization(
+				new Function<String, String>() {
+
+					@Override
+					public String apply(String languageId) {
+						return _getCustomerStory(languageId);
+					}
+
+				},
+				languageId, getDefaultLanguageId());
+		}
+
+		return _getCustomerStory(languageId);
+	}
+
+	@Override
+	public String getCustomerStoryMapAsXML() {
+		return LocalizationUtil.getXml(
+			getLanguageIdToCustomerStoryMap(), getDefaultLanguageId(),
+			"CustomerStory");
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToCustomerStoryMap() {
+		Map<String, String> languageIdToCustomerStoryMap =
+			new HashMap<String, String>();
+
+		List<CPDefinitionLocalization> cpDefinitionLocalizations =
+			CPDefinitionLocalServiceUtil.getCPDefinitionLocalizations(
+				getPrimaryKey());
+
+		for (CPDefinitionLocalization cpDefinitionLocalization :
+				cpDefinitionLocalizations) {
+
+			languageIdToCustomerStoryMap.put(
+				cpDefinitionLocalization.getLanguageId(),
+				cpDefinitionLocalization.getCustomerStory());
+		}
+
+		return languageIdToCustomerStoryMap;
+	}
+
+	private String _getCustomerStory(String languageId) {
+		CPDefinitionLocalization cpDefinitionLocalization =
+			CPDefinitionLocalServiceUtil.fetchCPDefinitionLocalization(
+				getPrimaryKey(), languageId);
+
+		if (cpDefinitionLocalization == null) {
+			return "";
+		}
+
+		return cpDefinitionLocalization.getCustomerStory();
+	}
+
+	@Override
+	public String getBenefits() {
+		return getBenefits(getDefaultLanguageId(), false);
+	}
+
+	@Override
+	public String getBenefits(String languageId) {
+		return getBenefits(languageId, true);
+	}
+
+	@Override
+	public String getBenefits(String languageId, boolean useDefault) {
+		if (useDefault) {
+			return LocalizationUtil.getLocalization(
+				new Function<String, String>() {
+
+					@Override
+					public String apply(String languageId) {
+						return _getBenefits(languageId);
+					}
+
+				},
+				languageId, getDefaultLanguageId());
+		}
+
+		return _getBenefits(languageId);
+	}
+
+	@Override
+	public String getBenefitsMapAsXML() {
+		return LocalizationUtil.getXml(
+			getLanguageIdToBenefitsMap(), getDefaultLanguageId(), "Benefits");
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToBenefitsMap() {
+		Map<String, String> languageIdToBenefitsMap =
+			new HashMap<String, String>();
+
+		List<CPDefinitionLocalization> cpDefinitionLocalizations =
+			CPDefinitionLocalServiceUtil.getCPDefinitionLocalizations(
+				getPrimaryKey());
+
+		for (CPDefinitionLocalization cpDefinitionLocalization :
+				cpDefinitionLocalizations) {
+
+			languageIdToBenefitsMap.put(
+				cpDefinitionLocalization.getLanguageId(),
+				cpDefinitionLocalization.getBenefits());
+		}
+
+		return languageIdToBenefitsMap;
+	}
+
+	private String _getBenefits(String languageId) {
+		CPDefinitionLocalization cpDefinitionLocalization =
+			CPDefinitionLocalServiceUtil.fetchCPDefinitionLocalization(
+				getPrimaryKey(), languageId);
+
+		if (cpDefinitionLocalization == null) {
+			return "";
+		}
+
+		return cpDefinitionLocalization.getBenefits();
+	}
+
+	@Override
+	public String getFunctions() {
+		return getFunctions(getDefaultLanguageId(), false);
+	}
+
+	@Override
+	public String getFunctions(String languageId) {
+		return getFunctions(languageId, true);
+	}
+
+	@Override
+	public String getFunctions(String languageId, boolean useDefault) {
+		if (useDefault) {
+			return LocalizationUtil.getLocalization(
+				new Function<String, String>() {
+
+					@Override
+					public String apply(String languageId) {
+						return _getFunctions(languageId);
+					}
+
+				},
+				languageId, getDefaultLanguageId());
+		}
+
+		return _getFunctions(languageId);
+	}
+
+	@Override
+	public String getFunctionsMapAsXML() {
+		return LocalizationUtil.getXml(
+			getLanguageIdToFunctionsMap(), getDefaultLanguageId(), "Functions");
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToFunctionsMap() {
+		Map<String, String> languageIdToFunctionsMap =
+			new HashMap<String, String>();
+
+		List<CPDefinitionLocalization> cpDefinitionLocalizations =
+			CPDefinitionLocalServiceUtil.getCPDefinitionLocalizations(
+				getPrimaryKey());
+
+		for (CPDefinitionLocalization cpDefinitionLocalization :
+				cpDefinitionLocalizations) {
+
+			languageIdToFunctionsMap.put(
+				cpDefinitionLocalization.getLanguageId(),
+				cpDefinitionLocalization.getFunctions());
+		}
+
+		return languageIdToFunctionsMap;
+	}
+
+	private String _getFunctions(String languageId) {
+		CPDefinitionLocalization cpDefinitionLocalization =
+			CPDefinitionLocalServiceUtil.fetchCPDefinitionLocalization(
+				getPrimaryKey(), languageId);
+
+		if (cpDefinitionLocalization == null) {
+			return "";
+		}
+
+		return cpDefinitionLocalization.getFunctions();
+	}
+
+	@Override
+	public String getPartners() {
+		return getPartners(getDefaultLanguageId(), false);
+	}
+
+	@Override
+	public String getPartners(String languageId) {
+		return getPartners(languageId, true);
+	}
+
+	@Override
+	public String getPartners(String languageId, boolean useDefault) {
+		if (useDefault) {
+			return LocalizationUtil.getLocalization(
+				new Function<String, String>() {
+
+					@Override
+					public String apply(String languageId) {
+						return _getPartners(languageId);
+					}
+
+				},
+				languageId, getDefaultLanguageId());
+		}
+
+		return _getPartners(languageId);
+	}
+
+	@Override
+	public String getPartnersMapAsXML() {
+		return LocalizationUtil.getXml(
+			getLanguageIdToPartnersMap(), getDefaultLanguageId(), "Partners");
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToPartnersMap() {
+		Map<String, String> languageIdToPartnersMap =
+			new HashMap<String, String>();
+
+		List<CPDefinitionLocalization> cpDefinitionLocalizations =
+			CPDefinitionLocalServiceUtil.getCPDefinitionLocalizations(
+				getPrimaryKey());
+
+		for (CPDefinitionLocalization cpDefinitionLocalization :
+				cpDefinitionLocalizations) {
+
+			languageIdToPartnersMap.put(
+				cpDefinitionLocalization.getLanguageId(),
+				cpDefinitionLocalization.getPartners());
+		}
+
+		return languageIdToPartnersMap;
+	}
+
+	private String _getPartners(String languageId) {
+		CPDefinitionLocalization cpDefinitionLocalization =
+			CPDefinitionLocalServiceUtil.fetchCPDefinitionLocalization(
+				getPrimaryKey(), languageId);
+
+		if (cpDefinitionLocalization == null) {
+			return "";
+		}
+
+		return cpDefinitionLocalization.getPartners();
+	}
+
+	@Override
+	public String getRelatedPlatforms() {
+		return getRelatedPlatforms(getDefaultLanguageId(), false);
+	}
+
+	@Override
+	public String getRelatedPlatforms(String languageId) {
+		return getRelatedPlatforms(languageId, true);
+	}
+
+	@Override
+	public String getRelatedPlatforms(String languageId, boolean useDefault) {
+		if (useDefault) {
+			return LocalizationUtil.getLocalization(
+				new Function<String, String>() {
+
+					@Override
+					public String apply(String languageId) {
+						return _getRelatedPlatforms(languageId);
+					}
+
+				},
+				languageId, getDefaultLanguageId());
+		}
+
+		return _getRelatedPlatforms(languageId);
+	}
+
+	@Override
+	public String getRelatedPlatformsMapAsXML() {
+		return LocalizationUtil.getXml(
+			getLanguageIdToRelatedPlatformsMap(), getDefaultLanguageId(),
+			"RelatedPlatforms");
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToRelatedPlatformsMap() {
+		Map<String, String> languageIdToRelatedPlatformsMap =
+			new HashMap<String, String>();
+
+		List<CPDefinitionLocalization> cpDefinitionLocalizations =
+			CPDefinitionLocalServiceUtil.getCPDefinitionLocalizations(
+				getPrimaryKey());
+
+		for (CPDefinitionLocalization cpDefinitionLocalization :
+				cpDefinitionLocalizations) {
+
+			languageIdToRelatedPlatformsMap.put(
+				cpDefinitionLocalization.getLanguageId(),
+				cpDefinitionLocalization.getRelatedPlatforms());
+		}
+
+		return languageIdToRelatedPlatformsMap;
+	}
+
+	private String _getRelatedPlatforms(String languageId) {
+		CPDefinitionLocalization cpDefinitionLocalization =
+			CPDefinitionLocalServiceUtil.fetchCPDefinitionLocalization(
+				getPrimaryKey(), languageId);
+
+		if (cpDefinitionLocalization == null) {
+			return "";
+		}
+
+		return cpDefinitionLocalization.getRelatedPlatforms();
 	}
 
 	@JSON
@@ -2681,150 +3056,6 @@ public class CPDefinitionModelImpl
 		_statusDate = statusDate;
 	}
 
-	@JSON
-	@Override
-	public String getOverview() {
-		if (_overview == null) {
-			return "";
-		}
-		else {
-			return _overview;
-		}
-	}
-
-	@Override
-	public void setOverview(String overview) {
-		_overview = overview;
-	}
-
-	@JSON
-	@Override
-	public String getIntroduction() {
-		if (_introduction == null) {
-			return "";
-		}
-		else {
-			return _introduction;
-		}
-	}
-
-	@Override
-	public void setIntroduction(String introduction) {
-		_introduction = introduction;
-	}
-
-	@JSON
-	@Override
-	public String getFeatures() {
-		if (_features == null) {
-			return "";
-		}
-		else {
-			return _features;
-		}
-	}
-
-	@Override
-	public void setFeatures(String features) {
-		_features = features;
-	}
-
-	@JSON
-	@Override
-	public String getSolutions() {
-		if (_solutions == null) {
-			return "";
-		}
-		else {
-			return _solutions;
-		}
-	}
-
-	@Override
-	public void setSolutions(String solutions) {
-		_solutions = solutions;
-	}
-
-	@JSON
-	@Override
-	public String getCustomerStory() {
-		if (_customerStory == null) {
-			return "";
-		}
-		else {
-			return _customerStory;
-		}
-	}
-
-	@Override
-	public void setCustomerStory(String customerStory) {
-		_customerStory = customerStory;
-	}
-
-	@JSON
-	@Override
-	public String getBenefits() {
-		if (_benefits == null) {
-			return "";
-		}
-		else {
-			return _benefits;
-		}
-	}
-
-	@Override
-	public void setBenefits(String benefits) {
-		_benefits = benefits;
-	}
-
-	@JSON
-	@Override
-	public String getFunctions() {
-		if (_functions == null) {
-			return "";
-		}
-		else {
-			return _functions;
-		}
-	}
-
-	@Override
-	public void setFunctions(String functions) {
-		_functions = functions;
-	}
-
-	@JSON
-	@Override
-	public String getPartners() {
-		if (_partners == null) {
-			return "";
-		}
-		else {
-			return _partners;
-		}
-	}
-
-	@Override
-	public void setPartners(String partners) {
-		_partners = partners;
-	}
-
-	@JSON
-	@Override
-	public String getRelatedPlatforms() {
-		if (_relatedPlatforms == null) {
-			return "";
-		}
-		else {
-			return _relatedPlatforms;
-		}
-	}
-
-	@Override
-	public void setRelatedPlatforms(String relatedPlatforms) {
-		_relatedPlatforms = relatedPlatforms;
-	}
-
 	@Override
 	public StagedModelType getStagedModelType() {
 		return new StagedModelType(
@@ -2990,15 +3221,6 @@ public class CPDefinitionModelImpl
 		cpDefinitionImpl.setStatusByUserId(getStatusByUserId());
 		cpDefinitionImpl.setStatusByUserName(getStatusByUserName());
 		cpDefinitionImpl.setStatusDate(getStatusDate());
-		cpDefinitionImpl.setOverview(getOverview());
-		cpDefinitionImpl.setIntroduction(getIntroduction());
-		cpDefinitionImpl.setFeatures(getFeatures());
-		cpDefinitionImpl.setSolutions(getSolutions());
-		cpDefinitionImpl.setCustomerStory(getCustomerStory());
-		cpDefinitionImpl.setBenefits(getBenefits());
-		cpDefinitionImpl.setFunctions(getFunctions());
-		cpDefinitionImpl.setPartners(getPartners());
-		cpDefinitionImpl.setRelatedPlatforms(getRelatedPlatforms());
 
 		cpDefinitionImpl.resetOriginalValues();
 
@@ -3286,78 +3508,6 @@ public class CPDefinitionModelImpl
 			cpDefinitionCacheModel.statusDate = Long.MIN_VALUE;
 		}
 
-		cpDefinitionCacheModel.overview = getOverview();
-
-		String overview = cpDefinitionCacheModel.overview;
-
-		if ((overview != null) && (overview.length() == 0)) {
-			cpDefinitionCacheModel.overview = null;
-		}
-
-		cpDefinitionCacheModel.introduction = getIntroduction();
-
-		String introduction = cpDefinitionCacheModel.introduction;
-
-		if ((introduction != null) && (introduction.length() == 0)) {
-			cpDefinitionCacheModel.introduction = null;
-		}
-
-		cpDefinitionCacheModel.features = getFeatures();
-
-		String features = cpDefinitionCacheModel.features;
-
-		if ((features != null) && (features.length() == 0)) {
-			cpDefinitionCacheModel.features = null;
-		}
-
-		cpDefinitionCacheModel.solutions = getSolutions();
-
-		String solutions = cpDefinitionCacheModel.solutions;
-
-		if ((solutions != null) && (solutions.length() == 0)) {
-			cpDefinitionCacheModel.solutions = null;
-		}
-
-		cpDefinitionCacheModel.customerStory = getCustomerStory();
-
-		String customerStory = cpDefinitionCacheModel.customerStory;
-
-		if ((customerStory != null) && (customerStory.length() == 0)) {
-			cpDefinitionCacheModel.customerStory = null;
-		}
-
-		cpDefinitionCacheModel.benefits = getBenefits();
-
-		String benefits = cpDefinitionCacheModel.benefits;
-
-		if ((benefits != null) && (benefits.length() == 0)) {
-			cpDefinitionCacheModel.benefits = null;
-		}
-
-		cpDefinitionCacheModel.functions = getFunctions();
-
-		String functions = cpDefinitionCacheModel.functions;
-
-		if ((functions != null) && (functions.length() == 0)) {
-			cpDefinitionCacheModel.functions = null;
-		}
-
-		cpDefinitionCacheModel.partners = getPartners();
-
-		String partners = cpDefinitionCacheModel.partners;
-
-		if ((partners != null) && (partners.length() == 0)) {
-			cpDefinitionCacheModel.partners = null;
-		}
-
-		cpDefinitionCacheModel.relatedPlatforms = getRelatedPlatforms();
-
-		String relatedPlatforms = cpDefinitionCacheModel.relatedPlatforms;
-
-		if ((relatedPlatforms != null) && (relatedPlatforms.length() == 0)) {
-			cpDefinitionCacheModel.relatedPlatforms = null;
-		}
-
 		return cpDefinitionCacheModel;
 	}
 
@@ -3367,7 +3517,7 @@ public class CPDefinitionModelImpl
 			getAttributeGetterFunctions();
 
 		StringBundler sb = new StringBundler(
-			(4 * attributeGetterFunctions.size()) + 2);
+			4 * attributeGetterFunctions.size() + 2);
 
 		sb.append("{");
 
@@ -3399,7 +3549,7 @@ public class CPDefinitionModelImpl
 			getAttributeGetterFunctions();
 
 		StringBundler sb = new StringBundler(
-			(5 * attributeGetterFunctions.size()) + 4);
+			5 * attributeGetterFunctions.size() + 4);
 
 		sb.append("<model><model-name>");
 		sb.append(getModelClassName());
@@ -3487,15 +3637,6 @@ public class CPDefinitionModelImpl
 	private long _statusByUserId;
 	private String _statusByUserName;
 	private Date _statusDate;
-	private String _overview;
-	private String _introduction;
-	private String _features;
-	private String _solutions;
-	private String _customerStory;
-	private String _benefits;
-	private String _functions;
-	private String _partners;
-	private String _relatedPlatforms;
 	private long _columnBitmask;
 	private CPDefinition _escapedModel;
 

@@ -61,26 +61,24 @@ public class CommerceCatalogLocalServiceUtil {
 				String name, String commerceCurrencyCode,
 				String catalogDefaultLanguageId, boolean system,
 				String externalReferenceCode,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext,
-				String descCatalog, String imagecatalog, String subcatalog, String nameLocation, String subCatalogLocation)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().addCommerceCatalog(
 			name, commerceCurrencyCode, catalogDefaultLanguageId, system,
-			externalReferenceCode, serviceContext, descCatalog, imagecatalog, subcatalog, nameLocation, subCatalogLocation);
+			externalReferenceCode, serviceContext);
 	}
 
 	public static com.liferay.commerce.product.model.CommerceCatalog
 			addCommerceCatalog(
 				String name, String commerceCurrencyCode,
 				String catalogDefaultLanguageId, String externalReferenceCode,
-				com.liferay.portal.kernel.service.ServiceContext serviceContext,
-				String descCatalog, String imagecatalog, String subcatalog, String nameLocation, String subCatalogLocation)
+				com.liferay.portal.kernel.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().addCommerceCatalog(
 			name, commerceCurrencyCode, catalogDefaultLanguageId,
-			externalReferenceCode, serviceContext, descCatalog, imagecatalog, subcatalog, nameLocation, subCatalogLocation);
+			externalReferenceCode, serviceContext);
 	}
 
 	public static com.liferay.commerce.product.model.CommerceCatalog
@@ -411,13 +409,12 @@ public class CommerceCatalogLocalServiceUtil {
 	public static com.liferay.commerce.product.model.CommerceCatalog
 			updateCommerceCatalog(
 				long commerceCatalogId, String name,
-				String commerceCurrencyCode, String catalogDefaultLanguageId,
-				String descCatalog, String imagecatalog, String subcatalog, String nameLocation, String subCatalogLocation)
+				String commerceCurrencyCode, String catalogDefaultLanguageId)
 		throws com.liferay.portal.kernel.exception.PortalException {
 
 		return getService().updateCommerceCatalog(
 			commerceCatalogId, name, commerceCurrencyCode,
-			catalogDefaultLanguageId, descCatalog, imagecatalog, subcatalog, nameLocation, subCatalogLocation);
+			catalogDefaultLanguageId);
 	}
 
 	public static CommerceCatalogLocalService getService() {

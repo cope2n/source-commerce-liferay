@@ -138,16 +138,6 @@ public class CommerceCatalogPersistenceTest {
 
 		newCommerceCatalog.setName(RandomTestUtil.randomString());
 
-		newCommerceCatalog.setDescCatalog(RandomTestUtil.randomString());
-
-		newCommerceCatalog.setSubCatalog(RandomTestUtil.randomString());
-
-		newCommerceCatalog.setNameLocation(RandomTestUtil.randomString());
-
-		newCommerceCatalog.setSubCatalogLocation(RandomTestUtil.randomString());
-
-		newCommerceCatalog.setImageCatalog(RandomTestUtil.randomString());
-
 		newCommerceCatalog.setCommerceCurrencyCode(
 			RandomTestUtil.randomString());
 
@@ -184,21 +174,6 @@ public class CommerceCatalogPersistenceTest {
 			Time.getShortTimestamp(newCommerceCatalog.getModifiedDate()));
 		Assert.assertEquals(
 			existingCommerceCatalog.getName(), newCommerceCatalog.getName());
-		Assert.assertEquals(
-			existingCommerceCatalog.getDescCatalog(),
-			newCommerceCatalog.getDescCatalog());
-		Assert.assertEquals(
-			existingCommerceCatalog.getSubCatalog(),
-			newCommerceCatalog.getSubCatalog());
-		Assert.assertEquals(
-			existingCommerceCatalog.getNameLocation(),
-			newCommerceCatalog.getNameLocation());
-		Assert.assertEquals(
-			existingCommerceCatalog.getSubCatalogLocation(),
-			newCommerceCatalog.getSubCatalogLocation());
-		Assert.assertEquals(
-			existingCommerceCatalog.getImageCatalog(),
-			newCommerceCatalog.getImageCatalog());
 		Assert.assertEquals(
 			existingCommerceCatalog.getCommerceCurrencyCode(),
 			newCommerceCatalog.getCommerceCurrencyCode());
@@ -261,10 +236,8 @@ public class CommerceCatalogPersistenceTest {
 			"CommerceCatalog", "externalReferenceCode", true,
 			"commerceCatalogId", true, "companyId", true, "userId", true,
 			"userName", true, "createDate", true, "modifiedDate", true, "name",
-			true, "descCatalog", true, "subCatalog", true, "nameLocation", true,
-			"subCatalogLocation", true, "imageCatalog", true,
-			"commerceCurrencyCode", true, "catalogDefaultLanguageId", true,
-			"system", true);
+			true, "commerceCurrencyCode", true, "catalogDefaultLanguageId",
+			true, "system", true);
 	}
 
 	@Test
@@ -521,16 +494,6 @@ public class CommerceCatalogPersistenceTest {
 		commerceCatalog.setModifiedDate(RandomTestUtil.nextDate());
 
 		commerceCatalog.setName(RandomTestUtil.randomString());
-
-		commerceCatalog.setDescCatalog(RandomTestUtil.randomString());
-
-		commerceCatalog.setSubCatalog(RandomTestUtil.randomString());
-
-		commerceCatalog.setNameLocation(RandomTestUtil.randomString());
-
-		commerceCatalog.setSubCatalogLocation(RandomTestUtil.randomString());
-
-		commerceCatalog.setImageCatalog(RandomTestUtil.randomString());
 
 		commerceCatalog.setCommerceCurrencyCode(RandomTestUtil.randomString());
 

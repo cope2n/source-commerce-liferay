@@ -39,11 +39,6 @@ public class CommerceCatalogSoap implements Serializable {
 		soapModel.setCreateDate(model.getCreateDate());
 		soapModel.setModifiedDate(model.getModifiedDate());
 		soapModel.setName(model.getName());
-		soapModel.setDescCatalog(model.getDescCatalog());
-		soapModel.setSubCatalog(model.getSubCatalog());
-		soapModel.setNameLocation(model.getNameLocation());
-		soapModel.setSubCatalogLocation(model.getSubCatalogLocation());
-		soapModel.setImageCatalog(model.getImageCatalog());
 		soapModel.setCommerceCurrencyCode(model.getCommerceCurrencyCode());
 		soapModel.setCatalogDefaultLanguageId(
 			model.getCatalogDefaultLanguageId());
@@ -171,46 +166,6 @@ public class CommerceCatalogSoap implements Serializable {
 		_name = name;
 	}
 
-	public String getDescCatalog() {
-		return _descCatalog;
-	}
-
-	public void setDescCatalog(String descCatalog) {
-		_descCatalog = descCatalog;
-	}
-
-	public String getSubCatalog() {
-		return _subCatalog;
-	}
-
-	public void setSubCatalog(String subCatalog) {
-		_subCatalog = subCatalog;
-	}
-
-	public String getNameLocation() {
-		return _nameLocation;
-	}
-
-	public void setNameLocation(String nameLocation) {
-		_nameLocation = nameLocation;
-	}
-
-	public String getSubCatalogLocation() {
-		return _subCatalogLocation;
-	}
-
-	public void setSubCatalogLocation(String subCatalogLocation) {
-		_subCatalogLocation = subCatalogLocation;
-	}
-
-	public String getImageCatalog() {
-		return _imageCatalog;
-	}
-
-	public void setImageCatalog(String imageCatalog) {
-		_imageCatalog = imageCatalog;
-	}
-
 	public String getCommerceCurrencyCode() {
 		return _commerceCurrencyCode;
 	}
@@ -247,11 +202,6 @@ public class CommerceCatalogSoap implements Serializable {
 	private Date _createDate;
 	private Date _modifiedDate;
 	private String _name;
-	private String _descCatalog;
-	private String _subCatalog;
-	private String _nameLocation;
-	private String _subCatalogLocation;
-	private String _imageCatalog;
 	private String _commerceCurrencyCode;
 	private String _catalogDefaultLanguageId;
 	private boolean _system;

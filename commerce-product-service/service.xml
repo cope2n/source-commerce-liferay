@@ -21,14 +21,15 @@
 		<!-- Other fields -->
 
 		<column name="name" type="String" />
-		<column name="descCatalog" type="String" />
-		<column name="subCatalog" type="String" />
-		<column name="nameLocation" type="String" />
-		<column name="subCatalogLocation" type="String" />
-		<column name="imageCatalog" type="String" />
 		<column name="commerceCurrencyCode" type="String" />
 		<column name="catalogDefaultLanguageId" type="String" />
 		<column name="system" type="boolean" />
+
+<!--		<localized-entity>-->
+<!--			<localized-column name="descCatalog" />-->
+<!--			<localized-column name="subCatalog" />-->
+<!--			<localized-column name="imageCatalog" />-->
+<!--		</localized-entity>-->
 
 		<!-- Order -->
 
@@ -266,16 +267,6 @@
 		<column name="statusByUserId" type="long" />
 		<column name="statusByUserName" type="String" />
 		<column name="statusDate" type="Date" />
-		<!-- Custom field cope2n -->
-		<column name="overview" type="String" />
-		<column name="introduction" type="String" />
-		<column name="features" type="String" />
-		<column name="solutions" type="String" />
-		<column name="customerStory" type="String" />
-		<column name="benefits" type="String" />
-		<column name="functions" type="String" />
-		<column name="partners" type="String" />
-		<column name="relatedPlatforms" type="String" />
 
 		<!-- Localized entity -->
 
@@ -286,6 +277,15 @@
 			<localized-column name="metaTitle" />
 			<localized-column name="metaDescription" />
 			<localized-column name="metaKeywords" />
+			<localized-column name="overview" />
+			<localized-column name="introduction" />
+			<localized-column name="features" />
+			<localized-column name="solutions" />
+			<localized-column name="customerStory" />
+			<localized-column name="benefits" />
+			<localized-column name="functions" />
+			<localized-column name="partners" />
+			<localized-column name="relatedPlatforms" />
 		</localized-entity>
 
 		<!-- Order -->

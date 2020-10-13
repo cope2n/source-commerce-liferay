@@ -11,7 +11,7 @@ bin/
 build/
 classes/
 ivy.xml.MD5
-libs/
+lib/
 liferay-hook.xml.processed
 node_modules/
 npm-debug.log

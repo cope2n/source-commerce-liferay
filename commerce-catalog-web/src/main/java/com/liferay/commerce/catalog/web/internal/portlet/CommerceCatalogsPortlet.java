@@ -18,7 +18,6 @@ import com.liferay.commerce.catalog.web.internal.display.context.CommerceCatalog
 import com.liferay.commerce.currency.service.CommerceCurrencyService;
 import com.liferay.commerce.product.constants.CPPortletKeys;
 import com.liferay.commerce.product.model.CommerceCatalog;
-import com.liferay.commerce.product.service.CommerceCatalogLocalServiceUtil;
 import com.liferay.commerce.product.service.CommerceCatalogService;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.messaging.proxy.ProxyModeThreadLocal;

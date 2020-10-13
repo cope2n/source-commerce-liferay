@@ -6,6 +6,8 @@ create index IX_A0B4C71A on CPAttachmentFileEntry (displayDate, status);
 create index IX_C2C5D600 on CPAttachmentFileEntry (uuid_[$COLUMN_LENGTH:75$], companyId);
 create unique index IX_BFCBDC82 on CPAttachmentFileEntry (uuid_[$COLUMN_LENGTH:75$], groupId);
 
+create unique index IX_D8B93434 on CPDSpecificationOptionValue (CPDSpecificationOptionValueId, CPDefinitionId);
+create unique index IX_EDD77D36 on CPDSpecificationOptionValue (CPDefinitionId, CPDSpecificationOptionValueId);
 create index IX_95975FB4 on CPDSpecificationOptionValue (CPDefinitionId, CPOptionCategoryId);
 create index IX_173E8E91 on CPDSpecificationOptionValue (CPDefinitionId, CPSpecificationOptionId);
 create index IX_4F4EDBA5 on CPDSpecificationOptionValue (CPOptionCategoryId);
@@ -103,6 +105,8 @@ create unique index IX_9F9DD68 on CProduct (uuid_[$COLUMN_LENGTH:75$], groupId);
 
 create index IX_1198BFF9 on CommerceCatalog (companyId, externalReferenceCode[$COLUMN_LENGTH:75$]);
 create index IX_3D14D2A7 on CommerceCatalog (companyId, system);
+
+create unique index IX_CFF7E0B3 on CommerceCatalogLocalization (commerceCatalogId, languageId[$COLUMN_LENGTH:75$]);
 
 create index IX_690E2FE3 on CommerceChannel (companyId, externalReferenceCode[$COLUMN_LENGTH:75$]);
 create index IX_E1ECD95 on CommerceChannel (siteGroupId);

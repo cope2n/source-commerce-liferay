@@ -208,24 +208,6 @@ public class CPDefinitionPersistenceTest {
 
 		newCPDefinition.setStatusDate(RandomTestUtil.nextDate());
 
-		newCPDefinition.setOverview(RandomTestUtil.randomString());
-
-		newCPDefinition.setIntroduction(RandomTestUtil.randomString());
-
-		newCPDefinition.setFeatures(RandomTestUtil.randomString());
-
-		newCPDefinition.setSolutions(RandomTestUtil.randomString());
-
-		newCPDefinition.setCustomerStory(RandomTestUtil.randomString());
-
-		newCPDefinition.setBenefits(RandomTestUtil.randomString());
-
-		newCPDefinition.setFunctions(RandomTestUtil.randomString());
-
-		newCPDefinition.setPartners(RandomTestUtil.randomString());
-
-		newCPDefinition.setRelatedPlatforms(RandomTestUtil.randomString());
-
 		_cpDefinitions.add(_persistence.update(newCPDefinition));
 
 		CPDefinition existingCPDefinition = _persistence.findByPrimaryKey(
@@ -341,29 +323,6 @@ public class CPDefinitionPersistenceTest {
 		Assert.assertEquals(
 			Time.getShortTimestamp(existingCPDefinition.getStatusDate()),
 			Time.getShortTimestamp(newCPDefinition.getStatusDate()));
-		Assert.assertEquals(
-			existingCPDefinition.getOverview(), newCPDefinition.getOverview());
-		Assert.assertEquals(
-			existingCPDefinition.getIntroduction(),
-			newCPDefinition.getIntroduction());
-		Assert.assertEquals(
-			existingCPDefinition.getFeatures(), newCPDefinition.getFeatures());
-		Assert.assertEquals(
-			existingCPDefinition.getSolutions(),
-			newCPDefinition.getSolutions());
-		Assert.assertEquals(
-			existingCPDefinition.getCustomerStory(),
-			newCPDefinition.getCustomerStory());
-		Assert.assertEquals(
-			existingCPDefinition.getBenefits(), newCPDefinition.getBenefits());
-		Assert.assertEquals(
-			existingCPDefinition.getFunctions(),
-			newCPDefinition.getFunctions());
-		Assert.assertEquals(
-			existingCPDefinition.getPartners(), newCPDefinition.getPartners());
-		Assert.assertEquals(
-			existingCPDefinition.getRelatedPlatforms(),
-			newCPDefinition.getRelatedPlatforms());
 	}
 
 	@Test
@@ -486,9 +445,7 @@ public class CPDefinitionPersistenceTest {
 			"maxSubscriptionCycles", true, "accountGroupFilterEnabled", true,
 			"channelFilterEnabled", true, "version", true, "status", true,
 			"statusByUserId", true, "statusByUserName", true, "statusDate",
-			true, "overview", true, "introduction", true, "features", true,
-			"solutions", true, "customerStory", true, "benefits", true,
-			"functions", true, "partners", true, "relatedPlatforms", true);
+			true);
 	}
 
 	@Test
@@ -808,24 +765,6 @@ public class CPDefinitionPersistenceTest {
 		cpDefinition.setStatusByUserName(RandomTestUtil.randomString());
 
 		cpDefinition.setStatusDate(RandomTestUtil.nextDate());
-
-		cpDefinition.setOverview(RandomTestUtil.randomString());
-
-		cpDefinition.setIntroduction(RandomTestUtil.randomString());
-
-		cpDefinition.setFeatures(RandomTestUtil.randomString());
-
-		cpDefinition.setSolutions(RandomTestUtil.randomString());
-
-		cpDefinition.setCustomerStory(RandomTestUtil.randomString());
-
-		cpDefinition.setBenefits(RandomTestUtil.randomString());
-
-		cpDefinition.setFunctions(RandomTestUtil.randomString());
-
-		cpDefinition.setPartners(RandomTestUtil.randomString());
-
-		cpDefinition.setRelatedPlatforms(RandomTestUtil.randomString());
 
 		_cpDefinitions.add(_persistence.update(cpDefinition));
 

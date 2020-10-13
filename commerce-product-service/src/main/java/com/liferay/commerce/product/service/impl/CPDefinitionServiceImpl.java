@@ -50,7 +50,10 @@ public class CPDefinitionServiceImpl extends CPDefinitionServiceBaseImpl {
 			Map<Locale, String> descriptionMap, Map<Locale, String> urlTitleMap,
 			Map<Locale, String> metaTitleMap,
 			Map<Locale, String> metaDescriptionMap,
-			Map<Locale, String> metaKeywordsMap, String productTypeName,
+			Map<Locale, String> metaKeywordsMap, Map<Locale, String> overviewMap, Map<Locale, String> introductionMap,
+Map<Locale, String> featuresMap, Map<Locale, String> solutionsMap,
+Map<Locale, String> customerStoryMap, Map<Locale, String> benefitsMap, Map<Locale, String> functionsMap,
+Map<Locale, String> partnersMap, Map<Locale, String> relatedPlatformsMap, String productTypeName,
 			boolean ignoreSKUCombinations, boolean shippable,
 			boolean freeShipping, boolean shipSeparately,
 			double shippingExtraPrice, double width, double height,
@@ -65,15 +68,14 @@ public class CPDefinitionServiceImpl extends CPDefinitionServiceBaseImpl {
 			int subscriptionLength, String subscriptionType,
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
+			ServiceContext serviceContext)
 		throws PortalException {
 
 		_checkCommerceCatalogPermission(groupId, ActionKeys.UPDATE);
 
 		return cpDefinitionLocalService.addCPDefinition(
 			groupId, userId, nameMap, shortDescriptionMap, descriptionMap,
-			urlTitleMap, metaTitleMap, metaDescriptionMap, metaKeywordsMap,
+			urlTitleMap, metaTitleMap, metaDescriptionMap, metaKeywordsMap, overviewMap, introductionMap, featuresMap, solutionsMap, customerStoryMap, benefitsMap, functionsMap, partnersMap, relatedPlatformsMap,
 			productTypeName, ignoreSKUCombinations, shippable, freeShipping,
 			shipSeparately, shippingExtraPrice, width, height, depth, weight,
 			cpTaxCategoryId, taxExempt, telcoOrElectronics, ddmStructureKey,
@@ -83,7 +85,7 @@ public class CPDefinitionServiceImpl extends CPDefinitionServiceBaseImpl {
 			expirationDateMinute, neverExpire, defaultSku, subscriptionEnabled,
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
+			externalReferenceCode, serviceContext);
 	}
 
 	@Override
@@ -251,14 +253,16 @@ public class CPDefinitionServiceImpl extends CPDefinitionServiceBaseImpl {
 			Map<Locale, String> descriptionMap, Map<Locale, String> urlTitleMap,
 			Map<Locale, String> metaTitleMap,
 			Map<Locale, String> metaDescriptionMap,
-			Map<Locale, String> metaKeywordsMap, boolean ignoreSKUCombinations,
+			Map<Locale, String> metaKeywordsMap, Map<Locale, String> overviewMap, Map<Locale, String> introductionMap,
+Map<Locale, String> featuresMap, Map<Locale, String> solutionsMap,
+Map<Locale, String> customerStoryMap, Map<Locale, String> benefitsMap, Map<Locale, String> functionsMap,
+Map<Locale, String> partnersMap, Map<Locale, String> relatedPlatformsMap, boolean ignoreSKUCombinations,
 			String ddmStructureKey, boolean published, int displayDateMonth,
 			int displayDateDay, int displayDateYear, int displayDateHour,
 			int displayDateMinute, int expirationDateMonth,
 			int expirationDateDay, int expirationDateYear,
 			int expirationDateHour, int expirationDateMinute,
-			boolean neverExpire, ServiceContext serviceContext,
-			String overview, String introduction, String features, String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
+			boolean neverExpire, ServiceContext serviceContext)
 		throws PortalException {
 
 		_checkCommerceCatalogPermissionByCPDefinitionId(
@@ -266,12 +270,12 @@ public class CPDefinitionServiceImpl extends CPDefinitionServiceBaseImpl {
 
 		return cpDefinitionLocalService.updateCPDefinition(
 			cpDefinitionId, nameMap, shortDescriptionMap, descriptionMap,
-			urlTitleMap, metaTitleMap, metaDescriptionMap, metaKeywordsMap,
+			urlTitleMap, metaTitleMap, metaDescriptionMap, metaKeywordsMap, overviewMap, introductionMap, featuresMap, solutionsMap, customerStoryMap, benefitsMap, functionsMap, partnersMap, relatedPlatformsMap,
 			ignoreSKUCombinations, ddmStructureKey, published, displayDateMonth,
 			displayDateDay, displayDateYear, displayDateHour, displayDateMinute,
 			expirationDateMonth, expirationDateDay, expirationDateYear,
 			expirationDateHour, expirationDateMinute, neverExpire,
-			serviceContext, overview, introduction, features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
+			serviceContext);
 	}
 
 	@Override
@@ -389,7 +393,10 @@ public class CPDefinitionServiceImpl extends CPDefinitionServiceBaseImpl {
 			Map<Locale, String> descriptionMap, Map<Locale, String> urlTitleMap,
 			Map<Locale, String> metaTitleMap,
 			Map<Locale, String> metaDescriptionMap,
-			Map<Locale, String> metaKeywordsMap, String productTypeName,
+			Map<Locale, String> metaKeywordsMap, Map<Locale, String> overviewMap, Map<Locale, String> introductionMap,
+Map<Locale, String> featuresMap, Map<Locale, String> solutionsMap,
+Map<Locale, String> customerStoryMap, Map<Locale, String> benefitsMap, Map<Locale, String> functionsMap,
+Map<Locale, String> partnersMap, Map<Locale, String> relatedPlatformsMap, String productTypeName,
 			boolean ignoreSKUCombinations, boolean shippable,
 			boolean freeShipping, boolean shipSeparately,
 			double shippingExtraPrice, double width, double height,
@@ -404,14 +411,14 @@ public class CPDefinitionServiceImpl extends CPDefinitionServiceBaseImpl {
 			int subscriptionLength, String subscriptionType,
 			UnicodeProperties subscriptionTypeSettingsProperties,
 			long maxSubscriptionCycles, String externalReferenceCode,
-			ServiceContext serviceContext, String overview, String introduction, String features, String benefits, String functions, String partners, String solutions, String customerStory, String relatedPlatforms)
+			ServiceContext serviceContext)
 		throws PortalException {
 
 		_checkCommerceCatalogPermission(groupId, ActionKeys.UPDATE);
 
 		return cpDefinitionLocalService.upsertCPDefinition(
 			groupId, userId, nameMap, shortDescriptionMap, descriptionMap,
-			urlTitleMap, metaTitleMap, metaDescriptionMap, metaKeywordsMap,
+			urlTitleMap, metaTitleMap, metaDescriptionMap, metaKeywordsMap, overviewMap, introductionMap, featuresMap, solutionsMap, customerStoryMap, benefitsMap, functionsMap, partnersMap, relatedPlatformsMap,
 			productTypeName, ignoreSKUCombinations, shippable, freeShipping,
 			shipSeparately, shippingExtraPrice, width, height, depth, weight,
 			cpTaxCategoryId, taxExempt, telcoOrElectronics, ddmStructureKey,
@@ -421,7 +428,7 @@ public class CPDefinitionServiceImpl extends CPDefinitionServiceBaseImpl {
 			expirationDateMinute, neverExpire, defaultSku, subscriptionEnabled,
 			subscriptionLength, subscriptionType,
 			subscriptionTypeSettingsProperties, maxSubscriptionCycles,
-			externalReferenceCode, serviceContext, overview, introduction, features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
+			externalReferenceCode, serviceContext);
 	}
 
 	private void _checkCommerceCatalogPermission(long groupId, String actionId)

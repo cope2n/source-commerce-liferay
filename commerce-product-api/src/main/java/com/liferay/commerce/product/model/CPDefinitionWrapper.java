@@ -99,15 +99,6 @@ public class CPDefinitionWrapper
 		attributes.put("statusByUserId", getStatusByUserId());
 		attributes.put("statusByUserName", getStatusByUserName());
 		attributes.put("statusDate", getStatusDate());
-		attributes.put("overview", getOverview());
-		attributes.put("introduction", getIntroduction());
-		attributes.put("features", getFeatures());
-		attributes.put("solutions", getSolutions());
-		attributes.put("customerStory", getCustomerStory());
-		attributes.put("benefits", getBenefits());
-		attributes.put("functions", getFunctions());
-		attributes.put("partners", getPartners());
-		attributes.put("relatedPlatforms", getRelatedPlatforms());
 
 		return attributes;
 	}
@@ -369,60 +360,6 @@ public class CPDefinitionWrapper
 		if (statusDate != null) {
 			setStatusDate(statusDate);
 		}
-
-		String overview = (String)attributes.get("overview");
-
-		if (overview != null) {
-			setOverview(overview);
-		}
-
-		String introduction = (String)attributes.get("introduction");
-
-		if (introduction != null) {
-			setIntroduction(introduction);
-		}
-
-		String features = (String)attributes.get("features");
-
-		if (features != null) {
-			setFeatures(features);
-		}
-
-		String solutions = (String)attributes.get("solutions");
-
-		if (solutions != null) {
-			setSolutions(solutions);
-		}
-
-		String customerStory = (String)attributes.get("customerStory");
-
-		if (customerStory != null) {
-			setCustomerStory(customerStory);
-		}
-
-		String benefits = (String)attributes.get("benefits");
-
-		if (benefits != null) {
-			setBenefits(benefits);
-		}
-
-		String functions = (String)attributes.get("functions");
-
-		if (functions != null) {
-			setFunctions(functions);
-		}
-
-		String partners = (String)attributes.get("partners");
-
-		if (partners != null) {
-			setPartners(partners);
-		}
-
-		String relatedPlatforms = (String)attributes.get("relatedPlatforms");
-
-		if (relatedPlatforms != null) {
-			setRelatedPlatforms(relatedPlatforms);
-		}
 	}
 
 	@Override
@@ -460,14 +397,24 @@ public class CPDefinitionWrapper
 		return _cpDefinition.getAvailableLanguageIds();
 	}
 
-	/**
-	 * Returns the benefits of this cp definition.
-	 *
-	 * @return the benefits of this cp definition
-	 */
 	@Override
 	public String getBenefits() {
 		return _cpDefinition.getBenefits();
+	}
+
+	@Override
+	public String getBenefits(String languageId) {
+		return _cpDefinition.getBenefits(languageId);
+	}
+
+	@Override
+	public String getBenefits(String languageId, boolean useDefault) {
+		return _cpDefinition.getBenefits(languageId, useDefault);
+	}
+
+	@Override
+	public String getBenefitsMapAsXML() {
+		return _cpDefinition.getBenefitsMapAsXML();
 	}
 
 	/**
@@ -574,14 +521,24 @@ public class CPDefinitionWrapper
 		return _cpDefinition.getCreateDate();
 	}
 
-	/**
-	 * Returns the customer story of this cp definition.
-	 *
-	 * @return the customer story of this cp definition
-	 */
 	@Override
 	public String getCustomerStory() {
 		return _cpDefinition.getCustomerStory();
+	}
+
+	@Override
+	public String getCustomerStory(String languageId) {
+		return _cpDefinition.getCustomerStory(languageId);
+	}
+
+	@Override
+	public String getCustomerStory(String languageId, boolean useDefault) {
+		return _cpDefinition.getCustomerStory(languageId, useDefault);
+	}
+
+	@Override
+	public String getCustomerStoryMapAsXML() {
+		return _cpDefinition.getCustomerStoryMapAsXML();
 	}
 
 	/**
@@ -676,14 +633,24 @@ public class CPDefinitionWrapper
 		return _cpDefinition.getExpirationDate();
 	}
 
-	/**
-	 * Returns the features of this cp definition.
-	 *
-	 * @return the features of this cp definition
-	 */
 	@Override
 	public String getFeatures() {
 		return _cpDefinition.getFeatures();
+	}
+
+	@Override
+	public String getFeatures(String languageId) {
+		return _cpDefinition.getFeatures(languageId);
+	}
+
+	@Override
+	public String getFeatures(String languageId, boolean useDefault) {
+		return _cpDefinition.getFeatures(languageId, useDefault);
+	}
+
+	@Override
+	public String getFeaturesMapAsXML() {
+		return _cpDefinition.getFeaturesMapAsXML();
 	}
 
 	/**
@@ -696,14 +663,24 @@ public class CPDefinitionWrapper
 		return _cpDefinition.getFreeShipping();
 	}
 
-	/**
-	 * Returns the functions of this cp definition.
-	 *
-	 * @return the functions of this cp definition
-	 */
 	@Override
 	public String getFunctions() {
 		return _cpDefinition.getFunctions();
+	}
+
+	@Override
+	public String getFunctions(String languageId) {
+		return _cpDefinition.getFunctions(languageId);
+	}
+
+	@Override
+	public String getFunctions(String languageId, boolean useDefault) {
+		return _cpDefinition.getFunctions(languageId, useDefault);
+	}
+
+	@Override
+	public String getFunctionsMapAsXML() {
+		return _cpDefinition.getFunctionsMapAsXML();
 	}
 
 	/**
@@ -736,19 +713,54 @@ public class CPDefinitionWrapper
 		return _cpDefinition.getIgnoreSKUCombinations();
 	}
 
-	/**
-	 * Returns the introduction of this cp definition.
-	 *
-	 * @return the introduction of this cp definition
-	 */
 	@Override
 	public String getIntroduction() {
 		return _cpDefinition.getIntroduction();
 	}
 
 	@Override
+	public String getIntroduction(String languageId) {
+		return _cpDefinition.getIntroduction(languageId);
+	}
+
+	@Override
+	public String getIntroduction(String languageId, boolean useDefault) {
+		return _cpDefinition.getIntroduction(languageId, useDefault);
+	}
+
+	@Override
+	public String getIntroductionMapAsXML() {
+		return _cpDefinition.getIntroductionMapAsXML();
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToBenefitsMap() {
+		return _cpDefinition.getLanguageIdToBenefitsMap();
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToCustomerStoryMap() {
+		return _cpDefinition.getLanguageIdToCustomerStoryMap();
+	}
+
+	@Override
 	public Map<String, String> getLanguageIdToDescriptionMap() {
 		return _cpDefinition.getLanguageIdToDescriptionMap();
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToFeaturesMap() {
+		return _cpDefinition.getLanguageIdToFeaturesMap();
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToFunctionsMap() {
+		return _cpDefinition.getLanguageIdToFunctionsMap();
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToIntroductionMap() {
+		return _cpDefinition.getLanguageIdToIntroductionMap();
 	}
 
 	@Override
@@ -772,8 +784,28 @@ public class CPDefinitionWrapper
 	}
 
 	@Override
+	public Map<String, String> getLanguageIdToOverviewMap() {
+		return _cpDefinition.getLanguageIdToOverviewMap();
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToPartnersMap() {
+		return _cpDefinition.getLanguageIdToPartnersMap();
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToRelatedPlatformsMap() {
+		return _cpDefinition.getLanguageIdToRelatedPlatformsMap();
+	}
+
+	@Override
 	public Map<String, String> getLanguageIdToShortDescriptionMap() {
 		return _cpDefinition.getLanguageIdToShortDescriptionMap();
+	}
+
+	@Override
+	public Map<String, String> getLanguageIdToSolutionsMap() {
+		return _cpDefinition.getLanguageIdToSolutionsMap();
 	}
 
 	/**
@@ -916,24 +948,44 @@ public class CPDefinitionWrapper
 		return _cpDefinition.getNameMapAsXML();
 	}
 
-	/**
-	 * Returns the overview of this cp definition.
-	 *
-	 * @return the overview of this cp definition
-	 */
 	@Override
 	public String getOverview() {
 		return _cpDefinition.getOverview();
 	}
 
-	/**
-	 * Returns the partners of this cp definition.
-	 *
-	 * @return the partners of this cp definition
-	 */
+	@Override
+	public String getOverview(String languageId) {
+		return _cpDefinition.getOverview(languageId);
+	}
+
+	@Override
+	public String getOverview(String languageId, boolean useDefault) {
+		return _cpDefinition.getOverview(languageId, useDefault);
+	}
+
+	@Override
+	public String getOverviewMapAsXML() {
+		return _cpDefinition.getOverviewMapAsXML();
+	}
+
 	@Override
 	public String getPartners() {
 		return _cpDefinition.getPartners();
+	}
+
+	@Override
+	public String getPartners(String languageId) {
+		return _cpDefinition.getPartners(languageId);
+	}
+
+	@Override
+	public String getPartners(String languageId, boolean useDefault) {
+		return _cpDefinition.getPartners(languageId, useDefault);
+	}
+
+	@Override
+	public String getPartnersMapAsXML() {
+		return _cpDefinition.getPartnersMapAsXML();
 	}
 
 	/**
@@ -971,14 +1023,24 @@ public class CPDefinitionWrapper
 		return _cpDefinition.getPublished();
 	}
 
-	/**
-	 * Returns the related platforms of this cp definition.
-	 *
-	 * @return the related platforms of this cp definition
-	 */
 	@Override
 	public String getRelatedPlatforms() {
 		return _cpDefinition.getRelatedPlatforms();
+	}
+
+	@Override
+	public String getRelatedPlatforms(String languageId) {
+		return _cpDefinition.getRelatedPlatforms(languageId);
+	}
+
+	@Override
+	public String getRelatedPlatforms(String languageId, boolean useDefault) {
+		return _cpDefinition.getRelatedPlatforms(languageId, useDefault);
+	}
+
+	@Override
+	public String getRelatedPlatformsMapAsXML() {
+		return _cpDefinition.getRelatedPlatformsMapAsXML();
 	}
 
 	/**
@@ -1036,14 +1098,24 @@ public class CPDefinitionWrapper
 		return _cpDefinition.getShortDescriptionMapAsXML();
 	}
 
-	/**
-	 * Returns the solutions of this cp definition.
-	 *
-	 * @return the solutions of this cp definition
-	 */
 	@Override
 	public String getSolutions() {
 		return _cpDefinition.getSolutions();
+	}
+
+	@Override
+	public String getSolutions(String languageId) {
+		return _cpDefinition.getSolutions(languageId);
+	}
+
+	@Override
+	public String getSolutions(String languageId, boolean useDefault) {
+		return _cpDefinition.getSolutions(languageId, useDefault);
+	}
+
+	@Override
+	public String getSolutionsMapAsXML() {
+		return _cpDefinition.getSolutionsMapAsXML();
 	}
 
 	/**
@@ -1480,16 +1552,6 @@ public class CPDefinitionWrapper
 		_cpDefinition.setAvailableIndividually(availableIndividually);
 	}
 
-	/**
-	 * Sets the benefits of this cp definition.
-	 *
-	 * @param benefits the benefits of this cp definition
-	 */
-	@Override
-	public void setBenefits(String benefits) {
-		_cpDefinition.setBenefits(benefits);
-	}
-
 	@Override
 	public void setCachedModel(boolean cachedModel) {
 		_cpDefinition.setCachedModel(cachedModel);
@@ -1553,16 +1615,6 @@ public class CPDefinitionWrapper
 	@Override
 	public void setCreateDate(Date createDate) {
 		_cpDefinition.setCreateDate(createDate);
-	}
-
-	/**
-	 * Sets the customer story of this cp definition.
-	 *
-	 * @param customerStory the customer story of this cp definition
-	 */
-	@Override
-	public void setCustomerStory(String customerStory) {
-		_cpDefinition.setCustomerStory(customerStory);
 	}
 
 	/**
@@ -1640,16 +1692,6 @@ public class CPDefinitionWrapper
 	}
 
 	/**
-	 * Sets the features of this cp definition.
-	 *
-	 * @param features the features of this cp definition
-	 */
-	@Override
-	public void setFeatures(String features) {
-		_cpDefinition.setFeatures(features);
-	}
-
-	/**
 	 * Sets whether this cp definition is free shipping.
 	 *
 	 * @param freeShipping the free shipping of this cp definition
@@ -1657,16 +1699,6 @@ public class CPDefinitionWrapper
 	@Override
 	public void setFreeShipping(boolean freeShipping) {
 		_cpDefinition.setFreeShipping(freeShipping);
-	}
-
-	/**
-	 * Sets the functions of this cp definition.
-	 *
-	 * @param functions the functions of this cp definition
-	 */
-	@Override
-	public void setFunctions(String functions) {
-		_cpDefinition.setFunctions(functions);
 	}
 
 	/**
@@ -1697,16 +1729,6 @@ public class CPDefinitionWrapper
 	@Override
 	public void setIgnoreSKUCombinations(boolean ignoreSKUCombinations) {
 		_cpDefinition.setIgnoreSKUCombinations(ignoreSKUCombinations);
-	}
-
-	/**
-	 * Sets the introduction of this cp definition.
-	 *
-	 * @param introduction the introduction of this cp definition
-	 */
-	@Override
-	public void setIntroduction(String introduction) {
-		_cpDefinition.setIntroduction(introduction);
 	}
 
 	/**
@@ -1755,26 +1777,6 @@ public class CPDefinitionWrapper
 	}
 
 	/**
-	 * Sets the overview of this cp definition.
-	 *
-	 * @param overview the overview of this cp definition
-	 */
-	@Override
-	public void setOverview(String overview) {
-		_cpDefinition.setOverview(overview);
-	}
-
-	/**
-	 * Sets the partners of this cp definition.
-	 *
-	 * @param partners the partners of this cp definition
-	 */
-	@Override
-	public void setPartners(String partners) {
-		_cpDefinition.setPartners(partners);
-	}
-
-	/**
 	 * Sets the primary key of this cp definition.
 	 *
 	 * @param primaryKey the primary key of this cp definition
@@ -1807,16 +1809,6 @@ public class CPDefinitionWrapper
 	@Override
 	public void setPublished(boolean published) {
 		_cpDefinition.setPublished(published);
-	}
-
-	/**
-	 * Sets the related platforms of this cp definition.
-	 *
-	 * @param relatedPlatforms the related platforms of this cp definition
-	 */
-	@Override
-	public void setRelatedPlatforms(String relatedPlatforms) {
-		_cpDefinition.setRelatedPlatforms(relatedPlatforms);
 	}
 
 	/**
@@ -1854,16 +1846,6 @@ public class CPDefinitionWrapper
 		Map<java.util.Locale, String> shortDescriptionMap) {
 
 		_cpDefinition.setShortDescriptionMap(shortDescriptionMap);
-	}
-
-	/**
-	 * Sets the solutions of this cp definition.
-	 *
-	 * @param solutions the solutions of this cp definition
-	 */
-	@Override
-	public void setSolutions(String solutions) {
-		_cpDefinition.setSolutions(solutions);
 	}
 
 	/**

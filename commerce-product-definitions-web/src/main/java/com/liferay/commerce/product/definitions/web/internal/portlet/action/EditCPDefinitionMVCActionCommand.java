@@ -34,11 +34,8 @@ import com.liferay.commerce.product.exception.NoSuchCatalogException;
 import com.liferay.commerce.product.model.CPDefinition;
 import com.liferay.commerce.product.model.CPInstanceConstants;
 import com.liferay.commerce.product.model.CommerceChannelRel;
-import com.liferay.commerce.product.service.CPDefinitionLocalServiceUtil;
 import com.liferay.commerce.product.service.CPDefinitionService;
 import com.liferay.commerce.product.service.CommerceChannelRelService;
-import com.liferay.portal.kernel.dao.orm.DynamicQuery;
-import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.portlet.PortletProvider;
 import com.liferay.portal.kernel.portlet.PortletProviderUtil;
@@ -117,6 +114,7 @@ public class EditCPDefinitionMVCActionCommand extends BaseMVCActionCommand {
 	protected void doProcessAction(
 			ActionRequest actionRequest, ActionResponse actionResponse)
 		throws Exception {
+
 		String cmd = ParamUtil.getString(actionRequest, Constants.CMD);
 
 		try {
@@ -394,6 +392,28 @@ public class EditCPDefinitionMVCActionCommand extends BaseMVCActionCommand {
 		Map<Locale, String> metaKeywordsMap =
 			LocalizationUtil.getLocalizationMap(
 				actionRequest, "metaKeywordsMapAsXML");
+
+		//<editor-fold desc="custom local field cope2n">
+		Map<Locale, String> overviewMap = LocalizationUtil.getLocalizationMap(
+				actionRequest, "overviewMapAsXML");
+		Map<Locale, String> introductionMap = LocalizationUtil.getLocalizationMap(
+				actionRequest, "introductionMapAsXML");
+		Map<Locale, String> featuresMap = LocalizationUtil.getLocalizationMap(
+				actionRequest, "featuresMapAsXML");
+		Map<Locale, String> solutionsMap = LocalizationUtil.getLocalizationMap(
+				actionRequest, "solutionsMapAsXML");
+		Map<Locale, String> customerStoryMap = LocalizationUtil.getLocalizationMap(
+				actionRequest, "customerStoryMapAsXML");
+		Map<Locale, String> benefitsMap = LocalizationUtil.getLocalizationMap(
+				actionRequest, "benefitsMapAsXML");
+		Map<Locale, String> functionsMap = LocalizationUtil.getLocalizationMap(
+				actionRequest, "functionsMapAsXML");
+		Map<Locale, String> partnersMap = LocalizationUtil.getLocalizationMap(
+				actionRequest, "partnersMapAsXML");
+		Map<Locale, String> relatedPlatformsMap = LocalizationUtil.getLocalizationMap(
+				actionRequest, "relatedPlatformsMapAsXML");
+		//</editor-fold>
+
 		boolean published = ParamUtil.getBoolean(actionRequest, "published");
 
 		int displayDateMonth = ParamUtil.getInteger(
@@ -433,39 +453,11 @@ public class EditCPDefinitionMVCActionCommand extends BaseMVCActionCommand {
 		boolean neverExpire = ParamUtil.getBoolean(
 			actionRequest, "neverExpire");
 
-		//<editor-fold desc="custom fields">
-		String overview = ParamUtil.getString(
-				actionRequest, "overview");
-
-		String introduction = ParamUtil.getString(
-				actionRequest, "introduction");
-
-		String features = ParamUtil.getString(
-				actionRequest, "features");
-
-		String benefits = ParamUtil.getString(
-				actionRequest, "benefits");
-
-		String functions = ParamUtil.getString(
-				actionRequest, "functions");
-
-		String partners = ParamUtil.getString(
-				actionRequest, "partners");
-
-		String solutions = ParamUtil.getString(
-				actionRequest, "solutions");
-
-		String customerStory = ParamUtil.getString(
-				actionRequest, "customerStory");
-
-		String relatedPlatforms = ParamUtil.getString(
-				actionRequest, "relatedPlatforms");
-		//</editor-fold>
-
 		ServiceContext serviceContext = ServiceContextFactory.getInstance(
 			CPDefinition.class.getName(), actionRequest);
 
 		CPDefinition cpDefinition = null;
+
 		if (cpDefinitionId <= 0) {
 
 			// Add commerce product definition
@@ -473,14 +465,16 @@ public class EditCPDefinitionMVCActionCommand extends BaseMVCActionCommand {
 			cpDefinition = _cpDefinitionService.addCPDefinition(
 				commerceCatalogGroupId, serviceContext.getUserId(), nameMap,
 				shortDescriptionMap, descriptionMap, urlTitleMap, metaTitleMap,
-				metaDescriptionMap, metaKeywordsMap, productTypeName, true,
+				metaDescriptionMap, metaKeywordsMap, overviewMap, introductionMap, featuresMap,
+					solutionsMap, customerStoryMap, benefitsMap, functionsMap,
+					partnersMap, relatedPlatformsMap, productTypeName, true,
 				true, false, false, 0D, 0D, 0D, 0D, 0D, 0L, false, false, null,
 				published, displayDateMonth, displayDateDay, displayDateYear,
 				displayDateHour, displayDateMinute, expirationDateMonth,
 				expirationDateDay, expirationDateYear, expirationDateHour,
 				expirationDateMinute, neverExpire,
 				CPInstanceConstants.DEFAULT_SKU, false, 0, null, null, 0L, null,
-				serviceContext, overview, introduction, features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
+				serviceContext);
 		}
 		else {
 
@@ -500,11 +494,14 @@ public class EditCPDefinitionMVCActionCommand extends BaseMVCActionCommand {
 			cpDefinition = _cpDefinitionService.updateCPDefinition(
 				cpDefinitionId, nameMap, shortDescriptionMap, descriptionMap,
 				urlTitleMap, metaTitleMap, metaDescriptionMap, metaKeywordsMap,
+					overviewMap, introductionMap, featuresMap,
+					solutionsMap, customerStoryMap, benefitsMap, functionsMap,
+					partnersMap, relatedPlatformsMap,
 				oldCPDefinition.isIgnoreSKUCombinations(), null, published,
 				displayDateMonth, displayDateDay, displayDateYear,
 				displayDateHour, displayDateMinute, expirationDateMonth,
 				expirationDateDay, expirationDateYear, expirationDateHour,
-				expirationDateMinute, neverExpire, serviceContext, overview, introduction, features, benefits, functions, partners, solutions, customerStory, relatedPlatforms);
+				expirationDateMinute, neverExpire, serviceContext);
 		}
 
 		return cpDefinition;

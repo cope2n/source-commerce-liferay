@@ -10,11 +10,6 @@
 		<field name="createDate" type="Date" />
 		<field name="modifiedDate" type="Date" />
 		<field name="name" type="String" />
-		<field name="descCatalog" type="String" />
-		<field name="subCatalog" type="String" />
-		<field name="nameLocation" type="String" />
-		<field name="subCatalogLocation" type="String" />
-		<field name="imageCatalog" type="String" />
 		<field name="commerceCurrencyCode" type="String" />
 		<field name="catalogDefaultLanguageId" type="String" />
 		<field name="system" type="boolean" />
@@ -135,15 +130,6 @@
 		<field name="statusByUserId" type="long" />
 		<field name="statusByUserName" type="String" />
 		<field name="statusDate" type="Date" />
-		<field name="overview" type="String" />
-		<field name="introduction" type="String" />
-		<field name="features" type="String" />
-		<field name="solutions" type="String" />
-		<field name="customerStory" type="String" />
-		<field name="benefits" type="String" />
-		<field name="functions" type="String" />
-		<field name="partners" type="String" />
-		<field name="relatedPlatforms" type="String" />
 	</model>
 	<model name="com.liferay.commerce.product.model.CPDefinitionLink">
 		<field name="uuid" type="String" />
@@ -185,6 +171,15 @@
 		<field name="metaKeywords" type="String">
 			<hint name="max-length">255</hint>
 		</field>
+		<field name="overview" type="String" />
+		<field name="introduction" type="String" />
+		<field name="features" type="String" />
+		<field name="solutions" type="String" />
+		<field name="customerStory" type="String" />
+		<field name="benefits" type="String" />
+		<field name="functions" type="String" />
+		<field name="partners" type="String" />
+		<field name="relatedPlatforms" type="String" />
 	</model>
 	<model name="com.liferay.commerce.product.model.CPDefinitionOptionRel">
 		<field name="uuid" type="String" />

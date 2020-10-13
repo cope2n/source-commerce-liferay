@@ -619,7 +619,10 @@ public abstract class CPDefinitionLocalServiceBaseImpl
 	public CPDefinitionLocalization updateCPDefinitionLocalization(
 			CPDefinition cpDefinition, String languageId, String name,
 			String shortDescription, String description, String metaTitle,
-			String metaDescription, String metaKeywords)
+			String metaDescription, String metaKeywords, String overview,
+			String introduction, String features, String solutions,
+			String customerStory, String benefits, String functions,
+			String partners, String relatedPlatforms)
 		throws PortalException {
 
 		cpDefinition = cpDefinitionPersistence.findByPrimaryKey(
@@ -633,7 +636,8 @@ public abstract class CPDefinitionLocalServiceBaseImpl
 		return _updateCPDefinitionLocalization(
 			cpDefinition, cpDefinitionLocalization, languageId, name,
 			shortDescription, description, metaTitle, metaDescription,
-			metaKeywords);
+			metaKeywords, overview, introduction, features, solutions,
+			customerStory, benefits, functions, partners, relatedPlatforms);
 	}
 
 	@Override
@@ -643,7 +647,14 @@ public abstract class CPDefinitionLocalServiceBaseImpl
 			Map<String, String> descriptionMap,
 			Map<String, String> metaTitleMap,
 			Map<String, String> metaDescriptionMap,
-			Map<String, String> metaKeywordsMap)
+			Map<String, String> metaKeywordsMap,
+			Map<String, String> overviewMap,
+			Map<String, String> introductionMap,
+			Map<String, String> featuresMap, Map<String, String> solutionsMap,
+			Map<String, String> customerStoryMap,
+			Map<String, String> benefitsMap, Map<String, String> functionsMap,
+			Map<String, String> partnersMap,
+			Map<String, String> relatedPlatformsMap)
 		throws PortalException {
 
 		cpDefinition = cpDefinitionPersistence.findByPrimaryKey(
@@ -651,14 +662,13 @@ public abstract class CPDefinitionLocalServiceBaseImpl
 
 		Map<String, String[]> localizedValuesMap =
 			new HashMap<String, String[]>();
-
 		for (Map.Entry<String, String> entry : nameMap.entrySet()) {
 			String languageId = entry.getKey();
 
 			String[] localizedValues = localizedValuesMap.get(languageId);
 
 			if (localizedValues == null) {
-				localizedValues = new String[6];
+				localizedValues = new String[15];
 
 				localizedValuesMap.put(languageId, localizedValues);
 			}
@@ -672,7 +682,7 @@ public abstract class CPDefinitionLocalServiceBaseImpl
 			String[] localizedValues = localizedValuesMap.get(languageId);
 
 			if (localizedValues == null) {
-				localizedValues = new String[6];
+				localizedValues = new String[15];
 
 				localizedValuesMap.put(languageId, localizedValues);
 			}
@@ -686,7 +696,7 @@ public abstract class CPDefinitionLocalServiceBaseImpl
 			String[] localizedValues = localizedValuesMap.get(languageId);
 
 			if (localizedValues == null) {
-				localizedValues = new String[6];
+				localizedValues = new String[15];
 
 				localizedValuesMap.put(languageId, localizedValues);
 			}
@@ -700,7 +710,7 @@ public abstract class CPDefinitionLocalServiceBaseImpl
 			String[] localizedValues = localizedValuesMap.get(languageId);
 
 			if (localizedValues == null) {
-				localizedValues = new String[6];
+				localizedValues = new String[15];
 
 				localizedValuesMap.put(languageId, localizedValues);
 			}
@@ -714,7 +724,7 @@ public abstract class CPDefinitionLocalServiceBaseImpl
 			String[] localizedValues = localizedValuesMap.get(languageId);
 
 			if (localizedValues == null) {
-				localizedValues = new String[6];
+				localizedValues = new String[15];
 
 				localizedValuesMap.put(languageId, localizedValues);
 			}
@@ -728,12 +738,137 @@ public abstract class CPDefinitionLocalServiceBaseImpl
 			String[] localizedValues = localizedValuesMap.get(languageId);
 
 			if (localizedValues == null) {
-				localizedValues = new String[6];
+				localizedValues = new String[15];
 
 				localizedValuesMap.put(languageId, localizedValues);
 			}
 
 			localizedValues[5] = entry.getValue();
+		}
+
+		for (Map.Entry<String, String> entry : overviewMap.entrySet()) {
+			String languageId = entry.getKey();
+			String[] localizedValues = localizedValuesMap.get(languageId);
+			System.out.println(languageId + ": " + localizedValues);
+			if (localizedValues == null) {
+				localizedValues = new String[15];
+
+				localizedValuesMap.put(languageId, localizedValues);
+			}
+
+			localizedValues[6] = entry.getValue();
+		}
+
+		for (Map.Entry<String, String> entry : introductionMap.entrySet()) {
+			String languageId = entry.getKey();
+
+			String[] localizedValues = localizedValuesMap.get(languageId);
+
+			if (localizedValues == null) {
+				localizedValues = new String[15];
+
+				localizedValuesMap.put(languageId, localizedValues);
+			}
+
+			localizedValues[7] = entry.getValue();
+		}
+
+		for (Map.Entry<String, String> entry : featuresMap.entrySet()) {
+			String languageId = entry.getKey();
+
+			String[] localizedValues = localizedValuesMap.get(languageId);
+
+			if (localizedValues == null) {
+				localizedValues = new String[15];
+
+				localizedValuesMap.put(languageId, localizedValues);
+			}
+
+			localizedValues[8] = entry.getValue();
+		}
+
+		for (Map.Entry<String, String> entry : solutionsMap.entrySet()) {
+			String languageId = entry.getKey();
+
+			String[] localizedValues = localizedValuesMap.get(languageId);
+
+			if (localizedValues == null) {
+				localizedValues = new String[15];
+
+				localizedValuesMap.put(languageId, localizedValues);
+			}
+
+			localizedValues[9] = entry.getValue();
+		}
+
+		for (Map.Entry<String, String> entry : customerStoryMap.entrySet()) {
+			String languageId = entry.getKey();
+
+			String[] localizedValues = localizedValuesMap.get(languageId);
+
+			if (localizedValues == null) {
+				localizedValues = new String[15];
+
+				localizedValuesMap.put(languageId, localizedValues);
+			}
+
+			localizedValues[10] = entry.getValue();
+		}
+
+		for (Map.Entry<String, String> entry : benefitsMap.entrySet()) {
+			String languageId = entry.getKey();
+
+			String[] localizedValues = localizedValuesMap.get(languageId);
+
+			if (localizedValues == null) {
+				localizedValues = new String[15];
+
+				localizedValuesMap.put(languageId, localizedValues);
+			}
+
+			localizedValues[11] = entry.getValue();
+		}
+
+		for (Map.Entry<String, String> entry : functionsMap.entrySet()) {
+			String languageId = entry.getKey();
+
+			String[] localizedValues = localizedValuesMap.get(languageId);
+
+			if (localizedValues == null) {
+				localizedValues = new String[15];
+
+				localizedValuesMap.put(languageId, localizedValues);
+			}
+
+			localizedValues[12] = entry.getValue();
+		}
+
+		for (Map.Entry<String, String> entry : partnersMap.entrySet()) {
+			String languageId = entry.getKey();
+
+			String[] localizedValues = localizedValuesMap.get(languageId);
+
+			if (localizedValues == null) {
+				localizedValues = new String[15];
+
+				localizedValuesMap.put(languageId, localizedValues);
+			}
+
+			localizedValues[13] = entry.getValue();
+		}
+
+		for (Map.Entry<String, String> entry : relatedPlatformsMap.entrySet()) {
+			String languageId = entry.getKey();
+
+			String[] localizedValues = localizedValuesMap.get(languageId);
+
+			if (localizedValues == null) {
+				localizedValues = new String[15];
+
+				localizedValuesMap.put(languageId, localizedValues);
+			}
+
+			localizedValues[14] = entry.getValue();
 		}
 
 		List<CPDefinitionLocalization> cpDefinitionLocalizations =
@@ -761,6 +896,16 @@ public abstract class CPDefinitionLocalServiceBaseImpl
 				cpDefinitionLocalization.setMetaTitle(localizedValues[3]);
 				cpDefinitionLocalization.setMetaDescription(localizedValues[4]);
 				cpDefinitionLocalization.setMetaKeywords(localizedValues[5]);
+				cpDefinitionLocalization.setOverview(localizedValues[6]);
+				cpDefinitionLocalization.setIntroduction(localizedValues[7]);
+				cpDefinitionLocalization.setFeatures(localizedValues[8]);
+				cpDefinitionLocalization.setSolutions(localizedValues[9]);
+				cpDefinitionLocalization.setCustomerStory(localizedValues[10]);
+				cpDefinitionLocalization.setBenefits(localizedValues[11]);
+				cpDefinitionLocalization.setFunctions(localizedValues[12]);
+				cpDefinitionLocalization.setPartners(localizedValues[13]);
+				cpDefinitionLocalization.setRelatedPlatforms(
+					localizedValues[14]);
 
 				cpDefinitionLocalizations.add(
 					cpDefinitionLocalizationPersistence.update(
@@ -794,6 +939,15 @@ public abstract class CPDefinitionLocalServiceBaseImpl
 			cpDefinitionLocalization.setMetaTitle(localizedValues[3]);
 			cpDefinitionLocalization.setMetaDescription(localizedValues[4]);
 			cpDefinitionLocalization.setMetaKeywords(localizedValues[5]);
+			cpDefinitionLocalization.setOverview(localizedValues[6]);
+			cpDefinitionLocalization.setIntroduction(localizedValues[7]);
+			cpDefinitionLocalization.setFeatures(localizedValues[8]);
+			cpDefinitionLocalization.setSolutions(localizedValues[9]);
+			cpDefinitionLocalization.setCustomerStory(localizedValues[10]);
+			cpDefinitionLocalization.setBenefits(localizedValues[11]);
+			cpDefinitionLocalization.setFunctions(localizedValues[12]);
+			cpDefinitionLocalization.setPartners(localizedValues[13]);
+			cpDefinitionLocalization.setRelatedPlatforms(localizedValues[14]);
 
 			cpDefinitionLocalizations.add(
 				cpDefinitionLocalizationPersistence.update(
@@ -808,7 +962,10 @@ public abstract class CPDefinitionLocalServiceBaseImpl
 			CPDefinitionLocalization cpDefinitionLocalization,
 			String languageId, String name, String shortDescription,
 			String description, String metaTitle, String metaDescription,
-			String metaKeywords)
+			String metaKeywords, String overview, String introduction,
+			String features, String solutions, String customerStory,
+			String benefits, String functions, String partners,
+			String relatedPlatforms)
 		throws PortalException {
 
 		if (cpDefinitionLocalization == null) {
@@ -832,6 +989,25 @@ public abstract class CPDefinitionLocalServiceBaseImpl
 		cpDefinitionLocalization.setMetaTitle(metaTitle);
 		cpDefinitionLocalization.setMetaDescription(metaDescription);
 		cpDefinitionLocalization.setMetaKeywords(metaKeywords);
+		cpDefinitionLocalization.setOverview(overview);
+		cpDefinitionLocalization.setIntroduction(introduction);
+		cpDefinitionLocalization.setFeatures(features);
+		cpDefinitionLocalization.setSolutions(solutions);
+		cpDefinitionLocalization.setCustomerStory(customerStory);
+		cpDefinitionLocalization.setBenefits(benefits);
+		cpDefinitionLocalization.setFunctions(functions);
+		cpDefinitionLocalization.setPartners(partners);
+		cpDefinitionLocalization.setRelatedPlatforms(relatedPlatforms);
+
+		System.out.println("overviewMap: " + overview);
+		System.out.println("introduction: " + introduction);
+		System.out.println("features: " + features);
+		System.out.println("solutions: " + solutions);
+		System.out.println("customerStory: " + customerStory);
+		System.out.println("benefits: " + benefits);
+		System.out.println("functions: " + functions);
+		System.out.println("partners: " + partners);
+		System.out.println("relatedPlatforms: " + relatedPlatforms);
 
 		return cpDefinitionLocalizationPersistence.update(
 			cpDefinitionLocalization);

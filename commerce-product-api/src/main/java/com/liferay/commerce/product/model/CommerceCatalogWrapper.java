@@ -63,11 +63,6 @@ public class CommerceCatalogWrapper
 		attributes.put("createDate", getCreateDate());
 		attributes.put("modifiedDate", getModifiedDate());
 		attributes.put("name", getName());
-		attributes.put("descCatalog", getDescCatalog());
-		attributes.put("subCatalog", getSubCatalog());
-		attributes.put("nameLocation", getNameLocation());
-		attributes.put("subCatalogLocation", getSubCatalogLocation());
-		attributes.put("imageCatalog", getImageCatalog());
 		attributes.put("commerceCurrencyCode", getCommerceCurrencyCode());
 		attributes.put(
 			"catalogDefaultLanguageId", getCatalogDefaultLanguageId());
@@ -125,37 +120,6 @@ public class CommerceCatalogWrapper
 
 		if (name != null) {
 			setName(name);
-		}
-
-		String descCatalog = (String)attributes.get("descCatalog");
-
-		if (descCatalog != null) {
-			setDescCatalog(descCatalog);
-		}
-
-		String subCatalog = (String)attributes.get("subCatalog");
-
-		if (subCatalog != null) {
-			setSubCatalog(subCatalog);
-		}
-
-		String nameLocation = (String)attributes.get("nameLocation");
-
-		if (nameLocation != null) {
-			setNameLocation(nameLocation);
-		}
-
-		String subCatalogLocation = (String)attributes.get(
-			"subCatalogLocation");
-
-		if (subCatalogLocation != null) {
-			setSubCatalogLocation(subCatalogLocation);
-		}
-
-		String imageCatalog = (String)attributes.get("imageCatalog");
-
-		if (imageCatalog != null) {
-			setImageCatalog(imageCatalog);
 		}
 
 		String commerceCurrencyCode = (String)attributes.get(
@@ -240,16 +204,6 @@ public class CommerceCatalogWrapper
 		return _commerceCatalog.getCreateDate();
 	}
 
-	/**
-	 * Returns the desc catalog of this commerce catalog.
-	 *
-	 * @return the desc catalog of this commerce catalog
-	 */
-	@Override
-	public String getDescCatalog() {
-		return _commerceCatalog.getDescCatalog();
-	}
-
 	@Override
 	public ExpandoBridge getExpandoBridge() {
 		return _commerceCatalog.getExpandoBridge();
@@ -276,16 +230,6 @@ public class CommerceCatalogWrapper
 	}
 
 	/**
-	 * Returns the image catalog of this commerce catalog.
-	 *
-	 * @return the image catalog of this commerce catalog
-	 */
-	@Override
-	public String getImageCatalog() {
-		return _commerceCatalog.getImageCatalog();
-	}
-
-	/**
 	 * Returns the modified date of this commerce catalog.
 	 *
 	 * @return the modified date of this commerce catalog
@@ -306,16 +250,6 @@ public class CommerceCatalogWrapper
 	}
 
 	/**
-	 * Returns the name location of this commerce catalog.
-	 *
-	 * @return the name location of this commerce catalog
-	 */
-	@Override
-	public String getNameLocation() {
-		return _commerceCatalog.getNameLocation();
-	}
-
-	/**
 	 * Returns the primary key of this commerce catalog.
 	 *
 	 * @return the primary key of this commerce catalog
@@ -328,26 +262,6 @@ public class CommerceCatalogWrapper
 	@Override
 	public Serializable getPrimaryKeyObj() {
 		return _commerceCatalog.getPrimaryKeyObj();
-	}
-
-	/**
-	 * Returns the sub catalog of this commerce catalog.
-	 *
-	 * @return the sub catalog of this commerce catalog
-	 */
-	@Override
-	public String getSubCatalog() {
-		return _commerceCatalog.getSubCatalog();
-	}
-
-	/**
-	 * Returns the sub catalog location of this commerce catalog.
-	 *
-	 * @return the sub catalog location of this commerce catalog
-	 */
-	@Override
-	public String getSubCatalogLocation() {
-		return _commerceCatalog.getSubCatalogLocation();
 	}
 
 	/**
@@ -480,16 +394,6 @@ public class CommerceCatalogWrapper
 		_commerceCatalog.setCreateDate(createDate);
 	}
 
-	/**
-	 * Sets the desc catalog of this commerce catalog.
-	 *
-	 * @param descCatalog the desc catalog of this commerce catalog
-	 */
-	@Override
-	public void setDescCatalog(String descCatalog) {
-		_commerceCatalog.setDescCatalog(descCatalog);
-	}
-
 	@Override
 	public void setExpandoBridgeAttributes(
 		com.liferay.portal.kernel.model.BaseModel<?> baseModel) {
@@ -518,16 +422,6 @@ public class CommerceCatalogWrapper
 	}
 
 	/**
-	 * Sets the image catalog of this commerce catalog.
-	 *
-	 * @param imageCatalog the image catalog of this commerce catalog
-	 */
-	@Override
-	public void setImageCatalog(String imageCatalog) {
-		_commerceCatalog.setImageCatalog(imageCatalog);
-	}
-
-	/**
 	 * Sets the modified date of this commerce catalog.
 	 *
 	 * @param modifiedDate the modified date of this commerce catalog
@@ -545,16 +439,6 @@ public class CommerceCatalogWrapper
 	@Override
 	public void setName(String name) {
 		_commerceCatalog.setName(name);
-	}
-
-	/**
-	 * Sets the name location of this commerce catalog.
-	 *
-	 * @param nameLocation the name location of this commerce catalog
-	 */
-	@Override
-	public void setNameLocation(String nameLocation) {
-		_commerceCatalog.setNameLocation(nameLocation);
 	}
 
 	@Override
@@ -575,26 +459,6 @@ public class CommerceCatalogWrapper
 	@Override
 	public void setPrimaryKeyObj(Serializable primaryKeyObj) {
 		_commerceCatalog.setPrimaryKeyObj(primaryKeyObj);
-	}
-
-	/**
-	 * Sets the sub catalog of this commerce catalog.
-	 *
-	 * @param subCatalog the sub catalog of this commerce catalog
-	 */
-	@Override
-	public void setSubCatalog(String subCatalog) {
-		_commerceCatalog.setSubCatalog(subCatalog);
-	}
-
-	/**
-	 * Sets the sub catalog location of this commerce catalog.
-	 *
-	 * @param subCatalogLocation the sub catalog location of this commerce catalog
-	 */
-	@Override
-	public void setSubCatalogLocation(String subCatalogLocation) {
-		_commerceCatalog.setSubCatalogLocation(subCatalogLocation);
 	}
 
 	/**

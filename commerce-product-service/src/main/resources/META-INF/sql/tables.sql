@@ -82,16 +82,7 @@ create table CPDefinition (
 	status INTEGER,
 	statusByUserId LONG,
 	statusByUserName VARCHAR(75) null,
-	statusDate DATE null,
-	overview VARCHAR(75) null,
-	introduction VARCHAR(75) null,
-	features VARCHAR(75) null,
-	solutions VARCHAR(75) null,
-	customerStory VARCHAR(75) null,
-	benefits VARCHAR(75) null,
-	functions VARCHAR(75) null,
-	partners VARCHAR(75) null,
-	relatedPlatforms VARCHAR(75) null
+	statusDate DATE null
 );
 
 create table CPDefinitionLink (
@@ -120,7 +111,16 @@ create table CPDefinitionLocalization (
 	description TEXT null,
 	metaTitle VARCHAR(255) null,
 	metaDescription VARCHAR(255) null,
-	metaKeywords VARCHAR(255) null
+	metaKeywords VARCHAR(255) null,
+	overview VARCHAR(75) null,
+	introduction VARCHAR(75) null,
+	features VARCHAR(75) null,
+	solutions VARCHAR(75) null,
+	customerStory VARCHAR(75) null,
+	benefits VARCHAR(75) null,
+	functions VARCHAR(75) null,
+	partners VARCHAR(75) null,
+	relatedPlatforms VARCHAR(75) null
 );
 
 create table CPDefinitionOptionRel (
@@ -347,14 +347,20 @@ create table CommerceCatalog (
 	createDate DATE null,
 	modifiedDate DATE null,
 	name VARCHAR(75) null,
-	descCatalog VARCHAR(75) null,
-	subCatalog VARCHAR(75) null,
-	nameLocation VARCHAR(75) null,
-	subCatalogLocation VARCHAR(75) null,
-	imageCatalog VARCHAR(75) null,
 	commerceCurrencyCode VARCHAR(75) null,
 	catalogDefaultLanguageId VARCHAR(75) null,
 	system BOOLEAN
+);
+
+create table CommerceCatalogLocalization (
+	mvccVersion LONG default 0 not null,
+	commerceCatalogLocalizationId LONG not null primary key,
+	companyId LONG,
+	commerceCatalogId LONG,
+	languageId VARCHAR(75) null,
+	descCatalog VARCHAR(75) null,
+	subCatalog VARCHAR(75) null,
+	imageCatalog VARCHAR(75) null
 );
 
 create table CommerceChannel (

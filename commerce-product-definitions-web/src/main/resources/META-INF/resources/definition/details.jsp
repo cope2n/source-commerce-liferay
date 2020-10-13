@@ -78,7 +78,7 @@ if ((cpDefinition != null) && (cpDefinition.getExpirationDate() != null)) {
 				for (CommerceCatalog commerceCatalog : commerceCatalogs) {
 				%>
 
-					<aui:option label="<%= commerceCatalog.getName() + " -- " + commerceCatalog.getSubCatalog() %>" selected="<%= (cpDefinition == null) ? (commerceCatalogs.size() == 1) : cpDefinitionsDisplayContext.isSelectedCatalog(commerceCatalog) %>" value="<%= commerceCatalog.getGroupId() %>" />
+					<aui:option label="<%= commerceCatalog.getName() %>" selected="<%= (cpDefinition == null) ? (commerceCatalogs.size() == 1) : cpDefinitionsDisplayContext.isSelectedCatalog(commerceCatalog) %>" value="<%= commerceCatalog.getGroupId() %>" />
 
 				<%
 				}
@@ -90,115 +90,149 @@ if ((cpDefinition != null) && (cpDefinition.getExpirationDate() != null)) {
 				<aui:validator name="required" />
 			</aui:input>
 
-			<aui:input label="short-description" localized="<%= true %>" name="shortDescriptionMapAsXML" resizable="<%= true %>" type="textarea" />
-
 			<%
 			String descriptionMapAsXML = StringPool.BLANK;
+			String overviewMapAsXML = StringPool.BLANK;
+			String introductionMapAsXML = StringPool.BLANK;
+			String featuresMapAsXML = StringPool.BLANK;
+			String solutionsMapAsXML = StringPool.BLANK;
+			String customerStoryMapAsXML = StringPool.BLANK;
+			String benefitsMapAsXML = StringPool.BLANK;
+			String functionsMapAsXML = StringPool.BLANK;
+			String partnersMapAsXML = StringPool.BLANK;
+			String relatedPlatformsMapAsXML = StringPool.BLANK;
 
 			if (cpDefinition != null) {
-				descriptionMapAsXML = cpDefinition.getDescriptionMapAsXML();
+//				descriptionMapAsXML = cpDefinition.getDescriptionMapAsXML();
+				overviewMapAsXML = cpDefinition.getOverviewMapAsXML();
+				introductionMapAsXML = cpDefinition.getIntroductionMapAsXML();
+				featuresMapAsXML = cpDefinition.getFeaturesMapAsXML();
+				solutionsMapAsXML = cpDefinition.getSolutionsMapAsXML();
+				customerStoryMapAsXML = cpDefinition.getCustomerStoryMapAsXML();
+				benefitsMapAsXML = cpDefinition.getBenefitsMapAsXML();
+				functionsMapAsXML = cpDefinition.getFunctionsMapAsXML();
+				partnersMapAsXML = cpDefinition.getPartnersMapAsXML();
+				relatedPlatformsMapAsXML = cpDefinition.getRelatedPlatformsMapAsXML();
 			}
 			%>
+			<liferay-ui:asset-tags-selector></liferay-ui:asset-tags-selector>
 
 			<aui:field-wrapper>
-				<label class="control-label" for="<portlet:namespace />descriptionMapAsXML"><liferay-ui:message key="full-description" /></label>
+				<label class="control-label" for="<portlet:namespace />overviewMapAsXML"><liferay-ui:message key="Overview" /></label>
 
 				<div class="entry-content form-group">
 					<liferay-ui:input-localized
-							editorName="tinymce"
-							name="descriptionMapAsXML"
+							editorName="ckeditor"
+							name="overviewMapAsXML"
 							type="editor"
-							xml="<%= descriptionMapAsXML %>"
+							xml="<%= overviewMapAsXML %>"
 					/>
 				</div>
 			</aui:field-wrapper>
+
 			<aui:field-wrapper>
-				<label class="control-label">Overview </label>
-				<liferay-ui:input-editor toolbarSet="overview"
-										 name="overview"
-										 initMethod="initEditorOverview"
-										 width="100" height="400"
-										 resizable="true" >
-				</liferay-ui:input-editor>
+				<label class="control-label" for="<portlet:namespace />introductionMapAsXML"><liferay-ui:message key="Introduction" /></label>
+
+				<div class="entry-content form-group">
+					<liferay-ui:input-localized
+							editorName="ckeditor"
+							name="introductionMapAsXML"
+							type="editor"
+							xml="<%= introductionMapAsXML %>"
+					/>
+				</div>
 			</aui:field-wrapper>
 
 			<aui:field-wrapper>
-				<label class="control-label">Introduction -- Challenge</label>
-				<liferay-ui:input-editor toolbarSet="introduction"
-										 name="introduction"
-										 initMethod="initEditorIntroduction"
-										 width="100" height="400"
-										 resizable="true" >
-				</liferay-ui:input-editor>
+				<label class="control-label" for="<portlet:namespace />featuresMapAsXML"><liferay-ui:message key="full-features" /></label>
+
+				<div class="entry-content form-group">
+					<liferay-ui:input-localized
+							editorName="ckeditor"
+							name="featuresMapAsXML"
+							type="editor"
+							xml="<%= featuresMapAsXML %>"
+					/>
+				</div>
 			</aui:field-wrapper>
 
 			<aui:field-wrapper>
-				<label class="control-label">Features </label>
-				<liferay-ui:input-editor toolbarSet="features"
-										 name="features"
-										 initMethod="initEditorFeatures"
-										 width="100" height="400"
-										 resizable="true" >
-				</liferay-ui:input-editor>
+				<label class="control-label" for="<portlet:namespace />solutionsMapAsXML"><liferay-ui:message key="full-solutions" /></label>
+
+				<div class="entry-content form-group">
+					<liferay-ui:input-localized
+							editorName="ckeditor"
+							name="solutionsMapAsXML"
+							type="editor"
+							xml="<%= solutionsMapAsXML %>"
+					/>
+				</div>
 			</aui:field-wrapper>
 
 			<aui:field-wrapper>
-				<label class="control-label">Benefits </label>
-				<liferay-ui:input-editor toolbarSet="benefits"
-										 name="benefits"
-										 initMethod="initEditorBenefits"
-										 width="100" height="400"
-										 resizable="true" >
-				</liferay-ui:input-editor>
+				<label class="control-label" for="<portlet:namespace />customerStoryMapAsXML"><liferay-ui:message key="full-customerStory" /></label>
+
+				<div class="entry-content form-group">
+					<liferay-ui:input-localized
+							editorName="ckeditor"
+							name="customerStoryMapAsXML"
+							type="editor"
+							xml="<%= customerStoryMapAsXML %>"
+					/>
+				</div>
 			</aui:field-wrapper>
 
 			<aui:field-wrapper>
-				<label class="control-label">Functions </label>
-				<liferay-ui:input-editor toolbarSet="functions"
-										 name="functions"
-										 initMethod="initEditorFunctions"
-										 width="100" height="400"
-										 resizable="true" >
-				</liferay-ui:input-editor>
+				<label class="control-label" for="<portlet:namespace />benefitsMapAsXML"><liferay-ui:message key="full-benefits" /></label>
+
+				<div class="entry-content form-group">
+					<liferay-ui:input-localized
+							editorName="ckeditor"
+							name="benefitsMapAsXML"
+							type="editor"
+							xml="<%= benefitsMapAsXML %>"
+					/>
+				</div>
 			</aui:field-wrapper>
 
 			<aui:field-wrapper>
-				<label class="control-label">Partners </label>
-				<liferay-ui:input-editor toolbarSet="partners"
-										 name="partners"
-										 initMethod="initEditorPartners"
-										 width="100" height="400"
-										 resizable="true" >
-				</liferay-ui:input-editor>
-			</aui:field-wrapper>
-			<aui:field-wrapper>
-				<label class="control-label">Solutions -- Our capability</label>
-				<liferay-ui:input-editor toolbarSet="solutions"
-										 name="solutions"
-										 initMethod="initEditorSolutions"
-										 width="100" height="400"
-										 resizable="true" >
-				</liferay-ui:input-editor>
-			</aui:field-wrapper>
-			<aui:field-wrapper>
-				<label class="control-label">Customer Story </label>
-				<liferay-ui:input-editor toolbarSet="customerStory"
-										 name="customerStory"
-										 initMethod="initEditorCustomerStory"
-										 width="100" height="400"
-										 resizable="true" >
-				</liferay-ui:input-editor>
-			</aui:field-wrapper>
-			<aui:field-wrapper>
-				<label class="control-label">Related Platforms </label>
-				<liferay-ui:input-editor toolbarSet="relatedPlatforms"
-										 name="relatedPlatforms"
-										 initMethod="initEditorRelatedPlatforms"
-										 width="100" height="400"
-										 resizable="true" >
-				</liferay-ui:input-editor>
+				<label class="control-label" for="<portlet:namespace />functionsMapAsXML"><liferay-ui:message key="full-functions" /></label>
+
+				<div class="entry-content form-group">
+					<liferay-ui:input-localized
+							editorName="ckeditor"
+							name="functionsMapAsXML"
+							type="editor"
+							xml="<%= functionsMapAsXML %>"
+					/>
+				</div>
 			</aui:field-wrapper>
 
+			<aui:field-wrapper>
+				<label class="control-label" for="<portlet:namespace />partnersMapAsXML"><liferay-ui:message key="full-partners" /></label>
+
+				<div class="entry-content form-group">
+					<liferay-ui:input-localized
+							editorName="ckeditor"
+							name="partnersMapAsXML"
+							type="editor"
+							xml="<%= partnersMapAsXML %>"
+					/>
+				</div>
+			</aui:field-wrapper>
+
+			<aui:field-wrapper>
+				<label class="control-label" for="<portlet:namespace />relatedPlatformsMapAsXML"><liferay-ui:message key="full-relatedPlatforms" /></label>
+
+				<div class="entry-content form-group">
+					<liferay-ui:input-localized
+							editorName="ckeditor"
+							name="relatedPlatformsMapAsXML"
+							type="editor"
+							xml="<%= relatedPlatformsMapAsXML %>"
+					/>
+				</div>
+			</aui:field-wrapper>
 		</aui:fieldset>
 
 		<aui:fieldset collapsible="<%= true %>" label="seo">
@@ -323,42 +357,5 @@ if ((cpDefinition != null) && (cpDefinition.getExpirationDate() != null)) {
 			'input',
 			debounce(handleOnNameInput, 200)
 		);
-	</aui:script>
-</c:if>
-
-<c:if test="<%= cpDefinition != null %>">
-	<aui:script>
-		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorOverview(){
-		return "<%= UnicodeFormatter.toString((String)cpDefinition.getOverview()) %>";
-		}
-
-		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorIntroduction(){
-		return "<%= UnicodeFormatter.toString((String)cpDefinition.getIntroduction()) %>";
-		}
-
-		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorFeatures(){
-		return "<%= UnicodeFormatter.toString((String)cpDefinition.getFeatures()) %>";
-		}
-
-		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorBenefits(){
-		return "<%= UnicodeFormatter.toString((String)cpDefinition.getBenefits()) %>";
-		}
-
-		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorFunctions(){
-		return "<%= UnicodeFormatter.toString((String)cpDefinition.getFunctions()) %>";
-		}
-
-		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorPartners(){
-		return "<%= UnicodeFormatter.toString((String)cpDefinition.getPartners()) %>";
-		}
-		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorSolutions(){
-		return "<%= UnicodeFormatter.toString((String)cpDefinition.getSolutions()) %>";
-		}
-		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorCustomerStory(){
-		return "<%= UnicodeFormatter.toString((String)cpDefinition.getCustomerStory()) %>";
-		}
-		function <portlet:namespace/><% assert cpDefinition != null; %>initEditorRelatedPlatforms(){
-		return "<%= UnicodeFormatter.toString((String)cpDefinition.getRelatedPlatforms()) %>";
-		}
 	</aui:script>
 </c:if>
